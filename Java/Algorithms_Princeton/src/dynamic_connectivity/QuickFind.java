@@ -1,25 +1,22 @@
 package dynamic_connectivity;
 
 public class QuickFind {
-	private int []id;
-	
+	private int[] id;
+
 	public QuickFind(int N) {
 		id = new int[N];
 		for (int i = 0; i < N; i++)
 			id[i] = i;
 	}
-	
-	public boolean connected(int p, int q)
-	{
+
+	public boolean connected(int p, int q) {
 		return id[p] == id[q];
 	}
-	
-	public void union(int p, int q)
-	{
+
+	public void union(int p, int q) {
 		if (id[p] == id[q])
 			return;
-		else
-		{
+		else {
 			int len = id.length;
 			int pid = id[p];
 			int qid = id[q];
@@ -28,9 +25,9 @@ public class QuickFind {
 					id[i] = qid;
 		}
 	}
-	
-	public static void main(String args[]) throws Exception{
-		
+
+	public static void main(String args[]) throws Exception {
+
 		QuickFind qf = new QuickFind(4);
 		qf.union(0, 3);
 		qf.union(1, 2);
@@ -44,6 +41,6 @@ public class QuickFind {
 		qf.union(1, 3);
 		qf.union(1, 0);
 		System.out.println(qf.connected(1, 0));
-		
+
 	}
 }
