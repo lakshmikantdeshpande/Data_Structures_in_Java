@@ -1,4 +1,6 @@
-package linked_list;
+package practice;
+
+import com.sun.javaws.exceptions.InvalidArgumentException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,15 +11,24 @@ class SinglyLinkedList {
 	
 	static class Node
 	{
-		int data;
-		Node next;
-		
+		private int data;
+        private Node next;
+
 		Node(int data)
 		{
 			this.data = data;
+            this.next = null;
 		}
 	}
 
+	void insertBeginning(Node head, int data)
+    {
+        if (head == null)
+            return;
+        Node temp = new Node(data);
+        temp.next = head;
+        head = temp;
+    }
 	public static void main(String[] args) throws IOException
 	{
 		int choice;
@@ -39,6 +50,7 @@ class SinglyLinkedList {
 			switch(choice)
 			{
 				case 1:
+
 					break;
 				case 2:
 					break;

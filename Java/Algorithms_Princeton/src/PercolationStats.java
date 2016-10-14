@@ -2,10 +2,10 @@ import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
-public class PercolationStats {
+class PercolationStats {
 	private double[] trials;
 
-	public PercolationStats(int n, int tests) {
+	private PercolationStats(int n, int tests) {
 
 		if (n <= 0 || tests <= 0)
 			throw new IllegalArgumentException();
@@ -29,19 +29,19 @@ public class PercolationStats {
 		}
 	}
 
-	public double mean() {
+	private double mean() {
 		return StdStats.mean(trials);
 	}
 
-	public double stddev() {
+	private double stddev() {
 		return StdStats.stddev(trials);
 	}
 
-	public double confidenceLo() {
+	private double confidenceLo() {
 		return mean() - ((1.96 * stddev()) / Math.sqrt(trials.length));
 	}
 
-	public double confidenceHi() {
+	private double confidenceHi() {
 		return mean() + ((1.96 * stddev()) / Math.sqrt(trials.length));
 	}
 

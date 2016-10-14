@@ -1,8 +1,8 @@
 package linked_list;
 
-public class LinkedListDemo {
+class LinkedListDemo {
 
-	node head;
+	private node head;
 	
 	static class node
 	{
@@ -17,7 +17,7 @@ public class LinkedListDemo {
 		}
 	}
 	
-	public void display()
+	private void display()
 	{
 		while (head != null)
 		{
