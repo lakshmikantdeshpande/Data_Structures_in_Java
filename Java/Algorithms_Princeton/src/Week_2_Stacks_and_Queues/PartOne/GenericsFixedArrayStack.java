@@ -9,23 +9,7 @@ public class GenericsFixedArrayStack<Item> {
         stack = (Item[]) new Object[capacity];
     }
 
-    public boolean isEmpty() {
-        return top == 0;
-    }
-
-    public void push(Item item) {
-        stack[++top] = item;
-    }
-
-    public Item pop()
-    {
-        Item item = stack[top];
-        stack[top--] = null;
-        return item;
-    }
-
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         GenericsFixedArrayStack gs = new GenericsFixedArrayStack(5);
         System.out.println(gs.isEmpty());
         // pushing three different datatypes
@@ -35,5 +19,19 @@ public class GenericsFixedArrayStack<Item> {
         System.out.println(gs.pop());
         System.out.println(gs.pop());
         System.out.println(gs.pop());
+    }
+
+    public boolean isEmpty() {
+        return top == 0;
+    }
+
+    public void push(Item item) {
+        stack[++top] = item;
+    }
+
+    public Item pop() {
+        Item item = stack[top];
+        stack[top--] = null;
+        return item;
     }
 }

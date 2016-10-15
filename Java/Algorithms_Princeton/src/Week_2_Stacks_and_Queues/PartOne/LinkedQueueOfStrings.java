@@ -2,19 +2,25 @@ package Week_2_Stacks_and_Queues;
 
 public class LinkedQueueOfStrings {
     Node head, tail;
-    private class Node
-    {
-        String item;
-        Node next;
+
+    public static void main(String args[]) throws Exception {
+        LinkedQueueOfStrings sos = new LinkedQueueOfStrings();
+        sos.enqueue("one");
+        sos.enqueue("two");
+        sos.enqueue("three");
+        sos.enqueue("four");
+        System.out.println(sos.dequeue());
+        System.out.println(sos.dequeue());
+        System.out.println(sos.dequeue());
+        System.out.println(sos.dequeue());
+        System.out.println(sos.dequeue());
     }
 
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return head == null;
     }
 
-    public void enqueue(String item)
-    {
+    public void enqueue(String item) {
         Node oldtail = tail;
         tail = new Node();
         tail.item = item;
@@ -25,8 +31,7 @@ public class LinkedQueueOfStrings {
             oldtail.next = tail;
     }
 
-    public String dequeue()
-    {
+    public String dequeue() {
         String item = head.item;
         head = head.next;
         if (isEmpty())
@@ -34,17 +39,8 @@ public class LinkedQueueOfStrings {
         return item;
     }
 
-    public static void main(String args[]) throws Exception
-    {
-        LinkedQueueOfStrings sos =  new LinkedQueueOfStrings();
-        sos.enqueue("one");
-        sos.enqueue("two");
-        sos.enqueue("three");
-        sos.enqueue("four");
-        System.out.println(sos.dequeue());
-        System.out.println(sos.dequeue());
-        System.out.println(sos.dequeue());
-        System.out.println(sos.dequeue());
-        System.out.println(sos.dequeue());
+    private class Node {
+        String item;
+        Node next;
     }
 }

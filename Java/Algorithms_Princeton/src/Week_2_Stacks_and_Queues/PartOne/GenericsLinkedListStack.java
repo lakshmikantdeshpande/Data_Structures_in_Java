@@ -3,9 +3,16 @@ package Week_2_Stacks_and_Queues.PartOne;
 public class GenericsLinkedListStack<Item> {
     Node head = null;
 
-    private class Node {
-        Item item;
-        Node next;
+    public static void main(String args[]) {
+        GenericsLinkedListStack gs = new GenericsLinkedListStack();
+        System.out.println(gs.isEmpty());
+        // pushing three different datatypes
+        gs.push(1);
+        gs.push("Two");
+        gs.push('3');
+        System.out.println(gs.pop());
+        System.out.println(gs.pop());
+        System.out.println(gs.pop());
     }
 
     public void push(Item item) {
@@ -25,16 +32,8 @@ public class GenericsLinkedListStack<Item> {
         return head == null;
     }
 
-    public static void main(String args[])
-    {
-        GenericsLinkedListStack gs = new GenericsLinkedListStack();
-        System.out.println(gs.isEmpty());
-        // pushing three different datatypes
-        gs.push(1);
-        gs.push("Two");
-        gs.push('3');
-        System.out.println(gs.pop());
-        System.out.println(gs.pop());
-        System.out.println(gs.pop());
+    private class Node {
+        Item item;
+        Node next;
     }
 }
