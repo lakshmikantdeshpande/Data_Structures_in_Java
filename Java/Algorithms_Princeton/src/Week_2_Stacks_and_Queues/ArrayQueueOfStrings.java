@@ -1,10 +1,5 @@
 package Week_2_Stacks_and_Queues;
 
-import java.lang.reflect.Array;
-
-/**
- * Created by lakshmikant_d on 10/15/2016.
- */
 public class ArrayQueueOfStrings {
     String[] queue;
     int front, back, capacity;
