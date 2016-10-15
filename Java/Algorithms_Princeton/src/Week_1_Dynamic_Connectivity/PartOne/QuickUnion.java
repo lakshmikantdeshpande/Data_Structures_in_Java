@@ -1,4 +1,4 @@
-package Week_1_Dynamic_Connectivity;
+package Week_1_Dynamic_Connectivity.PartOne;
 
 class QuickUnion {
 	private int[] id;
