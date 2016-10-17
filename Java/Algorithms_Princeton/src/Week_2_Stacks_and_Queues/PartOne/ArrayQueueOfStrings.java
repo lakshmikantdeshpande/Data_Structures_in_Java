@@ -1,4 +1,4 @@
-package Week_2_Stacks_and_Queues;
+package Week_2_Stacks_and_Queues.PartOne;
 
 public class ArrayQueueOfStrings {
     String[] queue;
