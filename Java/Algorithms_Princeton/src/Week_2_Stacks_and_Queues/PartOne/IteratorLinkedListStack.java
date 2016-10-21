@@ -33,7 +33,7 @@ public class IteratorLinkedListStack<Item> implements Iterable<Item> {
         return head == null;
     }
 
-    public StackIterator iterator() {
+    public Iterator<Item> iterator() {
         return new StackIterator();
     }
 

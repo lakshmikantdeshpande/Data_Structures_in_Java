@@ -32,7 +32,7 @@ public class IteratorFixedArrayStack<Item> implements Iterable<Item> {
         return item;
     }
 
-    public StackIterator iterator() {
+    public Iterator<Item> iterator() {
         return new StackIterator();
     }
 
