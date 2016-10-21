@@ -1,4 +1,4 @@
-package Week_2_Stacks_and_Queues.PartOne;
+package week_2_Stacks_and_Queues.PartOne;
 
 public class GenericsLinkedListStack<Item> {
     Node head = null;

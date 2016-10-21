@@ -1,4 +1,4 @@
-package Week_1_Dynamic_Connectivity.PartOne;
+package week_1_Dynamic_Connectivity.PartOne;
 
 class QuickFind {
     private int[] id;

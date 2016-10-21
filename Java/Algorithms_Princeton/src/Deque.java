@@ -6,7 +6,8 @@ public class Deque<Item> implements Iterable<Item> {
 	private int size;
 
 	public Deque() {
-		head = tail = null;
+		head = null;
+		tail = null;
 		size = 0;
 	}
 
@@ -107,9 +108,13 @@ public class Deque<Item> implements Iterable<Item> {
 
 		@Override
 		public Item next() {
-			Item item = current.item;
-			current = current.next;
-			return item;
+			if (!this.hasNext()) {
+				throw new NoSuchElementException();
+			} else {
+				Item item = current.item;
+				current = current.next;
+				return item;
+			}
 		}
 
 		@Override
@@ -124,25 +129,7 @@ public class Deque<Item> implements Iterable<Item> {
 		}
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static void main(String args[]) {
-		Deque deq = new Deque();
-		deq.addFirst("hi");
-		deq.addLast(0);
-		deq.addLast(2);
-		deq.addFirst(1);
-		deq.addFirst("zuzu");
-
-		// deq.removeFirst();
-		// deq.removeFirst();
-		// deq.removeFirst();
-		// deq.removeLast();
-		// deq.removeFirst ();
-		//
-		Iterator iterator = deq.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
+	public static void main(String[] args) {
 
 	}
 }

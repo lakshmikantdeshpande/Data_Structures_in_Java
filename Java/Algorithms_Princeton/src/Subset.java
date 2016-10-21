@@ -11,11 +11,11 @@ public class Subset {
 
 		RandomizedQueue<String> queue = new RandomizedQueue<String>();
 
-		while (StdIn.hasNextLine() && !StdIn.isEmpty()) {
+		while (!StdIn.isEmpty()) {
 			queue.enqueue(StdIn.readString());
 		}
 		for (int i = 0; i < k; i++) {
-			StdOut.println(queue.iterator().next());
+			StdOut.println(queue.dequeue());
 		}
 
 	}

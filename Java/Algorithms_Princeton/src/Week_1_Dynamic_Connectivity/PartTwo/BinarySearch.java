@@ -1,4 +1,4 @@
-package Week_1_Dynamic_Connectivity.PartTwo;
+package week_1_Dynamic_Connectivity.PartTwo;
 
 import java.io.IOException;
 

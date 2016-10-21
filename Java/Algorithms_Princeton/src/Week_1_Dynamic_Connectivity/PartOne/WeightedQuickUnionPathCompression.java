@@ -1,4 +1,4 @@
-package Week_1_Dynamic_Connectivity.PartOne;
+package week_1_Dynamic_Connectivity.PartOne;
 
 class WeightedQuickUnionPathCompression {
     private int[] size; // to store component size
