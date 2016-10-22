@@ -1,16 +1,16 @@
 package week_2_Stacks_and_Queues.PartTwo;
 
-public class SelectionSort {
+public class InsertionSort {
 
     public static void sort(int[] array) {
-        int min = 0, N = array.length;
+        int N = array.length;
         for (int i = 0; i < N; i++) {
-            min = i;
-            for (int j = i + 1; j < N; j++) {
-                if (array[j] < array[min])
-                    min = j;
+            for (int j = i; j > 0; j--) {
+                if (array[j] < array[j - 1])
+                    swap(array, j, j - 1);
+                else
+                    break;
             }
-            swap(array, i, min);
         }
     }
 
@@ -27,5 +27,4 @@ public class SelectionSort {
             System.out.print(x + " ");
 
     }
-
 }
