@@ -1,4 +1,4 @@
-package week_2_Stacks_and_Queues.PartTwo;
+package week_3_MergeSort_and_QuickSort.PartOne;
 
 public class MergeSort_Recursive_TopDown {
 
