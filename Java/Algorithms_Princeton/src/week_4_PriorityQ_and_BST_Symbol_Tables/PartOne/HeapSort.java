@@ -1,9 +1,5 @@
 package week_4_PriorityQ_and_BST_Symbol_Tables.PartOne;
 
-import java.awt.print.Printable;
-
-import edu.princeton.cs.algs4.Heap;
-
 public class HeapSort {
 	private static int[] pq;
 		
@@ -11,11 +7,11 @@ public class HeapSort {
 	{
 		int N = pq.length;
 		for (int k = N/2; k >= 1; k--)
-			sink(k, N);
+			sink(k, N);     // start from the middle of the tree, build proper heap tree
 		while (N > 1)
-		{
-			swap(1, N--);
-			sink(1, N);
+		{	
+			swap(1, N--);	// repeatedly removing top (i.e swapping top & bottom, then perform sink)
+			sink(1, N);		// sorts the array (as simple as that)
 		}		
 	}
 	
