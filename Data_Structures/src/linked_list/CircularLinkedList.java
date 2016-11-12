@@ -58,20 +58,19 @@ public class CircularLinkedList {
 	}
 
 	public synchronized void insertAtTheEnd(int data) {
-			insertAtTheBeginning(data);
-			tail = tail.next;
-			length++;
+		insertAtTheBeginning(data);
+		tail = tail.next; // length added in the insertAtTheBeginning function
 	}
-	
-	public synchronized void deleteFromTheEnd()
-	{
-		if (tail == null) return;
-		if (tail.next == tail) { 
-			tail = null; 
-			length--; 
+
+	public synchronized void deleteFromTheEnd() {
+		if (tail == null)
+			return;
+		if (tail.next == tail) {
+			tail = null;
+			length--;
 			return;
 		}
-		
+
 		Node temp = tail.next;
 		while (temp.next != tail) {
 			temp = temp.next;
@@ -80,10 +79,10 @@ public class CircularLinkedList {
 		tail = temp;
 		length--;
 	}
-	
-	public synchronized void deleteFromTheFront()
-	{
-		if (tail == null) return;
+
+	public synchronized void deleteFromTheFront() {
+		if (tail == null)
+			return;
 		if (tail.next == tail) {
 			tail = null;
 			length--;
@@ -92,7 +91,7 @@ public class CircularLinkedList {
 		Node temp = tail.next;
 		tail.next = temp.next;
 		temp = null;
-		length --;
+		length--;
 	}
 
 	public static void main(String[] args) {
