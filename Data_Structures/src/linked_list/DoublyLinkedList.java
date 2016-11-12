@@ -1,22 +1,23 @@
 package linked_list;
 
-class Node
-{
-	int data;
-	Node next;
-	
-	public Node(int data) {
-		this.data = data;
-	}
-}
-
-public class LinkedListDemo
-{
+public class DoublyLinkedList {
 	int length;
 	private Node head;
 		
+	class Node
+	{
+		int data;
+		Node next;
+		Node prev;
+		
+		public Node(int data)
+		{
+			this.data = data;
+		}
+	}
+	
 	// initialize the linked list
-	public LinkedListDemo() {
+	public DoublyLinkedList() {
 		head = null;
 		length = 0;
 	}
@@ -26,7 +27,7 @@ public class LinkedListDemo
 	{
 		return this.length;
 //		int len = 0;
-//		Node temp = head;
+//		Dnode temp = head;
 //		while (temp != null) {
 //			temp = temp.next;
 //			len++;
@@ -49,11 +50,28 @@ public class LinkedListDemo
 		}
 	}
 	
+	public synchronized void reversePrint()
+	{
+		Node temp = head;
+		while (temp.next != null)
+		{
+			temp = temp.next;
+		}
+		while (temp != null)
+		{
+			System.out.print(temp.data + " <- ");
+			temp = temp.prev;
+		}
+		System.out.println();
+	}
+
 	public synchronized void insertAtTheBeginning(int data)
 	{
 		Node oldHead = head;
 		head = new Node(data);
 		head.next = oldHead;
+		if (oldHead != null)
+			oldHead.prev = head;
 		length++;
 	}
 	
@@ -71,6 +89,7 @@ public class LinkedListDemo
 		while (temp.next != null)      // go to the end of the linked list
 			temp = temp.next;
 		temp.next = newnode;
+		newnode.prev = temp;
 		length++;
 	}
 	
@@ -80,15 +99,26 @@ public class LinkedListDemo
 		if (position > length) position = length;
 		if (position == 0) { insertAtTheBeginning(data); return; }
 		
-		Node temp = head;
+		Node p = head, q = null;
 		Node newNode = new Node(data);
 
 		for(int i = 1; i < position; i++)
 		{
-			temp = temp.next;
+			q = p;
+			p = p.next;
 		}
-		newNode.next = temp.next;
-		temp.next = newNode;
+		if (p != null)
+		{
+			newNode.next = q.next;
+			newNode.prev = q;
+			p.prev = newNode; 
+			q.next = newNode;
+		}
+		else
+		{
+			q.next = newNode;
+			newNode.prev = q;
+		}
 		length++;
 	}
 	
@@ -98,8 +128,10 @@ public class LinkedListDemo
 		if (head!= null)
 		{
 			head = temp.next;
+			head.prev = null;
 			temp = null;
 		}
+		
 		length--;
 	}
 	
@@ -133,29 +165,35 @@ public class LinkedListDemo
 			p = p.next;
 			k++;
 		}
-		q.next = p.next;
-		p = null;
+		if (p != null)
+		{
+			q.next = p.next;
+			p = null;
+			q.next.prev = null;
+		}
 		length--;
 	}
 	
+	
 	public static void main(String args[]) throws Exception
 	{
-		LinkedListDemo lld = new LinkedListDemo();
-		// lld.head = new Node(0);
-		// lld.ListLength();
+		DoublyLinkedList dld = new DoublyLinkedList();
+		// dld.head = new Node(0);
+		// dld.ListLength();
 		
-		lld.insertAtTheBeginning(3);
-		lld.insertAtTheBeginning(2);
-		lld.insertAtTheBeginning(1);
-		lld.insertAtTheEnd(4);
+		dld.insertAtTheBeginning(3);
+		dld.insertAtTheBeginning(2);
+		dld.insertAtTheBeginning(1);
+		dld.insertAtTheEnd(4);
 		
-		lld.insertAtThePosition(0, 5);
-		lld.deleteFromTheBeginning();
-		lld.deleteFromTheEnd();
-		lld.deleteFromTheEnd();
-		lld.deleteFromTheEnd();
-		lld.deleteFromThePosition(1);
+//		dld.insertAtThePosition(0, 5);
+//		dld.deleteFromTheBeginning();
+//		dld.deleteFromTheEnd();
+//		dld.deleteFromTheEnd();
+//		dld.deleteFromTheEnd();
+//		dld.deleteFromThePosition(1);
 		
-		lld.printLinkedList();
+		dld.reversePrint();		
+		dld.printLinkedList();
 	}
 }
