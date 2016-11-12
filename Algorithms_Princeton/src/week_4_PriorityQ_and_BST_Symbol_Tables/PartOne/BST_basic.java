@@ -52,6 +52,31 @@ public class BST_basic {
 		return -1;
 	}
 	
+	public static int minKey()
+	{
+		if (root == null) return -1;
+		
+		Node temp = root;
+		while (temp.left != null)
+			temp = temp.left;
+		return temp.key;
+	}
+	
+	public static int maxKey()
+	{
+		if (root == null) return -1;
+		Node temp = root;
+		while (temp.right != null)
+			temp = temp.right;
+		return temp.key;
+	}
+	
+	public static int floor(int key)
+	{
+
+		return -1;
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println(get(5));
@@ -61,6 +86,9 @@ public class BST_basic {
 		put(4, 7);
 		put(9, 4);
 		System.out.println(get(9));
+		System.out.println(minKey());
+		System.out.println(maxKey());
+		
 	}
 
 }
