@@ -1,0 +1,11 @@
+1. Implement Stack using Linked list
+--> Stack_Using_Linked_List.java
+
+2. Find nth node from the end of a linked list
+--> Nth_Node_From_The_End_1.java
+
+3. Can we improve the complexity of Problem 2?
+--> Nth_Node_From_The_End_2.java
+
+4. Can we use Problem-3 approach for solving Problem-2 without creating the hash table?
+--> Nth_Node_From_The_End_3.java
