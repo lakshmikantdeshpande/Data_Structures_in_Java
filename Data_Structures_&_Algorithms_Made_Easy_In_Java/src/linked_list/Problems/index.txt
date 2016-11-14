@@ -2,10 +2,19 @@
 --> Stack_Using_Linked_List.java
 
 2. Find nth node from the end of a linked list
+== Brute force, start from every node, check if it takes n nodes to reach to last node (null)
+   (n*n time, 1 space)
 --> Nth_Node_From_The_End_1.java
 
 3. Can we improve the complexity of Problem 2?
+== used hashmap to store data in the nodes (n time, n space)
 --> Nth_Node_From_The_End_2.java
 
 4. Can we use Problem-3 approach for solving Problem-2 without creating the hash table?
+== two scans, one for finding length, second for length-n traversal (n+n time 1 space)
 --> Nth_Node_From_The_End_3.java
+
+5. Can we solve Problem-2 in one scan ?
+== sliding window with the help of 2 pointers (n time 1 space)
+--> Nth_Node_From_The_End_4.java
+

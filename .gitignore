@@ -44,10 +44,10 @@ tmp/
 *.bak
 *.swp
 *~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+#local.properties
+#.settings/
+#.loadpath
+#.recommenders
 
 #########################
 # Eclipse Core
@@ -68,10 +68,10 @@ local.properties
 
 #########################
 # JDT-specific (Eclipse Java Development Tools)
-#.classpath
+.classpath
 
 # Java annotation processor (APT)
-#.factorypath
+.factorypath
 #########################
 
 # PDT-specific (PHP Development Tools)
@@ -79,7 +79,7 @@ local.properties
 
 #########################
 # sbteclipse plugin
-#.target
+.target
 #########################
 
 # Tern plugin
@@ -93,7 +93,7 @@ local.properties
 
 #########################
 # Code Recommenders
-#.recommenders/
+.recommenders/
 #########################
 
 *.class

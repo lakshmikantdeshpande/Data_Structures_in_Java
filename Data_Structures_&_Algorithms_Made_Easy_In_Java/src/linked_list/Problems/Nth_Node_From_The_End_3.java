@@ -1,6 +1,6 @@
+// 4. Can we use Problem-3 approach for solving Problem-2 without creating the hash table?
+// two scans, one for finding length, second for length-n traversal (n+n time 1 space)
 package linked_list.Problems;
-
-import java.util.HashMap;
 
 public class Nth_Node_From_The_End_3 {
 	private Node head;
@@ -50,17 +50,16 @@ public class Nth_Node_From_The_End_3 {
 		nnd.nthFromTheEnd(0);
 	}
 
-	// hashtable(hashmap) solution gives n time complexity and n space complexity 
+	// two scans, one to find length, second to reach to length-n element
 	private void nthFromTheEnd(int n) {
 		if (head == null || n < 0)
 			return;
-		
+
 		Node temp = head;
-		
+
 		// find the size by iterating through the linked list
 		int counter = 0;
-		while (temp != null)
-		{
+		while (temp != null) {
 			counter++;
 			temp = temp.next;
 		}

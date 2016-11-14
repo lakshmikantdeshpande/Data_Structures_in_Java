@@ -1,16 +1,13 @@
-// 3. Can we improve the complexity of Problem 2?
-// using hashtable(hashmap here) to improve speed
-// n time n space
-
+// 5. Can we solve Problem-2 in one scan ?
+// sliding window of 2 pointers(n time 1 space)
+// possibly the best solution
 package linked_list.Problems;
 
 import java.util.HashMap;
-import java.util.Map;
 
-public class Nth_Node_From_The_End_2 {
+public class Nth_Node_From_The_End_4 {
 	private Node head;
 	private int size;
-	private Map<Integer, Integer> map;
 
 	private class Node {
 		int data;
@@ -21,7 +18,7 @@ public class Nth_Node_From_The_End_2 {
 		}
 	}
 
-	public Nth_Node_From_The_End_2() {
+	public Nth_Node_From_The_End_4() {
 		this.head = null;
 		this.size = 0;
 	}
@@ -45,7 +42,7 @@ public class Nth_Node_From_The_End_2 {
 	}
 
 	public static void main(String[] args) {
-		Nth_Node_From_The_End_2 nnd = new Nth_Node_From_The_End_2();
+		Nth_Node_From_The_End_4 nnd = new Nth_Node_From_The_End_4();
 		nnd.insertFromTheBeginning(5);
 		nnd.insertFromTheBeginning(4);
 		nnd.insertFromTheBeginning(3);
@@ -53,22 +50,34 @@ public class Nth_Node_From_The_End_2 {
 		nnd.insertFromTheBeginning(1);
 
 		nnd.display();
-		nnd.nthFromTheEnd(2);
+		nnd.nthFromTheEnd(0);
 	}
 
-	// hashtable(hashmap) solution gives n time complexity and n space
-	// complexity
+	// sliding window of size n to find nth element from the end
 	private void nthFromTheEnd(int n) {
 		if (head == null || n < 0)
 			return;
-		Node temp = head;
-		map = new HashMap<Integer, Integer>();
-		for (int i = size; i > 0; i--) {
-			map.put(i, temp.data);
-			temp = temp.next;
-		}
 
-		System.out.println(map.get(n));
+		Node p = head, q = head;
+
+		int i = 0;
+		for (i = 0; i < n; i++) {
+			if (p == null)
+				break;
+			p = p.next;
+		}
+		if (i == n)
+			if (p == null || p.next == null)
+				System.out.println(q.data);
+			else {
+				while (p.next != null) {
+					p = p.next;
+					q = q.next;
+				}
+				System.out.println(q.data);
+			}
+		else
+			System.out.println("Invalid n");
 	}
 
 }
