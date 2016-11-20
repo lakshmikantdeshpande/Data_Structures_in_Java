@@ -3,7 +3,6 @@
 // possibly the best solution
 package linked_list.Problems;
 
-
 public class Nth_Node_From_The_End_4 {
 	private Node head;
 	private int size;

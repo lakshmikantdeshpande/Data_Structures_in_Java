@@ -80,8 +80,36 @@ i = m + a*l + k     // a = no. of rounds slow pointer has run in the loop
 16. Insert a node in a sorted linked list
 --> Insert_In_A_Sorted_Linked_List.java
 
+17. Reverse a singly linked list
+--> Reverse_A_Linked_List_1.java <-- Iterative
+--> Reverse_A_Linked_List_2.java <-- Recursive
 
+18. Find intersection point of the given two linked lists
+==  Brute force:
+   Start with A, compare next of each Node in B with A's next node  
+   O(mn) time complexity where m, n = length of linked list A and B respectively
+   O(1) space complexity
+   
+       A-XXXXX
+           XXXXX
+               XXXXX
+                   XXXX
+                       XXX
+                          OXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XX
+                      XX
+                    XXX
+                 XXX
+              XXX
+           XXX
+       XXXX
+B-XXXXXX
 
+19. Can Problem-18 be be done using a sorting technique ?
+== Nope
 
+20. Can we solve Problem-18 using hash table ?
+== Yes we can
+--> Intersection_Of_Linked_Lists.java
 
 
