@@ -18,3 +18,6 @@
 == sliding window with the help of 2 pointers (n time 1 space)
 --> Nth_Node_From_The_End_4.java
 
+6. Can we solve Problem-5 with recursion?
+== we can use global variable to track post recursive call
+--> Nth_Node_From_The_End_5.java
