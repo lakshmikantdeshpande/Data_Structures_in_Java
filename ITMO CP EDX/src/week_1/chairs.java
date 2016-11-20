@@ -11,12 +11,13 @@ import java.util.StringTokenizer;
 public class chairs {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("chairs.in"));
-		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("chairs.out")));
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(
+				"chairs.out")));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		double i = Double.parseDouble(st.nextToken())/2;
-		double j = Double.parseDouble(st.nextToken())/2;
-		double k = Double.parseDouble(st.nextToken())/2;		
-		pw.println(  (i+j+k) / 3);
+		double i = Double.parseDouble(st.nextToken()) / 2;
+		double j = Double.parseDouble(st.nextToken()) / 2;
+		double k = Double.parseDouble(st.nextToken()) / 2;
+		pw.println((i + j + k) / 3);
 		pw.close();
 		br.close();
 	}

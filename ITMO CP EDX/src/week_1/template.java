@@ -119,7 +119,7 @@ public class template {
 		}
 
 		pw.println(names.get(minindex) + "\n" + cost.get(minindex));
-		
+
 		pw.close();
 		br.close();
 	}

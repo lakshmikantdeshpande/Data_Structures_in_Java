@@ -7,7 +7,7 @@
 --> Nth_Node_From_The_End_1.java
 
 3. Can we improve the complexity of Problem 2?
-== used hashmap to store data in the nodes (n time, n space)
+== used HashMap to store data in the nodes (n time, n space)
 --> Nth_Node_From_The_End_2.java
 
 4. Can we use Problem-3 approach for solving Problem-2 without creating the hash table?
@@ -18,6 +18,70 @@
 == sliding window with the help of 2 pointers (n time 1 space)
 --> Nth_Node_From_The_End_4.java
 
-6. Can we solve Problem-5 with recursion?
-== we can use global variable to track post recursive call
+6. Can we solve Problem-5 with recursion ?
+== Using a global variable to track the length of the linked list
 --> Nth_Node_From_The_End_5.java
+
+7. Check whether the given linked list is either NULL-terminated or ends in a cycle(cyclic)?
+== (Brute Force) Check with each node if the next pointer of some other node points to that node.
+(This might take the code in an infinite loop) (would take n*n time, and 1 space)
+
+8. Can we use hashing technique for solving Problem-8?
+== Traverse through the whole linked list, while doing so, keep on saving the address of each of the node. Whenever we jump 
+on the next node, search if next node's address exists in the HashMap. If it does, then the linked list is cyclic.
+--> Cyclic_Linked_List_1.java
+
+9. Can we solve the Problem-6 using sorting technique?
+== Nope. We could store all the nodes in a list, sort it and check if any 2 adjacent members of the list are the same, then 
+it is a cyclic linked list, but this approach may go in an infinite loop, so this one fails. (wud take nlogn time, & n space)
+
+10. Can we solve the Problem-6 in O(n)?
+== Yes, using two pointers(fast and slow)  (Floyd's Cycle Finding Algorithm)
+--> Cyclic_Linked_List_2.java
+
+11. You are given a pointer to the first element of a linked list L. There are 2 possibilites for L, it either ends(snake)
+or its last element points back to one of the earlier elements in the list(snail). Task is to devise an algorithm that tests
+whether a given list L is a snake or a snail.
+(Tricky problem, same as Floyd's algorithm)
+--> Cyclic_Linked_List_2.java
+
+12. Check whether the given linked list is either NULL-terminated or not. If there is a cycle, find the start node of the loop.
+== Find the loop, using Floyd's cycle detection algorithm, let fast ptr stay there, point slow pointer to the head of the 
+linked list, make fast and slow pointer move by one at a time. They will meet at the beginning of the loop.
+--> Start_Of_The_Loop_Linked_List.java
+
+13. Prove that they'll meet at the start of the linked list
+==
+LEGEND:
+i    <-- steps taken by slow pointer
+2*i  <-- steps taken by fast pointer
+m    <-- length of the non loop part
+k    <-- distance between start of the loop and the position where pointers meet
+l    <-- length of the loop part
+
+i = m + a*l + k     // a = no. of rounds slow pointer has run in the loop
+2*i = m + b*l + k   // b = no. of rounds fast pointer has run in the loop
+
+.'. 2(m + a*l + k) = m + b*l + k
+    2m + 2a*l + 2k = m + b*l + k
+    2m + 2k - m - k = b*l - 2a*k
+    
+    m + k = (b - 2a)*l
+    
+    Hence we can say that, m+k = multiple of length of the loop
+    
+14. Will Floyd's algorithm work for 2,3 speeds of slow and fast pointers respectively ?
+== It will work for any speeds of fast pointers (except 0 & same speeds of pointers)
+
+15. Check whether the given linked list is NULL terminated. If there is a cycle, find the length of the loop
+== floyd's algorithm for loop detection, a variable to track count of number of steps of the slow pointer
+--> Cyclic_Linked_List_Length.java
+
+16. Insert a node in a sorted linked list
+--> Insert_In_A_Sorted_Linked_List.java
+
+
+
+
+
+

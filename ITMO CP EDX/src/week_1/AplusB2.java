@@ -10,16 +10,17 @@ import java.util.StringTokenizer;
 
 public class AplusB2 {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("aplusbb.in"));
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("aplusbb.out")));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        
-        long a = Long.parseLong(st.nextToken());
-        long b = Long.parseLong(st.nextToken());
-        pw.println(a + b*b);
-        pw.close();
-        br.close();
-    }
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader("aplusbb.in"));
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(
+				"aplusbb.out")));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+
+		long a = Long.parseLong(st.nextToken());
+		long b = Long.parseLong(st.nextToken());
+		pw.println(a + b * b);
+		pw.close();
+		br.close();
+	}
 
 }

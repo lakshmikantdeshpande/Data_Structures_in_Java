@@ -8,16 +8,17 @@ import java.util.StringTokenizer;
 
 public class test {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new FileReader("test.in"));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("test.out")));
-        
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
-        out.println(a + b);
-        br.close();
-        out.close();
-    }
+		BufferedReader br = new BufferedReader(new FileReader("test.in"));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(
+				"test.out")));
+
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int a = Integer.parseInt(st.nextToken());
+		int b = Integer.parseInt(st.nextToken());
+		out.println(a + b);
+		br.close();
+		out.close();
+	}
 }
