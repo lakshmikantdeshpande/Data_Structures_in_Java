@@ -105,11 +105,12 @@ i = m + a*l + k     // a = no. of rounds slow pointer has run in the loop
        XXXX
 B-XXXXXX
 
-19. Can Problem-18 be be done using a sorting technique ?
+19. Can Problem-18 be be done using a sorting technique?
 == Nope
 
-20. Can we solve Problem-18 using hash table ?
-== Yes we can
---> Intersection_Of_Linked_Lists.java
+20. Can we solve Problem-18 using hash table?
+--> Intersection_Of_Linked_Lists_1.java
 
+21. Can we use stacks for solving the problem-18?
+--> Intersection_Of_Linked_Lists_2.java
 
