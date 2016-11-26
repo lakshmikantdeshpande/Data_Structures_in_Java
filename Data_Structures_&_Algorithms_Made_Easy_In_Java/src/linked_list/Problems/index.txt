@@ -114,3 +114,8 @@ B-XXXXXX
 21. Can we use stacks for solving the problem-18?
 --> Intersection_Of_Linked_Lists_2.java
 
+22. Is there any other way of solving Problem-18?
+--> Intersection_Of_Linked_Lists_3.java
+
+23. Can we still think of an alternative solution for the problem 18?
+--> Intersection_Of_Linked_Lists_4.java
