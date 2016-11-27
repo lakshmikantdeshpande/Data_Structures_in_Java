@@ -62,7 +62,7 @@ public class Intersection_Of_Linked_Lists_3 {
 
 		head2.next = tempx;
 		tempx.next = tempy;
-//		tempy.next = temp6;
+		// tempy.next = temp6;
 		tempy.next = null;
 
 		temp6.next = temp7;
@@ -76,8 +76,8 @@ public class Intersection_Of_Linked_Lists_3 {
 		ill.display(head2);
 	}
 
-//	O(m + n) time, O(m + n) space
-//	using HashSet
+	// O(m + n) time, O(m + n) space
+	// using HashSet
 	private void findIntersection(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			System.out.println("No intersection found");
@@ -85,7 +85,7 @@ public class Intersection_Of_Linked_Lists_3 {
 		}
 		Set<Node> set = new HashSet<Node>();
 		boolean flag = false;
-		
+
 		for (Node temp = head1; temp != null; temp = temp.next)
 			set.add(temp);
 		for (Node temp = head2; temp != null; temp = temp.next)
@@ -94,8 +94,7 @@ public class Intersection_Of_Linked_Lists_3 {
 				flag = true;
 				break;
 			}
-		if (!flag)
-		{
+		if (!flag) {
 			System.out.println("No intersection found");
 		}
 	}

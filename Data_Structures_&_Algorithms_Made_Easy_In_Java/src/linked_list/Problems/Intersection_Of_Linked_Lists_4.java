@@ -85,8 +85,9 @@ public class Intersection_Of_Linked_Lists_4 {
 		ill.display(head2);
 	}
 
-//	O(max(mlogm,nlogn)) time, O(max(m, n)) space
-//	Sorted first array, binary searched every element from the second array through first	
+	// O(max(mlogm,nlogn)) time, O(max(m, n)) space
+	// Sorted first array, binary searched every element from the second array
+	// through first
 	private void findIntersection(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			System.out.println("No intersection found");
@@ -102,7 +103,8 @@ public class Intersection_Of_Linked_Lists_4 {
 		for (Node temp = head2; temp != null; temp = temp.next) {
 			int x = Collections.binarySearch(list, temp, new comparator());
 			if (x >= 0) {
-				System.out.println("Intersection found at " + (list.get(x).data));
+				System.out.println("Intersection found at "
+						+ (list.get(x).data));
 				flag = true;
 				break;
 			}

@@ -59,7 +59,7 @@ public class Intersection_Of_Linked_Lists_2 {
 		head2.next = tempx;
 		tempx.next = tempy;
 		tempy.next = temp6;
-//		tempy.next = null;
+		// tempy.next = null;
 
 		temp6.next = temp7;
 		temp7.next = temp8;
@@ -70,16 +70,17 @@ public class Intersection_Of_Linked_Lists_2 {
 		ill.display(head1);
 		try {
 			ill.findIntersection(head1, head2);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
 		ill.display(head2);
 	}
 
-//	return last common element while popping the stacks 
+	// return last common element while popping the stacks
 	private void findIntersection(Node head1, Node head2) throws Exception {
-		if (head1 == null || head2 == null) return;
-		
+		if (head1 == null || head2 == null)
+			return;
+
 		Stack<Integer> stack1 = new Stack<Integer>();
 		Stack<Integer> stack2 = new Stack<Integer>();
 		Node t1 = head1, t2 = head2;
@@ -91,10 +92,9 @@ public class Intersection_Of_Linked_Lists_2 {
 			stack2.push(t2.data);
 			t2 = t2.next;
 		}
-			
+
 		int x = 0, y = 0, z = 0;
-		while (x == y)
-		{
+		while (x == y) {
 			z = x;
 			try {
 				x = stack1.pop();

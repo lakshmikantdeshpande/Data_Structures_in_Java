@@ -72,6 +72,6 @@ public class List_Length_Even_Odd {
 		if (temp == null)
 			System.out.println("List's length is even: " + (counter * 2));
 		else
-			System.out.println("List's length is odd: " + ((counter* 2) + 1));
+			System.out.println("List's length is odd: " + ((counter * 2) + 1));
 	}
 }

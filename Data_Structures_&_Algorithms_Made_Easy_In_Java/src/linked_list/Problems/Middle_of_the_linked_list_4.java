@@ -4,8 +4,6 @@
 
 package linked_list.Problems;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Middle_of_the_linked_list_4 {
 	private static Node head;

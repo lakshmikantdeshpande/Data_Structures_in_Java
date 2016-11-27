@@ -49,7 +49,7 @@ public class Intersection_Of_Linked_Lists_1 {
 		Node temp8 = ill.new Node(9);
 		Node temp9 = ill.new Node(10);
 		Node temp10 = ill.new Node(11);
-		
+
 		Node tempx = ill.new Node(54);
 		Node tempy = ill.new Node(55);
 
@@ -63,8 +63,8 @@ public class Intersection_Of_Linked_Lists_1 {
 		head2.next = tempx;
 		tempx.next = tempy;
 		tempy.next = temp6;
-//		tempy.next = null;		
-		
+		// tempy.next = null;
+
 		temp6.next = temp7;
 		temp7.next = temp8;
 		temp8.next = temp9;
@@ -80,15 +80,13 @@ public class Intersection_Of_Linked_Lists_1 {
 		int x = 0;
 		Map<Node, Integer> map = new HashMap<Node, Integer>();
 		Node temp1 = head1, temp2 = head2;
-		while (temp1 != null && temp2!= null)
-		{
-			if (map.containsKey(temp1))
-			{
-				System.out.println(temp1.data); return;
-			}
-			else if (map.containsKey(temp2))
-			{
-				System.out.println(temp2.data); return;
+		while (temp1 != null && temp2 != null) {
+			if (map.containsKey(temp1)) {
+				System.out.println(temp1.data);
+				return;
+			} else if (map.containsKey(temp2)) {
+				System.out.println(temp2.data);
+				return;
 			}
 			map.put(temp1, x++);
 			map.put(temp2, x++);
@@ -97,5 +95,5 @@ public class Intersection_Of_Linked_Lists_1 {
 		}
 		System.out.println("These two linked lists don't seem to intersect.");
 	}
-	
+
 }

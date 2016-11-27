@@ -57,10 +57,10 @@ public class Middle_of_the_linked_list_1 {
 		findMiddle(head);
 	}
 
-//	 25. How will you find the middle of the linked list?
-//	 O(n*n) time, O(1) space
-//	 Check from each element, if middle is achieved
-	
+	// 25. How will you find the middle of the linked list?
+	// O(n*n) time, O(1) space
+	// Check from each element, if middle is achieved
+
 	private static void findMiddle(Node head) {
 		if (head == null) {
 			System.out.println("Linked list seems empty !");

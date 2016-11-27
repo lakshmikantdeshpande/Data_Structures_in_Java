@@ -1,13 +1,10 @@
-// 27. Can we use hash table for solving problem-25?
-// O(n) time, O(n) space
-// used hashtable
+// 34. Reverse the linked list in pairs. If you have a linked list that holds 1-2-3-4-x, 
+//     then after the function has been called the linked list would hold 2-1-4-3-x
+// O(n) time, O(1) space
 
 package linked_list.Problems;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Middle_of_the_linked_list_3 {
+public class Flip_Pairs_Linked_List {
 	private static Node head;
 
 	private static class Node {
@@ -57,19 +54,40 @@ public class Middle_of_the_linked_list_3 {
 		temp10.next = null;
 
 		display(head);
-		findMiddle(head);
+		display(flipPairsRecursive(head));
+		// display(flipPairs(head));
 	}
 
-	private static void findMiddle(Node head) {
-		if (head == null) {
-			System.out.println("Linked list seems empty !");
-			return;
+	private static Node flipPairsRecursive(Node head) {
+		Node temp;
+		if (head == null || head.next == null) {
+			return head;
+		} else {
+			temp = head.next;
+			head.next = temp.next;
+			temp.next = head;
+			head = temp;
+
+			head.next.next = flipPairsRecursive(head.next.next);
+			return head;
 		}
-		Map<Integer, Node> map = new HashMap<Integer, Node>();
-		int counter = 0;
-		for (Node temp = head; temp != null; temp = temp.next)
-			map.put(counter++, temp);
-		System.out.println("Middle of the linked list is "
-				+ map.get(counter / 2).data);
+	}
+
+	private static Node flipPairs(Node head) {
+		Node temp1 = null, temp2 = null;
+
+		while (head != null && head.next != null) {
+			if (temp1 != null) {
+				temp1.next.next = head.next;
+			}
+
+			temp1 = head.next;
+			head.next = temp1.next;
+			temp1.next = head;
+			if (temp2 == null)
+				temp2 = temp1;
+			head = head.next;
+		}
+		return temp2;
 	}
 }

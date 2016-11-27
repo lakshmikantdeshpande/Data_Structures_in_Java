@@ -150,3 +150,24 @@ B-XXXXXX
 33. Can we solve Problem 32 without recursion?
 --> Merge_Sorted_Linked_List_2.java
 
+34. Reverse the linked list in pairs. If you have a linked list that holds 1-2-3-4-x, then after the function has been called
+the linked list would hold 2-1-4-3-x
+--> Flip_Pairs_Linked_List.java
+
+35. Given a binary tree convert it to doubly linked list.
+--> SKIPPED (Need to learn Trees first)
+
+36. How do we sort the linked lists?
+--> SKIPPED (Need to learn Sorting first)
+
+37. Which of the following will give O(1) Complexity for concatenation?
+    1. Singly linked list     2. doubly linked list     3. Circular linked list
+--> Circular linked list, as we don't need to traverse to the end
+
+38. Cut a circular linked list into 2 equal parts. If the number of nodes in the list are odd, then make first list longer.
+--> Cut_Circular_Linked_List.java
+   (NEED TO REVIEW AGAIN)
+   
+39. Palindrome check in a linked list?
+--> Palindrome_Linked_List.java
+

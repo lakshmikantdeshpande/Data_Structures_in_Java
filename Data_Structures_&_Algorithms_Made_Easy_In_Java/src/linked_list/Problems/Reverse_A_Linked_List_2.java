@@ -59,7 +59,7 @@ public class Reverse_A_Linked_List_2 {
 
 		rll.display();
 		head = rll.reverse(head, null);
-		
+
 		rll.display();
 	}
 
@@ -71,11 +71,11 @@ public class Reverse_A_Linked_List_2 {
 			curr.next = prev;
 			return null;
 		}
-		
+
 		Node temp = curr.next;
 		curr.next = prev;
 		reverse(temp, curr);
-		return head;		
+		return head;
 	}
 
 }

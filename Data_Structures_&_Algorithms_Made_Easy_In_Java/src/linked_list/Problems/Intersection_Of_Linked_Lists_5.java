@@ -62,7 +62,7 @@ public class Intersection_Of_Linked_Lists_5 {
 		head2.next = tempx;
 		tempx.next = tempy;
 		tempy.next = temp6;
-//		tempy.next = null;
+		// tempy.next = null;
 
 		temp6.next = temp7;
 		temp7.next = temp8;
@@ -75,10 +75,10 @@ public class Intersection_Of_Linked_Lists_5 {
 		ill.display(head2);
 	}
 
-//  O((m+n)+ min(m,n)) time, O(1) space 
-//  find out lengths of the linked lists, find their difference
-//  make the longer linked list run till the difference point
-//  make both linked lists run till a common point is encountered
+	// O((m+n)+ min(m,n)) time, O(1) space
+	// find out lengths of the linked lists, find their difference
+	// make the longer linked list run till the difference point
+	// make both linked lists run till a common point is encountered
 	private void findIntersection(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			System.out.println("No intersection found");
