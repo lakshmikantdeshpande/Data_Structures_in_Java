@@ -134,3 +134,19 @@ B-XXXXXX
 
 28. Can we solve Problem 25 in just one scan ?
 --> Middle_of_the_linked_list_4.java
+
+29. How will you display a linked list from the end? (Display in reverse)
+--> Print_In_Reverse_Recursive.java
+
+30. Check whether the given linked list length is even or odd?
+--> List_Length_Even_Odd.java
+
+31. If the head of a linked list is pointing to kth element, then how will you get the elements before kth element ?
+--> SKIPPED (Need to learn XOR linked lists)
+
+32. Given two sorted linked lists, we need to merge them into the third list in sorted order.
+--> Merge_Sorted_Linked_List_1.java
+
+33. Can we solve Problem 32 without recursion?
+--> Merge_Sorted_Linked_List_2.java
+
