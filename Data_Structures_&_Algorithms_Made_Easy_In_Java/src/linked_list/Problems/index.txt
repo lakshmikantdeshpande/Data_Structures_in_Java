@@ -119,3 +119,7 @@ B-XXXXXX
 
 23. Can we still think of an alternative solution for the problem 18?
 --> Intersection_Of_Linked_Lists_4.java
+
+24. Can we improve the complexity for the problem-18?
+--> Intersection_Of_Linked_Lists_5.java
+

@@ -1,26 +1,32 @@
-// 22. Is there any other way of solving Problem-18?
-//	O(m + n) time, O(m + n) space
-//	using HashSet
+// 23. Can we still think of an alternative solution for the problem 18?
+//	O(max(mlogm,nlogn)) time, O(max(m, n)) space
+//	Sorted first array, binary searched every element from the second array through first
 
 package linked_list.Problems;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.List;
 
 public class Intersection_Of_Linked_Lists_4 {
 	private static Node head1;
 	private static Node head2;
 
-	private class Node {
+	private class Node implements Comparable<Node> {
 		int data;
 		Node next;
 
 		public Node(int data) {
 			this.data = data;
 			this.next = null;
+		}
+
+		@Override
+		public int compareTo(Node o) {
+			if (o == null)
+				return -1;
+			return this.data - o.data;
 		}
 	}
 
@@ -65,8 +71,8 @@ public class Intersection_Of_Linked_Lists_4 {
 
 		head2.next = tempx;
 		tempx.next = tempy;
-//		tempy.next = temp6;
-		tempy.next = null;
+		tempy.next = temp6;
+		// tempy.next = null;
 
 		temp6.next = temp7;
 		temp7.next = temp8;
@@ -79,33 +85,37 @@ public class Intersection_Of_Linked_Lists_4 {
 		ill.display(head2);
 	}
 
-//	O(m + n) time, O(m + n) space
-//	using HashSet
+//	O(max(mlogm,nlogn)) time, O(max(m, n)) space
+//	Sorted first array, binary searched every element from the second array through first	
 	private void findIntersection(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			System.out.println("No intersection found");
 			return;
 		}
-		
 		boolean flag = false;
-		Object[] nodes = new Object[100];
-		int i = 0;
+		List<Node> list = new ArrayList<Node>();
 		for (Node temp = head1; temp != null; temp = temp.next)
-			nodes[i++] = temp;
-		for (Node temp = head2; temp != null; temp = temp.next)
-		{	
-			int x = Arrays.binarySearch(nodes, (Node)temp);
-			System.out.println("adfjskhasdjklfhjka "+ x + "asjdfhajklsdhfljka");
-			if (x != -1){
-				System.out.println("Intersection found at " + ((Node)nodes[x]).data);
+			list.add(temp);
+
+		Collections.sort(list);
+
+		for (Node temp = head2; temp != null; temp = temp.next) {
+			int x = Collections.binarySearch(list, temp, new comparator());
+			if (x >= 0) {
+				System.out.println("Intersection found at " + (list.get(x).data));
 				flag = true;
 				break;
 			}
 		}
-		if (!flag)
-		{
+		if (!flag) {
 			System.out.println("No intersection found");
 		}
 	}
 
+	private class comparator implements Comparator<Node> {
+		@Override
+		public int compare(Node arg0, Node arg1) {
+			return (arg0.data - arg1.data);
+		}
+	}
 }
