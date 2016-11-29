@@ -4,7 +4,6 @@
 
 package linked_list.Problems;
 
-
 public class Middle_of_the_linked_list_4 {
 	private static Node head;
 

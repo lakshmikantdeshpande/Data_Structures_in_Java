@@ -57,7 +57,7 @@ public class Cut_Circular_Linked_List {
 		cll.insertAtTheEnd(2);
 		cll.insertAtTheEnd(3);
 		cll.insertAtTheEnd(4);
-		
+
 		cll.display();
 		Node temp1 = null, temp2 = null;
 		cll.splitList(cll.tail, temp1, temp2);
@@ -65,29 +65,31 @@ public class Cut_Circular_Linked_List {
 
 	private void splitList(Node tail, Node temp1, Node temp2) {
 		Node slow = tail, fast = tail;
-		if (tail == null) return;
-//		If there are odd nodes in circular linked list, fast.next will be tail, for even nodes fast.next.next will be 
-//		the tail
-		
+		if (tail == null)
+			return;
+		// If there are odd nodes in circular linked list, fast.next will be
+		// tail, for even nodes fast.next.next will be
+		// the tail
+
 		while (fast.next != null && fast.next.next != tail) {
 			fast = fast.next.next;
 			slow = slow.next;
 		}
-		
-//		if there are even elements in the list, move fast 
+
+		// if there are even elements in the list, move fast
 		if (fast.next.next == tail)
 			fast = fast.next;
-		
-//		Set tail pointer to first half
+
+		// Set tail pointer to first half
 		temp1 = tail;
 
-//		Set tail pointer to second half
-		if (tail.next != tail) 
+		// Set tail pointer to second half
+		if (tail.next != tail)
 			temp2 = slow.next;
-		
-//		Make the second half circular
+
+		// Make the second half circular
 		fast.next = slow.next;
-//		Make the first half circular
+		// Make the first half circular
 		slow.next = tail;
 	}
 
