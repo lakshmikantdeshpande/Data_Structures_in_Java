@@ -172,3 +172,4 @@ the linked list would hold 2-1-4-3-x
 --> Palindrome_Linked_List.java
 
 40. Exchange the adjacent elements in linked list.
+--> Exchange_Adjacent_Nodes.java
