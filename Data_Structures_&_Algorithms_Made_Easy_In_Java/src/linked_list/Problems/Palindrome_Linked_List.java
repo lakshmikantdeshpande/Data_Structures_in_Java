@@ -42,19 +42,20 @@ public class Palindrome_Linked_List {
 		Node temp10 = new Node(0);
 
 		head.next = temp1;
-		temp1.next = temp2;
-		temp2.next = temp3;
-		temp3.next = temp4;
-		temp4.next = temp5;
-		temp5.next = temp6;
-		temp6.next = temp7;
-		temp7.next = temp8;
-		temp8.next = temp9;
-		temp9.next = temp10;
+//		temp1.next = temp2;
+//		temp2.next = temp3;
+//		temp3.next = temp4;
+//		temp4.next = temp5;
+//		temp5.next = temp6;
+//		temp6.next = temp7;
+//		temp7.next = temp8;
+//		temp8.next = temp9;
+//		temp9.next = temp10;
 		temp10.next = null;
 
 		display(head);
 		findMiddle(head);
+		display(head);
 	}
 
 	private static void findMiddle(Node head) {
@@ -62,27 +63,31 @@ public class Palindrome_Linked_List {
 			return;
 		}
 		Node fast = head, slow = head;
+		boolean flag = true;
 		while (fast != null && fast.next != null) {
 			fast = fast.next.next;
 			slow = slow.next;
 		}
-		Node p = slow, q = null, r = null;
-		while (p != null) {
-			r = p.next;
-			p.next = q;
-			q = p;
-			p = r;
+		Stack<Integer> stack = new Stack<Integer>();
+		int i = 0;
+		while (slow != null) {
+			stack.push(slow.data);
+			slow = slow.next;
+			i++;
 		}
 
-		p = head;
-		while (q != null) {
-			if (p.data != q.data) {
-				System.out.println("Not a palindrome");
-				return;
+		slow = head;
+		try {
+			while (slow != null && i-- > 0) {
+				if (slow.data != stack.pop()) {
+					System.out.println("Not a palindrome");
+					return;
+				}
+				slow = slow.next;
 			}
-			p = p.next;
-			q = q.next;
+			System.out.println("Is a palindrome");
+		} catch (Exception e) {
+			System.out.println(e.toString());
 		}
-		System.out.println("It is a palindrome");
 	}
 }
