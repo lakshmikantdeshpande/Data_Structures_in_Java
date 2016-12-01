@@ -173,3 +173,6 @@ the linked list would hold 2-1-4-3-x
 
 40. Exchange the adjacent elements in linked list.
 --> Exchange_Adjacent_Nodes.java
+
+41. For a given K value (K > 0) reverse blocks of K nodes in a list.
+--> Reverse_K_Nodes.java
