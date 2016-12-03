@@ -175,4 +175,22 @@ the linked list would hold 2-1-4-3-x
 --> Exchange_Adjacent_Nodes.java
 
 41. For a given K value (K > 0) reverse blocks of K nodes in a list.
---> Reverse_K_Nodes.java
+--> Reverse_K_Nodes_1.java
+
+42. Can we solve problem-39 with recursion?
+--> Reverse_K_Nodes_2.java
+
+43. Is it possible to get O(1) access time for linked lists?
+--> Yes, using hashtables, save all nodes in a hashtable
+    O(1) access time, O(n) preprocessing (for putting nodes in the hashtable), O(n) space for hashtable
+
+44. JosephusCircle: N people have decided to elect a leader by arranging themselves in a circle and eliminating every Mth 
+    person around the circle, closing ranks as each person drops out. Find which person will be the one remaining (rank 1).
+--> Josephus_Circle.java 
+
+45. Given a linked list consists of data, next pointer and random pointer to any node in the linked list. Clone the LL.
+--> SKIPPED (not much useful)
+
+46. In a linked list with N nodes, the time taken to insert an element after an element pointed by some pointer is
+    1. O(1)   2. O(n)   3. O(n*log n)   4. O(log n)
+--> O(1) 

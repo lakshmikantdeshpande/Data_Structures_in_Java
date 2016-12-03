@@ -42,15 +42,15 @@ public class Palindrome_Linked_List {
 		Node temp10 = new Node(0);
 
 		head.next = temp1;
-//		temp1.next = temp2;
-//		temp2.next = temp3;
-//		temp3.next = temp4;
-//		temp4.next = temp5;
-//		temp5.next = temp6;
-//		temp6.next = temp7;
-//		temp7.next = temp8;
-//		temp8.next = temp9;
-//		temp9.next = temp10;
+		// temp1.next = temp2;
+		// temp2.next = temp3;
+		// temp3.next = temp4;
+		// temp4.next = temp5;
+		// temp5.next = temp6;
+		// temp6.next = temp7;
+		// temp7.next = temp8;
+		// temp8.next = temp9;
+		// temp9.next = temp10;
 		temp10.next = null;
 
 		display(head);

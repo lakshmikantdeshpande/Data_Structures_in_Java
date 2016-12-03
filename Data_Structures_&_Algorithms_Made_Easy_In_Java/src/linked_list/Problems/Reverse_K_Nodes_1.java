@@ -2,7 +2,7 @@
 
 package linked_list.Problems;
 
-public class Reverse_K_Nodes {
+public class Reverse_K_Nodes_1 {
 	private static Node head;
 
 	private class Node {
@@ -15,7 +15,7 @@ public class Reverse_K_Nodes {
 		}
 	}
 
-	public Reverse_K_Nodes() {
+	public Reverse_K_Nodes_1() {
 		head = new Node(0);
 	}
 
@@ -31,7 +31,7 @@ public class Reverse_K_Nodes {
 	}
 
 	public static void main(String[] args) {
-		Reverse_K_Nodes rll = new Reverse_K_Nodes();
+		Reverse_K_Nodes_1 rll = new Reverse_K_Nodes_1();
 		Node temp1 = rll.new Node(1);
 		Node temp2 = rll.new Node(2);
 		Node temp3 = rll.new Node(3);
