@@ -212,3 +212,43 @@ the linked list would hold 2-1-4-3-x
     1) Unsorted list: O(n) to find the median O(1) to insert an element
     2) Sorted list: O(1) to find the median (if we keep track of a median)
     				O(n) to insert an element
+    (Priority queues and heaps can be used)
+
+51. Consider the following Java program code (runtime F is a function wid input n)
+	java.util.ArrayList<Integer> list = new java.util.ArrayList<Integer>();
+	for (int i = 0; i < n; i++)
+		list.add(0,i);
+	
+	which of the following is correct?
+	A) F(n) = O(n)   B) F(n) = O(n*n)   C) F(n) = O(n*n*n*n)   D) F(n) = O(n*logn)
+
+==  B) F(n) = O(n*n) 
+	because outer loop is (n), and indexed insertion involves shifting of the array (n)
+	n*n time complexity
+	
+52. Consider the following Java program code (runtime F is a function wid input n)
+	java.util.ArrayList<Integer> list = new java.util.ArrayList<Integer>();
+	for (int i = 0; i < n; i++)
+		list.add(i,i);
+	for (int j = 0; j < n; j++)
+		list.remove(n-j-1);
+	
+	which of the following is correct?
+	A) F(n) = O(n)   B) F(n) = O(n*n)   C) F(n) = O(n*n*n*n)   D) F(n) = O(n*logn)
+
+==  A) F(n) = O(n)
+	As the code operates on the end of the ArrayList O(n)
+	
+53. Consider the following code (runtime F is a function wid input n)
+	java.util.LinkedList<Integer> list = new java.util.LinkedList<Integer>();
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+			list.add(list.size()/2, j).
+	
+	which of the following is correct?
+	A) F(n) = O(n)   B) F(n) = O(n*n)   C) F(n) = O(n*n*n*n)   D) F(n) = O(n*n*n)
+
+==  D) F(n) = O(n*n*n) as
+	list.size() complexity n, outer list.add complexity 1
+	for j loop n
+	for i loop n
