@@ -194,3 +194,21 @@ the linked list would hold 2-1-4-3-x
 46. In a linked list with N nodes, the time taken to insert an element after an element pointed by some pointer is
     1. O(1)   2. O(n)   3. O(n*log n)   4. O(log n)
 --> O(1) 
+
+47. Find modular node from a given linked list. (last modular node)
+	for eg. if n = 19, k = 3, then last number where n%k == 0 i.e. 18th node should be returned
+--> ModularNode.java
+
+48. Find a modular node from the end
+--> Similar to 47
+
+49. Find fractional node.
+--> Same as 47
+
+50. Median in an infinite series of integers
+==  in odd sized linked list, middle element is the median,  
+    in even sized linked list, median is avg of middle 2 elements
+    in an infinite series of integers, there are 2 cases:
+    1) Unsorted list: O(n) to find the median O(1) to insert an element
+    2) Sorted list: O(1) to find the median (if we keep track of a median)
+    				O(n) to insert an element

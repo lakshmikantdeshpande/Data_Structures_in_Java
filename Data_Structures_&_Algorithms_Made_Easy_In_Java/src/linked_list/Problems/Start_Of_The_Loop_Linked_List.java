@@ -81,8 +81,7 @@ public class Start_Of_The_Loop_Linked_List {
 		}
 
 		if (slowPointer != fastPointer) {
-			System.out
-					.println("Damn! It is not a cycle, aborting the operation !");
+			System.out.println("Damn! It is not a cycle, aborting the operation !");
 			return;
 		}
 
