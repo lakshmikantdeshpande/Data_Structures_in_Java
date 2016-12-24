@@ -57,7 +57,7 @@ public class ModularNode {
 		Node temp = head;
 		while (temp != null) {
 			if (i % k == 0) {
-//				System.out.println(i + " " + k);
+				// System.out.println(i + " " + k);
 				modularNode = temp;
 			}
 			i++;

@@ -252,3 +252,7 @@ the linked list would hold 2-1-4-3-x
 	list.size() complexity n, outer list.add complexity 1
 	for j loop n
 	for i loop n
+
+54. Given a singly linked list L: L1-L2-L3...Ln-1-Ln, reorder the linked list to
+    L1,Ln,L2,Ln-1
+--> ReorderLL_1.java     // divide LL in 2, (use stack) Reorder as per needs
