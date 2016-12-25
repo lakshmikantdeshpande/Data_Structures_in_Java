@@ -68,6 +68,7 @@ public class Remove_Duplicates_1 {
 			prev = curr;
 			while (curr2 != null) {
 				// check curr & curr2 values are same, if true delete curr2
+				if (curr.data == curr2.data)
 					prev.next = curr2.next;
 				prev = curr2;
 				curr2 = curr2.next;
