@@ -256,3 +256,34 @@ the linked list would hold 2-1-4-3-x
 54. Given a singly linked list L: L1-L2-L3...Ln-1-Ln, reorder the linked list to
     L1,Ln,L2,Ln-1
 --> ReorderLL_1.java     // divide LL in 2, (use stack) Reorder as per needs
+    SKIPPED SECOND WAY
+    
+55. Which sorting algorithm is easily adaptable to singly linked lists?
+--> Insertion Sort is easily adaptable to LL, it's good as we don't need to shift
+    the elements, but we just have to adjust the pointers
+
+56. How do you implement insertion sort for linked lists?
+--> Insertion_Sort_Linked_List.java
+
+57. Given a list, rotate the list to the right by k places,where k is non negative.
+	For eg. given 1-2-3-4-5-NULL, return 4-5-1-2-3-NULL when n = 2.
+--> Rotate_List.java
+
+58. You are given 2 LL representing 2 nonnegative nos. Digits are stored in reverse 
+	order, and each of their nodes contain a single digit. Add the 2 nos and return it 
+	as a LL.eg. 3-4-3  +  5-6-4 will give 8-0-8
+--> SKIPPED FOR NOW
+
+59. Given a linked list and value k, partition it in a way that all the nodes less than
+	K come before nodes greater than or equal to k. preserve relative order of the nodes
+	in each of the 2 partitions. eg. 1-4-3-2-5-2 and k = 3, then return 1-2-2-4-3-5
+--> SKIPPED FOR NOW
+
+60. Merge k sorted lists and return it as one sorted list
+--> SKIPPED FOR NOW
+
+61. How'd you remove duplicates from an unsorted linked list?
+--> Remove_Duplicates_1.java
+
+62. Can we reduce time complexity of problem61?
+--> Remove_Duplicates_2.java
