@@ -86,7 +86,8 @@ public class DoublyLinkedList {
 		length++;
 	}
 
-	public synchronized void insertAtThePosition(int position, int data) throws Exception {
+	public synchronized void insertAtThePosition(int position, int data)
+			throws Exception {
 		if (position < 0)
 			position = 0;
 		if (position > length)
