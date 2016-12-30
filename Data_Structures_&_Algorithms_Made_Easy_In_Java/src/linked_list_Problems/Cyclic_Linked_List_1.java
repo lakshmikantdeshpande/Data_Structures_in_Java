@@ -74,8 +74,7 @@ public class Cyclic_Linked_List_1 {
 			list.add(temp);
 		}
 		if ((temp.next != null) && list.contains(temp.next))
-			System.out.println("Linked list is cyclic at position "
-					+ (list.indexOf(temp.next) + 1));
+			System.out.println("Linked list is cyclic at position " + (list.indexOf(temp.next) + 1));
 		else
 			System.out.println("Linked list is not cyclic");
 	}

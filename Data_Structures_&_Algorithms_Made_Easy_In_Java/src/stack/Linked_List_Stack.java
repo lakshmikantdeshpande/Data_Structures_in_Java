@@ -38,6 +38,16 @@ public class Linked_List_Stack {
 		return top + 1;
 	}
 
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	public int peek() throws Exception {
+		if (head == null)
+			throw new Exception("Stack is empty");
+		return head.data;
+	}
+
 	@Override
 	public String toString() {
 		if (size() == 0)

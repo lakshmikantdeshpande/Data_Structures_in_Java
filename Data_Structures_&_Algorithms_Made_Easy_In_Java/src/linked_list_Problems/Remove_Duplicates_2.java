@@ -61,8 +61,7 @@ public class Remove_Duplicates_2 {
 
 	private static void removeDuplicates(Node head) {
 		if (head == null || head.next == null) {
-			System.out
-					.println("Linked list is either empty or has only 1 element");
+			System.out.println("Linked list is either empty or has only 1 element");
 			return;
 		}
 		Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
