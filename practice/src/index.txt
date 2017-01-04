@@ -4,6 +4,10 @@ Solved following problems on HackerRank:
 Merge two sorted linked lists
 Get Node Value (nth element from the back)
 
-2/2/2017:
+3/2/2017:
 Cycle Detection
 Find Merge Point of Two Lists
+
+4/2/2017
+Preparing for sas java
+
