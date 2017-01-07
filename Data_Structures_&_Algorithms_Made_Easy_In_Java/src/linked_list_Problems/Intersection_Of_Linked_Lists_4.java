@@ -103,7 +103,8 @@ public class Intersection_Of_Linked_Lists_4 {
 		for (Node temp = head2; temp != null; temp = temp.next) {
 			int x = Collections.binarySearch(list, temp, new comparator());
 			if (x >= 0) {
-				System.out.println("Intersection found at " + (list.get(x).data));
+				System.out.println("Intersection found at "
+						+ (list.get(x).data));
 				flag = true;
 				break;
 			}

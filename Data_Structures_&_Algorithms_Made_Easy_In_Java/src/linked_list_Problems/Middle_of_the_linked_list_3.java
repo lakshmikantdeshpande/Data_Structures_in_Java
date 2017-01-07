@@ -69,6 +69,7 @@ public class Middle_of_the_linked_list_3 {
 		int counter = 0;
 		for (Node temp = head; temp != null; temp = temp.next)
 			map.put(counter++, temp);
-		System.out.println("Middle of the linked list is " + map.get(counter / 2).data);
+		System.out.println("Middle of the linked list is "
+				+ map.get(counter / 2).data);
 	}
 }
