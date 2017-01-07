@@ -1,6 +1,19 @@
 O(n) Algorithm
-
 Prefix and postfix are ways to represent an expression without parenthesis:
+
+Algorithm:
+1. Create a stack
+2. If (char is operand)
+		output char
+	Else if (char is '(')
+		push(char)
+	Else if (char is of lower / equal precedence than stack.peek())
+		push(stack.pop()) until either '(' is not popped or stack is empty
+	Else // char is of higher precedence
+		push (char)
+3. Pop everything and append to output
+4. Voila !!
+
 
 Infix       A+B
 Prefix      +AB
@@ -9,13 +22,12 @@ Postfix     AB+  (Reverse Polish Notation)
 
 Precedence table in this program:
 
-() {} []      a b c      */      +- 
+a b c 1 2 3      */      +-      ^
 
 There will be no parentheses in our output
 
 Tutorial:
 https://youtu.be/vq-nUF0G4fI
-
 
 
 Full Precedence table for reference:
