@@ -59,7 +59,8 @@ public class InfixToPostfix {
 						break;
 					} else if (lowPrecedence(precedenceTable, stack, c))
 						output.append(stack.pop());
-					else  // higher precedence character
+					else
+						// higher precedence character
 						break;
 				}
 				stack.push(c);
@@ -77,12 +78,12 @@ public class InfixToPostfix {
 	private static boolean lowPrecedence(Map<Character, Integer> map,
 			Stack<Character> stack, char c) {
 		return map.get(c) <= map.get(stack.peek());
-/* FOR DEBUGGING		
- 		if (map.get(c) == null || map.get(stack.peek()) == null) {
-			System.out.println(c + " -> " + map.get(c));
-			System.out.println(stack.peek() + " -> " + map.get(stack.peek()));
-			return false;
-		} */		
+		/*
+		 * FOR DEBUGGING if (map.get(c) == null || map.get(stack.peek()) ==
+		 * null) { System.out.println(c + " -> " + map.get(c));
+		 * System.out.println(stack.peek() + " -> " + map.get(stack.peek()));
+		 * return false; }
+		 */
 	}
 
 	private static boolean isAlphaNumeric(char c) {
