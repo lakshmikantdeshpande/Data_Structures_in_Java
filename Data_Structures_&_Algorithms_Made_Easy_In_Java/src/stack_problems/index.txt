@@ -2,7 +2,8 @@
 --> Balance_Parentheses.java
 
 2. Infix to postfix using stack
---> SKIPPED FOR NOW
+--> InfixToPostfix.java
+    InfixToPostfix.txt
 
 3. For a given array with n symbols, how many stack permutations can be done?
 --> It is represented by Catalan number. (To be discussed in Dynamic Programming)
