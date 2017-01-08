@@ -3,6 +3,8 @@
 
 package linked_list_Problems;
 
+import java.util.Stack;
+
 public class Palindrome_Linked_List {
 
 	private static Node head;
@@ -69,16 +71,14 @@ public class Palindrome_Linked_List {
 			slow = slow.next;
 		}
 		Stack<Integer> stack = new Stack<Integer>();
-		int i = 0;
 		while (slow != null) {
 			stack.push(slow.data);
 			slow = slow.next;
-			i++;
 		}
 
 		slow = head;
 		try {
-			while (slow != null && i-- > 0) {
+			while (slow != null && !stack.empty()) {     // && i-- > 0
 				if (slow.data != stack.pop()) {
 					System.out.println("Not a palindrome");
 					return;

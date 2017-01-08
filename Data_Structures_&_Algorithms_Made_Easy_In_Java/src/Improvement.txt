@@ -7,4 +7,4 @@ StringBuilder should be used instead of String
 
 string + "hello"   internally uses StringBuilder, no need of micro-optimization
 
-Call System.gc() whenever you feel that some memory might have been leaked 
+Call System.gc() whenever you feel that some memory has been leaked 

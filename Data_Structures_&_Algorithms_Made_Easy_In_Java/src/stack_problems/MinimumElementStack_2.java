@@ -1,3 +1,7 @@
+// 7. Reduce problem 6's space complexity
+// n time 2n space complexity (practically lower than 2n)
+// 1 time for getMinimum()
+
 package stack_problems;
 
 import java.util.Stack;

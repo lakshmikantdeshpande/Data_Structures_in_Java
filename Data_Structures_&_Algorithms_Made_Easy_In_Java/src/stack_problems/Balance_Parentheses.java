@@ -1,3 +1,6 @@
+// 1. Can we use stacks for balancing symbols?
+// n time n space
+
 package stack_problems;
 
 import stack.Linked_List_Stack;
