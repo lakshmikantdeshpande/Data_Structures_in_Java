@@ -4,7 +4,7 @@
 
 package stack_problems;
 
-public class MinimumElementStack {
+public class MinimumElementStack_1 {
 	int top = -1;
 	static Node head1; // main stack
 	static Node head2; // minimum stack
@@ -19,7 +19,7 @@ public class MinimumElementStack {
 		}
 	}
 
-	public MinimumElementStack() {
+	public MinimumElementStack_1() {
 		head1 = null;
 		head2 = null;
 	}
@@ -69,7 +69,7 @@ public class MinimumElementStack {
 	}
 
 	public static void main(String[] args) throws Exception {
-		MinimumElementStack mes = new MinimumElementStack();
+		MinimumElementStack_1 mes = new MinimumElementStack_1();
 		mes.push(2);
 		mes.push(6);
 		mes.push(4);
