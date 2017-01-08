@@ -1,0 +1,15 @@
+Infix Evaluation : 2 stacks algorithm by Dijkstra
+
+1. Create 2 stacks, one for operators, and other for operands.
+2. For each token,
+	a. if it is operand,  operands.push(token)
+	b. if it is operator, operators.push(token)
+	c. if it is '(' continue
+	d. if it is ')'
+			pop operands twice  i.e. 2, 1
+			pop operator once
+			push 1 <operator> 2 onto operands stack
+3. Return operands.pop()
+
+Tutorial:
+http://algs4.cs.princeton.edu/13stacks/Evaluate.java.html

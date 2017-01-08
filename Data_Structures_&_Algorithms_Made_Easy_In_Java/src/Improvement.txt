@@ -1,0 +1,10 @@
+Room for improvement in the programs
+
+String can be converted to charArray for memory efficiency
+i.e. char chararray[] = string.toCharArray();
+
+StringBuilder should be used instead of String
+
+string + "hello"   internally uses StringBuilder, no need of micro-optimization
+
+Call System.gc() whenever you feel that some memory might have been leaked 

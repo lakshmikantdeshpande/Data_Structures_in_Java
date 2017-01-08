@@ -73,7 +73,8 @@ public class InfixToPostfix {
 		return output.toString();
 	}
 
-	// returns true if upcoming character has lower precedence than stack
+	// returns true if upcoming character has same or lower precedence than
+	// stack
 	// character
 	private static boolean lowPrecedence(Map<Character, Integer> map,
 			Stack<Character> stack, char c) {

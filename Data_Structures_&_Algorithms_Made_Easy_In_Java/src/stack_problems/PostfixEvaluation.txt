@@ -1,0 +1,9 @@
+PostFix Evaluation Algorithm:
+1. Scan the expression
+2. Create an empty stack
+3. If operand is found, push it on to the stack
+4. if operator is found, and if it is unary, pop an element from stack.
+							 if it is binary, pop 2 elements from the stack.
+							 apply operation on the popped operator, and push result onto the stack
+5. Continue till expression is evaluated.
+6. Return top of the stack as a result.

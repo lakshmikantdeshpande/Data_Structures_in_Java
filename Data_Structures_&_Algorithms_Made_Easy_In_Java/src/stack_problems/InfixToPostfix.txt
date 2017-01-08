@@ -28,6 +28,7 @@ There will be no parentheses in our output
 
 Tutorial:
 https://youtu.be/vq-nUF0G4fI
+https://andromeda.rutgers.edu/~loftin/datafal06/infixToPostfix.pdf
 
 
 Full Precedence table for reference:
