@@ -1,9 +1,0 @@
-1. Can we use stacks for balancing symbols?
---> Balance_Parentheses.java
-
-2. Infix to postfix using stack
---> InfixToPostfix.java
-    InfixToPostfix.txt
-
-3. For a given array with n symbols, how many stack permutations can be done?
---> It is represented by Catalan number. (To be discussed in Dynamic Programming)
