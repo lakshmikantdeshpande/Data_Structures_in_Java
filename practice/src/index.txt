@@ -1,12 +1,15 @@
 Solved following problems on HackerRank:
 
-1/2/2017:
+1/1/2017:
 Merge two sorted linked lists
 Get Node Value (nth element from the back)
 
-3/2/2017:
+3/1/2017:
 Cycle Detection
 Find Merge Point of Two Lists
 
-4,5,6/2/2017
-Prepared for sas java
+4,5,6/1/2017
+Prepared for saas java
+
+9/1/2017
+Preparing for mthi java
