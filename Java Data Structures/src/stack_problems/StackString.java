@@ -1,3 +1,8 @@
+// 18. Create an empty stack of integers.
+// 'S' should indicate push and 'X' should indicate a pop. 
+// Is it possible to create 325641 & 154623 by just pushing and popping 1, 2, 3, 4, 5, 6 in this order only?
+// n*n time  n space
+
 import java.util.Stack;
 
 public class StackString {

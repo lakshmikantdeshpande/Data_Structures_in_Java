@@ -1,3 +1,5 @@
+// 15. Implement three stacks in an array
+// n time n size
 
 public class ThreeStacksInArray {
 private int[] array;
