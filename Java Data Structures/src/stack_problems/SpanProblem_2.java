@@ -1,3 +1,6 @@
+// 23. Improve time complexity of problem 22
+// n time n space
+
 package stack_problems;
 
 import java.util.Stack;
@@ -15,17 +18,23 @@ public class SpanProblem_2 {
 		int[] spans = new int[array.length];
 
 		Stack<Integer> stack = new Stack<Integer>();
-		int k = 0;
-		for (int i = 0; i < array.length; i++) {
-			while (!stack.isEmpty() && array[i] > array[(Integer) stack.pop()])
+		stack.push(0);
+		spans[0] = 1; // span of the first element will always be 1
+
+		for (int i = 1; i < array.length; i++) {
+			// keep popping the stack, while stack is not empty and top of
+			// the stack is smaller than spans[i]
+			while (!stack.empty() && array[stack.peek()] < array[i])
 				stack.pop();
 
-			if (stack.isEmpty())
-				k = -1;
+			// all the elements to the left are smaller than array[i]
+			if (stack.empty())
+				spans[i] = i + 1;
 			else
-				k = (Integer) stack.pop();
+				// if stack top is greater than array[i], span is current index
+				// - stack index
+				spans[i] = i - stack.peek();
 
-			spans[i] = i - k;
 			stack.push(i);
 		}
 		return spans;

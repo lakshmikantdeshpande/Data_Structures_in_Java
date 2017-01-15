@@ -16,16 +16,17 @@ public class SpanProblem_1 {
 
 	private static int[] findSpans(int[] array) {
 		int[] spans = new int[array.length];
-
-		for (int i = 0; i < array.length; i++) {
-			int span = 1;
+		
+		spans[0] = 1;
+		for (int i = 1; i < array.length; i++) {
+			spans[i] = 1;
 			int j = i - 1;
-			// check how many ups have been there till nw in the array
+			// check the number of consecutive previous stock rates in the
+			// increasing order
 			while (j >= 0 && array[j] <= array[j + 1]) {
-				span++;
+				spans[i]++;
 				j--;
 			}
-			spans[i] = span;
 		}
 		return spans;
 	}
