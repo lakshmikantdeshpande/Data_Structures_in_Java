@@ -1,32 +1,33 @@
+// Use StringBuilder
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
-
-class SignalRange{
+import java.util.StringTokenizer;
+ 
+class SignalRange {
     public static void main(String args[] ) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String line = br.readLine();
-        int T = Integer.parseInt(line);
-
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int T = Integer.parseInt(st.nextToken());
+ 
         while (T-- > 0) {
-            line = br.readLine();
-            int numbers = Integer.parseInt(line);
-            line = br.readLine();
-            String[] strings = line.split(" ");
+            st = new StringTokenizer(br.readLine());
+            int numbers = Integer.parseInt(st.nextToken());
+            st = new StringTokenizer(br.readLine());
             int[] array = new int[numbers];
             for (int i = 0; i < numbers; i++)
-                array[i] = Integer.parseInt(strings[i]);
-            int[] result = solve(array, numbers);
-            for (int i = 0; i < numbers; i++)
-                System.out.print(result[i] + " ");
+                array[i] = Integer.parseInt(st.nextToken());
+            solve(array, numbers);
         }
+        br = null;
+        st = null;
+        System.gc();
     }
     
-    public static int[] solve(int array[], int N) {
+    public static void solve(int array[], int N) {
         Stack<Integer> stack = new Stack<Integer>();
-        int[] result = new int[N];
         stack.push(0);
-        result[0] = 1;
+        StringBuilder stb = new StringBuilder("1 ");
         
         for (int i = 1; i < N; i++) {
             // pop all the elements smaller than the current element
@@ -35,12 +36,17 @@ class SignalRange{
             // if no elements are smaller than current element, it is the largest
             // so, result[i] will be 1 + index
             if (stack.empty())
-                result[i] = i + 1;
+                stb.append(i + 1);
             else  // else result[i] = current index - index of previous larger element
-                result[i] = i - stack.peek();
+                stb.append(i - stack.peek());
                 
             stack.push(i);
+            if (i != N-1)
+                stb.append(" ");
         }
-        return result;
+        System.out.println(stb.toString());
+        stb = null;
+        stack = null;
+        System.gc();
     }
 }
