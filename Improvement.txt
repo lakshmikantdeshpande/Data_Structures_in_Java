@@ -3,7 +3,7 @@ Room for improvement in the programs
 String can be converted to charArray for memory efficiency
 i.e. char chararray[] = string.toCharArray();
 
-StringBuilder should be used instead of String
+StringBuilder should be used instead of String for faster programs
 
 string + "hello"   internally uses StringBuilder, no need of micro-optimization
 
