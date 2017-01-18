@@ -1,3 +1,6 @@
+// Find the largest rectangle under histogram.
+// n time n space
+
 import java.util.Stack;
 
 public class LargestRectangleUnderHistogram {
