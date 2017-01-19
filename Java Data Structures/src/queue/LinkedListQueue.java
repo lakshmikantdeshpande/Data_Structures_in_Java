@@ -1,3 +1,7 @@
+// Queue using linked list
+// n space
+// 1 time for enqueue, dequeue, size, isEmpty, peek
+
 package queue;
 
 public class LinkedListQueue {
@@ -72,6 +76,7 @@ public class LinkedListQueue {
 		LinkedListQueue llq = new LinkedListQueue();
 		llq.enQueue(5);
 		llq.enQueue(8);
+		System.out.println(llq.peek());
 		llq.enQueue(89);
 		System.out.println(llq.toString());
 		llq.deQueue();
