@@ -16,7 +16,7 @@ public class SpanProblem_1 {
 
 	private static int[] findSpans(int[] array) {
 		int[] spans = new int[array.length];
-		
+
 		spans[0] = 1;
 		for (int i = 1; i < array.length; i++) {
 			spans[i] = 1;

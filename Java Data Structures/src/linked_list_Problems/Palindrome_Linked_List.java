@@ -78,7 +78,7 @@ public class Palindrome_Linked_List {
 
 		slow = head;
 		try {
-			while (slow != null && !stack.empty()) {     // && i-- > 0
+			while (slow != null && !stack.empty()) { // && i-- > 0
 				if (slow.data != stack.pop()) {
 					System.out.println("Not a palindrome");
 					return;
