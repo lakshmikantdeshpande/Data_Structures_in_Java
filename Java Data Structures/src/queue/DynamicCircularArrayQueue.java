@@ -35,7 +35,7 @@ public class DynamicCircularArrayQueue {
 	private void expand() {
 		int length = size();
 		int newQueue[] = new int[length << 1]; // twice the size
-		
+
 		for (int i = front; i <= rear; i++)
 			newQueue[i - front] = queue[i % capacity];
 		queue = newQueue;
@@ -54,16 +54,16 @@ public class DynamicCircularArrayQueue {
 		front = (front + 1) % capacity;
 		return data;
 	}
-	
+
 	private void shrink() {
 		int length = size;
 		if (length <= mincapacity || length << 2 >= length)
 			return;
-		
+
 		if (length < mincapacity)
 			length = mincapacity;
 		int newQueue[] = new int[length];
-		System.arraycopy(queue, 0, newQueue, 0, length+1);
+		System.arraycopy(queue, 0, newQueue, 0, length + 1);
 		queue = newQueue;
 	}
 
