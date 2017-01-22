@@ -12,7 +12,7 @@ import java.util.Stack;
 
 public class Consecutive_Pair {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Stack<Integer> stack = new Stack<Integer>();
 		stack.push(4);
 		stack.push(5);
@@ -27,7 +27,10 @@ public class Consecutive_Pair {
 		System.out.println(consecutiveCheck(stack));
 	}
 
-	private static boolean consecutiveCheck(Stack<Integer> stack) {
+	private static boolean consecutiveCheck(Stack<Integer> stack)
+			throws Exception {
+		if (stack == null)
+			throw new Exception("Stack is null");
 		Queue<Integer> queue = new LinkedList<Integer>();
 		boolean ordered = true;
 
