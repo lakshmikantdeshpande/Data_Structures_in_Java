@@ -1,25 +1,25 @@
+package he_TestClass;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.StringTokenizer;
- 
+
 class TonyAndCars {
-    public static void main(String args[] ) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
-        
-        Map<Integer, Long> map = new HashMap<Integer, Long>();
-        long nines = 9;
-        for (int i = 1; i < 12; i++) {
-            map.put(i, nines);
-            nines *= 10;
-        }
- 
+	public static void main(String args[]) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());
+
+		Map<Integer, Long> map = new HashMap<Integer, Long>();
+		long[] nines = new long[] { 9L, 90L, 900L, 9000L, 90000L, 900000L, 9000000L, 90000000L, 900000000L, 9000000000L,
+				90000000000L, 900000000000L };
+		for (int i = 1; i < 12; i++)
+			map.put(i, nines[i - 1]);
+
 		StringBuilder strb = new StringBuilder();
- 
+
 		while (T-- > 0) {
- 
+
 			long k = Long.parseLong(br.readLine());
 			long sum = 0;
 			long dsum = 0;
@@ -40,10 +40,10 @@ class TonyAndCars {
 			strb.append(dsum + "\n");
 		}
 		System.out.println(strb.toString());
- 
-        strb = null;
-        map = null;
-        br = null;
-        System.gc();
-    }
+		nines = null;
+		strb = null;
+		map = null;
+		br = null;
+		System.gc();
+	}
 }
