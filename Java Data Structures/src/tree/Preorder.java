@@ -1,3 +1,6 @@
+// Preorder Traversal
+// N time N space
+
 package tree;
 
 import java.util.ArrayList;
@@ -5,30 +8,17 @@ import java.util.Stack;
 
 public class Preorder {
 
-	private class TreeNode {
-		int data;
-		TreeNode left;
-		TreeNode right;
-
-		public TreeNode(int data) {
-			this.data = data;
-			left = null;
-			right = null;
-		}
-
-	}
-
 	// Recursive
-	public void Preorder(TreeNode root) {
-		if (root != null) {
-			Preorder(root.left);
-			System.out.println(root.data);
-			Preorder(root.right);
-		}
+	public void doPreorder(TreeNode root) {
+		if (root == null)
+			return;
+		System.out.println(root.data);
+		doPreorder(root.left);
+		doPreorder(root.right);
 	}
 
 	// Non recursive
-	public ArrayList<Integer> PreorderInterative(TreeNode root) {
+	public ArrayList<Integer> doPreorderInterative(TreeNode root) {
 		ArrayList<Integer> result = new ArrayList<Integer>();
 
 		if (root == null)
@@ -48,9 +38,4 @@ public class Preorder {
 		}
 		return result;
 	}
-
-	public static void main(String[] args) {
-
-	}
-
 }
