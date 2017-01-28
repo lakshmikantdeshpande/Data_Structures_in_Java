@@ -1,7 +1,7 @@
-// Max in binary tree
+// 1. Find the max element in a binary tree (recursion)
 // Solution buk n time n space
 // my solution n+n time n space
-// my solution #2  n time n space
+// my solution  n time n space (elegant ;))
 
 package tree_problems;
 
