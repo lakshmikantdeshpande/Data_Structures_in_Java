@@ -3,6 +3,8 @@
 
 package tree_problems;
 
+import tree.TreeNode;
+
 public class SearchElement_1 {
 
 	public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class Inorder {
 		if (root == null)
 			return;
 		doInorder(root.left);
-		System.out.println(root.data);
+		System.out.print(root.data +" - ");
 		doInorder(root.right);
 	}
 

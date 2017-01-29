@@ -7,6 +7,8 @@ package tree_problems;
 
 import java.util.StringTokenizer;
 
+import tree.TreeNode;
+
 public class MaxElement_1 {
 	static int max = Integer.MIN_VALUE;
 

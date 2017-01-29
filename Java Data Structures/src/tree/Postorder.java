@@ -14,7 +14,7 @@ public class Postorder {
 			return;
 		doPostorder(root.left);
 		doPostorder(root.right);
-		System.out.println(root.data);
+		System.out.print(root.data +" - ");
 	}
 
 	// Non recursive

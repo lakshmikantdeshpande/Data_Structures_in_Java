@@ -6,6 +6,8 @@ package tree_problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import tree.TreeNode;
+
 public class MaxElement_2 {
 
 	public static void main(String[] args) {
