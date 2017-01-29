@@ -15,7 +15,7 @@ public class HeightDepthTree_1 {
 		root.left.left = new TreeNode(4);
 		root.left.right = new TreeNode(5);
 
-		System.out.println(findDepth(root));
+		System.out.println(findDepth(root) - 1);
 	}
 
 	// recursive
