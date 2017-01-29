@@ -12,7 +12,7 @@ public class Preorder {
 	public void doPreorder(TreeNode root) {
 		if (root == null)
 			return;
-		System.out.print(root.data +" - ");
+		System.out.print(root.data + " - ");
 		doPreorder(root.left);
 		doPreorder(root.right);
 	}
