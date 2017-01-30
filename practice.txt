@@ -16,3 +16,6 @@ Preparing for mthi java
 
 11/1/2017
 Hourglass, Kangaroo on hr
+
+30/1/2017
+Solved queue using 2 stacks on hr
