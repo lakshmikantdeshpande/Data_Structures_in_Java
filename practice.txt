@@ -19,3 +19,7 @@ Hourglass, Kangaroo on hr
 
 30/1/2017
 Solved queue using 2 stacks on hr
+
+31/1/2017
+Tree traversals preorder-inorder-postorder on hr
+
