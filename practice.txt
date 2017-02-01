@@ -23,3 +23,5 @@ Solved queue using 2 stacks on hr
 31/1/2017
 Tree traversals preorder-inorder-postorder on hr
 
+1/1/2017
+text editor stack on hr
