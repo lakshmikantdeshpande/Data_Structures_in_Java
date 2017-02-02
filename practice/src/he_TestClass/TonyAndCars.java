@@ -11,8 +11,9 @@ class TonyAndCars {
 		int T = Integer.parseInt(br.readLine());
 
 		Map<Integer, Long> map = new HashMap<Integer, Long>();
-		long[] nines = new long[] { 9L, 90L, 900L, 9000L, 90000L, 900000L, 9000000L, 90000000L, 900000000L, 9000000000L,
-				90000000000L, 900000000000L };
+		long[] nines = new long[] { 9L, 90L, 900L, 9000L, 90000L, 900000L,
+				9000000L, 90000000L, 900000000L, 9000000000L, 90000000000L,
+				900000000000L };
 		for (int i = 1; i < 12; i++)
 			map.put(i, nines[i - 1]);
 
