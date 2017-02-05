@@ -1,4 +1,5 @@
 // 20. Find diameter/width of a tree. (No. of nodes on longest path between 2 leaves of a tree)
+// n time n space
 
 package tree_problems;
 

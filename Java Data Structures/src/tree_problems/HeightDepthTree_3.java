@@ -24,7 +24,7 @@ public class HeightDepthTree_3 {
 	}
 
 	// offering null indicates end of the level
-	private static int findDepth(TreeNode root) {
+	public static int findDepth(TreeNode root) {
 		if (root == null)
 			return 0;
 
