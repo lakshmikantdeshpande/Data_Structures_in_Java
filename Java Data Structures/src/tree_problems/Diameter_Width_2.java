@@ -1,5 +1,6 @@
 // 21. Find width of a binary tree (diameter). 
 // The diameter of a tree is maximum number of nodes at any level (depth) in the tree.
+
 package tree_problems;
 
 import tree.TreeNode;
