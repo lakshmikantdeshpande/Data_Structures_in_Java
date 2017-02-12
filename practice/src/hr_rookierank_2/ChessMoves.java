@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class ChessMoves {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -72,17 +72,18 @@ public class Solution {
 					continue;
 				} else {
 					int tempa, tempb;
-					for (int m = l + 1; m < 8; m++) {
-						if (m < 4) {
-							tempa = a - i * list[m][0];
-							tempb = b - j * list[m][1];
-						} else {
-							tempa = a - j * list[m - 4][0];
-							tempb = b - i * list[m - 4][1];
+					if (!(p == 0 && q == 0))
+						for (int m = l + 1; m < 8; m++) {
+							if (m < 4) {
+								tempa = a - i * list[m][0];
+								tempb = b - j * list[m][1];
+							} else {
+								tempa = a - j * list[m - 4][0];
+								tempb = b - i * list[m - 4][1];
+							}
+							if (tempa == 0 && tempb == 0)
+								return ++counter;
 						}
-						if (tempa == 0 && tempb == 0)
-							return ++counter;
-					}
 
 					a = p;
 					b = q;
