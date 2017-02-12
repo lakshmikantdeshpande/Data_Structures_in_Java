@@ -17,9 +17,12 @@ public class Solution {
 		for (int i = 1; i < n; i++) {
 			for (int j = 1; j < n; j++) {
 				if (array[i][j] == 0) {
-					if (i > k && j > k)
-						array[i][j] = -1;
-					else
+					if (i > k && j > k) {
+						if (i == n - 1 && j == n - 1)
+							array[i][j] = 1;
+						else
+							array[i][j] = -1;
+					} else
 						array[j][i] = array[i][j] = check(i, j, n);
 				}
 			}
@@ -46,13 +49,8 @@ public class Solution {
 		List<String> alist = new ArrayList<String>();
 		StringBuilder strb1 = new StringBuilder();
 		int a = n, b = n;
-		int p, q, lindex;
-		int lasta = a, lastb = b;
-		boolean lflag;
-		System.out.println("i = " + i + " j = " + j);
+		int p, q;
 		while (true) {
-			lindex = -1;
-			lflag = false;
 
 			for (int l = 0; l < 8; l++) {
 				if (l < 4) {
@@ -68,27 +66,24 @@ public class Solution {
 
 				if (p == 0 && q == 0) {
 					alist.add(strb1.toString());
-//					System.out.println(alist);
 					return ++counter;
 				} else if (p < 0 || q < 0 || p > n || q > n
 						|| alist.contains(strb1.toString())) {
-					// || (p == 0 && q != 0) || (p != 0 && q == 0)
-					if (lflag) {
-						// System.out.println("LFLAG");
-						l = lindex + 1;
-						alist.subList(l, alist.size()).clear();
-						a = lasta;
-						b = lastb;
-						lflag = false;
-					}
 					continue;
 				} else {
-					if (!lflag) {
-						lindex = l;
-						lasta = a;
-						lastb = b;
-						lflag = true;
+					int tempa, tempb;
+					for (int m = l + 1; m < 8; m++) {
+						if (m < 4) {
+							tempa = a - i * list[m][0];
+							tempb = b - j * list[m][1];
+						} else {
+							tempa = a - j * list[m - 4][0];
+							tempb = b - i * list[m - 4][1];
+						}
+						if (tempa == 0 && tempb == 0)
+							return ++counter;
 					}
+
 					a = p;
 					b = q;
 					alist.add(strb1.toString());
@@ -100,14 +95,6 @@ public class Solution {
 				break;
 			counter++;
 		}
-
-		// System.out.println("---------------------------------------------");
-		// System.out.println("For i = " + i + " and j = " + j);
-		//
-		// for (String s : alist)
-		// System.out.println(s);
-		//
-		// System.out.println("---------------------------------------------");
 		return counter;
 	}
 }
