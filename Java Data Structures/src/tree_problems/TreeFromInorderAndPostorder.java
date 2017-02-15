@@ -1,4 +1,4 @@
-// 29. Build tree from given inorder and preorder string.
+// 30. Build tree from given inorder and postorder string.
 // n time 1 space
 
 package tree_problems;
@@ -10,11 +10,11 @@ import java.util.Queue;
 
 import tree.TreeNode;
 
-public class TreeFromInorderAndPreorder {
+public class TreeFromInorderAndPostorder {
 
 	public static void main(String[] args) {
 		// DBEAFC // inorder 425163
-		// ABDECF // preorder 124536
+		// ABDECF // postorder 452631
 
 		List<Integer> inorder = new ArrayList<Integer>();
 		inorder.add(4);
@@ -24,40 +24,42 @@ public class TreeFromInorderAndPreorder {
 		inorder.add(6);
 		inorder.add(3);
 
-		List<Integer> preorder = new ArrayList<Integer>();
-		preorder.add(1);
-		preorder.add(2);
-		preorder.add(4);
-		preorder.add(5);
-		preorder.add(3);
-		preorder.add(6);
+		List<Integer> postorder = new ArrayList<Integer>();
+		postorder.add(4);
+		postorder.add(5);
+		postorder.add(2);
+		postorder.add(6);
+		postorder.add(3);
+		postorder.add(1);
 
-		levelOrder(buildTree(preorder, inorder));
+		levelOrder(buildTree(postorder, inorder));
 	}
 
-	public static TreeNode buildTree(List<Integer> preorder,
+	private static TreeNode buildTree(List<Integer> postorder,
 			List<Integer> inorder) {
-		if (preorder.size() == 0 || preorder.size() != inorder.size())
+		if (postorder.size() == 0 || inorder.size() != postorder.size())
 			return null;
-		return build(preorder, 0, preorder.size() - 1, inorder, 0,
+		return build(postorder, 0, postorder.size() - 1, inorder, 0,
 				inorder.size() - 1);
 	}
 
-	private static TreeNode build(List<Integer> preorder, int preStart,
-			int preEnd, List<Integer> inorder, int inStart, int inEnd) {
-		if (preStart > preEnd || inStart > inEnd)
+	private static TreeNode build(List<Integer> postorder, int postStart,
+			int postEnd, List<Integer> inorder, int inStart, int inEnd) {
+		if (postStart > postEnd || inStart > inEnd)
 			return null;
 
-		int data = preorder.get(preStart);
-		TreeNode curr = new TreeNode(data);
+		int val = postorder.get(postEnd);
 		int offset = inStart;
+		TreeNode curr = new TreeNode(val);
+
 		for (; offset < inEnd; offset++)
-			if (inorder.get(offset) == data)
+			if (inorder.get(offset) == val)
 				break;
-		curr.left = build(preorder, preStart + 1, preStart + offset - inStart,
-				inorder, inStart, offset - 1);
-		curr.right = build(preorder, preStart + offset - inStart + 1, preEnd,
-				inorder, offset + 1, inEnd);
+
+		curr.left = build(postorder, postStart, postStart + offset - inStart
+				- 1, inorder, inStart, offset - 1);
+		curr.right = build(postorder, postStart + offset - inStart,
+				postEnd - 1, inorder, offset + 1, inEnd);
 		return curr;
 	}
 
