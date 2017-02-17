@@ -32,3 +32,6 @@ studied java, watched the pursuit of happyness
 9,10,11,14/2/2017
 read abt ioppt
 hr competition
+
+17/2/2017
+Wrote code for choosing random program to practice (incomplete)

@@ -1,4 +1,6 @@
-Room for improvement in the programs
+http://codeforces.com/blog/entry/16599
+
+**Room for improvement in the programs**
 
 String can be converted to charArray for memory efficiency
 i.e. char chararray[] = string.toCharArray();
