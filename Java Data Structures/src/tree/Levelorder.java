@@ -36,7 +36,7 @@ public class Levelorder {
 		}
 		return res;
 	}
-	
+
 	public static void levelOrderPrint(TreeNode root) {
 		if (root == null)
 			return;
