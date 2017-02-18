@@ -5,6 +5,7 @@ package tree_problems;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -23,8 +24,8 @@ public class ZigzagTraversal {
 		System.out.println(zigzag(root));
 	}
 
-	private static ArrayList<ArrayList<Integer>> zigzag(TreeNode root) {
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+	private static List<ArrayList<Integer>> zigzag(TreeNode root) {
+		List<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 		if (root == null)
 			return result;
 
@@ -34,7 +35,7 @@ public class ZigzagTraversal {
 		queue.offer(root);
 		queue.offer(null);
 
-		ArrayList<Integer> current = new ArrayList<Integer>();
+		List<Integer> current = new ArrayList<Integer>();
 
 		while (!queue.isEmpty()) {
 			TreeNode temp = queue.poll();

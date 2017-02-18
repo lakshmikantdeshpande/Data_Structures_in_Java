@@ -36,4 +36,30 @@ public class Levelorder {
 		}
 		return res;
 	}
+	
+	public static void levelOrderPrint(TreeNode root) {
+		if (root == null)
+			return;
+
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.offer(root);
+		queue.offer(null);
+
+		while (!queue.isEmpty()) {
+			TreeNode temp = queue.poll();
+
+			if (temp != null) {
+				System.out.print(temp.data + " ");
+				if (temp.left != null)
+					queue.offer(temp.left);
+				if (temp.right != null)
+					queue.offer(temp.right);
+			} else {
+				System.out.println();
+				if (!queue.isEmpty())
+					queue.offer(null);
+			}
+		}
+		System.out.println("************************");
+	}
 }

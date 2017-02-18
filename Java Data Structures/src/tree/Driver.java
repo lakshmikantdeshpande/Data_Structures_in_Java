@@ -31,6 +31,9 @@ public class Driver {
 		System.out.println("Level Order");
 		Levelorder lo = new Levelorder();
 		System.out.println(lo.levelOrder(root));
+
+		System.out.println("************************");
+		Levelorder.levelOrderPrint(root);
 	}
 
 }
