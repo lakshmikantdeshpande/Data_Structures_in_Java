@@ -35,3 +35,6 @@ hr competition
 
 17/2/2017
 Wrote code for choosing random program to practice (incomplete)
+
+21/2/2017
+Wrote code for choosing random program to practice Complete (yet to be pushed on Github frm PC)
