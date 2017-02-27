@@ -1,6 +1,3 @@
-// Preorder Traversal
-// N time N space
-
 package tree;
 
 import java.util.ArrayList;

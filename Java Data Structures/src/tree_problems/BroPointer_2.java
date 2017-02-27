@@ -1,3 +1,6 @@
+// 40. Can you solve Q.39 with some other way ?
+// n time n space
+
 package tree_problems;
 
 import java.util.LinkedList;
