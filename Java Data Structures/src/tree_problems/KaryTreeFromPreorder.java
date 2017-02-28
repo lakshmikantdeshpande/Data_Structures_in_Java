@@ -1,7 +1,8 @@
 // 49. Build a k-ary tree from given preorder traversal 
 // where each tree has 0 or k nodes. (full k-ary tree)
 // n time n space
-// need to revisit
+
+// SKIPPED FOR NOW  (WRONG CODE)
 
 package tree_problems;
 
@@ -28,7 +29,7 @@ public class KaryTreeFromPreorder {
 	}
 
 	public static void main(String[] args) {
-		build(new int[] { 1, 2, 5, 6, 7, 3, 9, 10, 11, 4 }, 10, 0);
+		build(new int[] { 1, 2, 5, 6, 7, 3, 9, 10, 11, 4 }, 10, 2);
 	}
 
 	static int index = 0;
