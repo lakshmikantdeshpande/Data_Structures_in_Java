@@ -37,11 +37,11 @@ package tree_problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class TreeNode {
+class sTreeNode {
 	char data;
-	TreeNode left, right;
+	sTreeNode left, right;
 
-	public TreeNode(char c) {
+	public sTreeNode(char c) {
 		this.data = c;
 	}
 }
@@ -52,10 +52,10 @@ public class SpecialPreorderTree {
 		levelOrderPrint(buildTree(new char[] { 'I', 'L', 'I', 'L', 'L' }, 0));
 	}
 
-	private static TreeNode buildTree(char[] array, int i) {
+	private static sTreeNode buildTree(char[] array, int i) {
 		if (array == null || i == array.length)
 			return null;
-		TreeNode node = new TreeNode(array[i]);
+		sTreeNode node = new sTreeNode(array[i]);
 		if (array[i] == 'L')
 			return node;
 		node.left = buildTree(array, ++i);
@@ -63,16 +63,16 @@ public class SpecialPreorderTree {
 		return node;
 	}
 
-	private static void levelOrderPrint(TreeNode root) {
+	private static void levelOrderPrint(sTreeNode root) {
 		if (root == null)
 			return;
 
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		Queue<sTreeNode> queue = new LinkedList<sTreeNode>();
 		queue.offer(root);
 		queue.offer(null);
 
 		while (!queue.isEmpty()) {
-			TreeNode temp = queue.poll();
+			sTreeNode temp = queue.poll();
 
 			if (temp != null) {
 				System.out.print(temp.data + " ");
