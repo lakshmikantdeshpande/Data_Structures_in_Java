@@ -37,31 +37,31 @@ public class Main {
 
 		System.out.println(map.size());
 		ObjectInputStream oos = null;
-//		try {
-//			oos = new ObjectOutputStream(new FileOutputStream("hello.txt"));
-//			oos.writeObject(e1);
-//			System.out.println("Object written to disk");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			oos.close();
-//		}
-		
+		// try {
+		// oos = new ObjectOutputStream(new FileOutputStream("hello.txt"));
+		// oos.writeObject(e1);
+		// System.out.println("Object written to disk");
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// } finally {
+		// oos.close();
+		// }
+
 		try {
 			oos = new ObjectInputStream(new FileInputStream("hello.txt"));
-			Employee temp = (Employee)oos.readObject();
+			Employee temp = (Employee) oos.readObject();
 			System.out.println("read object: " + temp.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			oos.close();
 		}
-		
+
 		FileWriter fw = new FileWriter("out.txt");
 		for (int i = 0; i < 10; i++)
 			fw.write(i + "\n");
 		fw.close();
-		
+
 		int c = 0;
 		Scanner scanner = new Scanner(new File("out.txt"));
 		while (scanner.hasNextLine()) {
