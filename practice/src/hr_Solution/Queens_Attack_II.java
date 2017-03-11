@@ -1,11 +1,12 @@
 package hr_Solution;
 
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Queens_Attack_II {
 
-	private static String[] array;
+	private static Set<String> set;
 
 	public static void main(String args[]) throws Exception {
 		Scanner scanner = new Scanner(System.in);
@@ -23,13 +24,11 @@ public class Queens_Attack_II {
 		} catch (Exception e) {
 
 		}
-		array = new String[k];
-
+		set = new HashSet<String>();
+		// o(1) for adding and retrieving
 		for (int i = 0; i < k; i++) {
-			array[i] = scanner.nextLine().trim();
+			set.add(scanner.nextLine().trim());
 		}
-		// nlogn in worst time
-		Arrays.sort(array);
 
 		int count = 0;
 		for (int i = 1; i <= 8; i++)
@@ -37,7 +36,7 @@ public class Queens_Attack_II {
 		System.out.println(count);
 
 		scanner.close();
-		array = null;
+		set = null;
 		scanner = null;
 		System.gc();
 	}
@@ -85,7 +84,7 @@ public class Queens_Attack_II {
 			tempx += dirx;
 			tempy += diry;
 			if (tempx < 1 || tempy < 1 || tempx > n || tempy > n
-					|| isPresent(tempx + " " + tempy)) {
+					|| set.contains(tempx + " " + tempy)) {
 				break;
 			} else {
 				count++;
@@ -95,7 +94,4 @@ public class Queens_Attack_II {
 		return count;
 	}
 
-	public static boolean isPresent(String str) {
-		return Arrays.binarySearch(array, str) >= 0;
-	}
 }
