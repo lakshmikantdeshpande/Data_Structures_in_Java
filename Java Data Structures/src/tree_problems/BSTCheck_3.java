@@ -1,11 +1,12 @@
-// 52. Find shortest path between 2 nodes in a BST.
-// n time 1 space (n space for recursion stack)
+// 57. Improve complexity of problem 56
+// n time n space (recursion stack)
+// WRONG RESULTS SOMETIME
 
 package tree_problems;
 
 import tree.BST;
 
-public class LeastCommonAncestorBST {
+public class BSTCheck_3 {
 
 	public static void main(String[] args) {
 
@@ -26,23 +27,17 @@ public class LeastCommonAncestorBST {
 		root = insert(root, 60);
 		root = insert(root, 80);
 
-		System.out.println(LCA(root, root.left.left, root.left.right).data);
-
+		System.out
+				.println(checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 	}
 
-	private static BST LCA(BST root, BST a, BST b) {
+	private static boolean checkBST(BST root, int min, int max) {
 		if (root == null)
-			return null;
-		if (root == a || root == b)
-			return root;
+			return true;
 
-		BST left = LCA(root.left, a, b);
-		BST right = LCA(root.right, a, b);
-
-		if (left != null && right != null)
-			return root;
-		else
-			return left != null ? left : right;
+		return (root.data > min && root.data < max
+				&& checkBST(root.left, min, root.data) && checkBST(root.right,
+					root.data, max));
 	}
 
 	// normal BST insertion
@@ -55,4 +50,5 @@ public class LeastCommonAncestorBST {
 			root.right = insert(root.right, data);
 		return root;
 	}
+
 }

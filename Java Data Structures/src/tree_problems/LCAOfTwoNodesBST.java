@@ -1,11 +1,11 @@
-// 52. Find shortest path between 2 nodes in a BST.
-// n time 1 space (n space for recursion stack)
+// 54. Find LCA of 2 given BST nodes.
+// n time n space recursion stack (skewed trees)
 
 package tree_problems;
 
 import tree.BST;
 
-public class LeastCommonAncestorBST {
+public class LCAOfTwoNodesBST {
 
 	public static void main(String[] args) {
 
@@ -27,22 +27,23 @@ public class LeastCommonAncestorBST {
 		root = insert(root, 80);
 
 		System.out.println(LCA(root, root.left.left, root.left.right).data);
-
 	}
 
-	private static BST LCA(BST root, BST a, BST b) {
+	public static BST LCA(BST root, BST a, BST b) {
 		if (root == null)
 			return null;
 		if (root == a || root == b)
 			return root;
 
-		BST left = LCA(root.left, a, b);
-		BST right = LCA(root.right, a, b);
+		// LCA should exist between 2 nodes
+		// i.e. a root.data b OR b root.data a
 
-		if (left != null && right != null)
-			return root;
+		if (Math.max(a.data, b.data) < root.data) // a b root.data
+			return LCA(root.left, a, b);
+		else if (Math.min(a.data, b.data) > root.data) // root.data a b
+			return LCA(root.right, a, b);
 		else
-			return left != null ? left : right;
+			return root;
 	}
 
 	// normal BST insertion
@@ -55,4 +56,5 @@ public class LeastCommonAncestorBST {
 			root.right = insert(root.right, data);
 		return root;
 	}
+
 }
