@@ -1,4 +1,4 @@
-// 57. Improve complexity of problem 56.
+// 58. Improve complexity of problem 56
 // n time 1 space
 
 package tree_problems;
