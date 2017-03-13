@@ -1,11 +1,13 @@
-// 58. Improve complexity of problem 56
+// 59. Convert a BST to circular DLL with space complexity 1.
 // n time 1 space
 
 package tree_problems;
 
+import java.io.PrintStream;
+
 import tree.BST;
 
-public class BSTCheck_4 {
+public class BSTToDLL {
 
 	public static void main(String[] args) {
 
@@ -26,23 +28,43 @@ public class BSTCheck_4 {
 		root = insert(root, 60);
 		root = insert(root, 80);
 
-		System.out.println(checkBST(root));
+		bstToDll(root);
+		printDLL(head);
 	}
 
-	private static int last = Integer.MIN_VALUE;
+	private static BST prev = null;
+	private static BST head = null;
 
-	private static boolean checkBST(BST root) {
+	public static void bstToDll(BST root) {
 		if (root == null)
-			return true;
+			return;
 
-		if (!checkBST(root.left))
-			return false;
+		bstToDll(root.left);
 
-		if (root.data < last)
-			return false;
-		last = root.data;
+		if (prev == null)
+			head = root;
+		else {
+			root.left = prev;
+			prev.right = root;
+		}
+		prev = root;
 
-		return checkBST(root.right);
+		bstToDll(root.right);
+	}
+
+	// print linked list
+	private static void printDLL(BST head) {
+		if (head == null)
+			return;
+		PrintStream ps = new PrintStream(System.out);
+
+		while (head != null) {
+			ps.print(head.data + " ");
+			head = head.right;
+		}
+
+		ps.println();
+		ps.flush();
 	}
 
 	// normal BST insertion
