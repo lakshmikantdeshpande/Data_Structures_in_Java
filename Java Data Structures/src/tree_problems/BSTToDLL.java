@@ -32,8 +32,8 @@ public class BSTToDLL {
 		printDLL(head);
 	}
 
-	private static BST prev = null;
-	private static BST head = null;
+	public static BST prev = null;
+	public static BST head = null;
 
 	public static void bstToDll(BST root) {
 		if (root == null)

@@ -36,6 +36,7 @@ public class MirrorTree {
 		return root;
 	}
 
+	// helper function for printing tree in level order
 	private static void printLevelOrder(TreeNode root) {
 		if (root == null)
 			return;
