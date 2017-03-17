@@ -9,7 +9,7 @@ public class BSTDriver {
 		BST root = insert(null, 50);
 
 		/*-
-		 *Let us create following BST      
+		 *      
 		 *       50                                   
 		 *     /     \                                 
 		 *    30      70                               

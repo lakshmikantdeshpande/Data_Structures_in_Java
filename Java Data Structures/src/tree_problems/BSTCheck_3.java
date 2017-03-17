@@ -11,7 +11,7 @@ public class BSTCheck_3 {
 	public static void main(String[] args) {
 
 		/*-
-		 *Let us create following BST      
+		 *      
 		 *       50                                   
 		 *     /     \                                 
 		 *    30      70                               
