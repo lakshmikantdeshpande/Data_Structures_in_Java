@@ -1,5 +1,5 @@
 // 60. Convert a sorted doubly linked list to balanced BST.
-// n time n space for recursion
+// nlogn time n space for recursion
 
 package tree_problems;
 
@@ -66,7 +66,7 @@ public class DLLToBalancedBST {
 		return dllToBST(n);
 	}
 
-	// recursive function to `12
+	// recursive function to convert
 	private static DLL dllToBST(int n) {
 		if (n <= 0)
 			return null;
