@@ -1,4 +1,4 @@
-// 60. Convert a sorted doubly linked list to balanced BST.
+// 60. Convert a sorted doubly linked list to a balanced BST.
 // nlogn time n space for recursion
 
 package tree_problems;

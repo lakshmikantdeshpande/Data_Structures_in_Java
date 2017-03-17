@@ -1,5 +1,5 @@
 // 61. Convert a sorted array to BST
-// n time n space for recursion
+// nlogn time n space for recursion
 
 package tree_problems;
 
