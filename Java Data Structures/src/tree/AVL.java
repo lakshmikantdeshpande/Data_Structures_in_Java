@@ -13,5 +13,6 @@ public class AVL {
 
 	public AVL(int data) {
 		this.data = data;
+		this.height = 1;
 	}
 }
