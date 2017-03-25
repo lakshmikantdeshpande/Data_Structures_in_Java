@@ -73,16 +73,14 @@ public class Insertion_Sort_Linked_List {
 				newHead.next = oldHead;
 			} else {
 				while (innerPointer.next != null) {
-					if (pointer.data > innerPointer.data
-							&& pointer.data <= innerPointer.next.data) {
+					if (pointer.data > innerPointer.data && pointer.data <= innerPointer.next.data) {
 						Node oldNext = innerPointer.next;
 						innerPointer.next = pointer;
 						pointer.next = oldNext;
 					}
 					innerPointer = innerPointer.next;
 				}
-				if (innerPointer.next == null
-						&& pointer.data > innerPointer.data) {
+				if (innerPointer.next == null && pointer.data > innerPointer.data) {
 					innerPointer.next = pointer;
 					pointer.next = null;
 				}

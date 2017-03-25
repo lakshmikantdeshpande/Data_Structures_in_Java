@@ -7,10 +7,8 @@ public class PalindromeCheck {
 
 	public static void main(String[] args) {
 		System.out.println(isPalindrome(null));
-		System.out
-				.println(isPalindrome(new char[] { 'a', 'a', 'c', 'a', 'a' }));
-		System.out.println(isPalindrome(new char[] { 'a', 'a', 'c', 'c', 'a',
-				'a' }));
+		System.out.println(isPalindrome(new char[] { 'a', 'a', 'c', 'a', 'a' }));
+		System.out.println(isPalindrome(new char[] { 'a', 'a', 'c', 'c', 'a', 'a' }));
 	}
 
 	public static boolean isPalindrome(char[] array) {

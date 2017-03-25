@@ -86,11 +86,9 @@ public class Cyclic_Linked_List_Length {
 				counter++;
 			} while (slow != fast);
 
-			System.out.println("Loop exists, length of the loop is "
-					+ (counter));
+			System.out.println("Loop exists, length of the loop is " + (counter));
 		} else
-			System.out.println("Loop doesn't exist, length of the loop is "
-					+ counter);
+			System.out.println("Loop doesn't exist, length of the loop is " + counter);
 	}
 
 }

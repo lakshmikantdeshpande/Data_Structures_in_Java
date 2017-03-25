@@ -37,11 +37,9 @@ public class Quasiisomorphic {
 	public static boolean isQuasiisomorphic(TreeNode root1, TreeNode root2) {
 		if (root1 == null && root2 == null)
 			return true;
-		if ((root1 == null && root2 != null)
-				|| (root1 != null && root2 == null))
+		if ((root1 == null && root2 != null) || (root1 != null && root2 == null))
 			return false;
-		return ((isQuasiisomorphic(root1.left, root2.left) && isQuasiisomorphic(
-				root1.right, root2.right)) || (isQuasiisomorphic(root1.left,
-				root2.right) && isQuasiisomorphic(root1.right, root2.left)));
+		return ((isQuasiisomorphic(root1.left, root2.left) && isQuasiisomorphic(root1.right, root2.right))
+				|| (isQuasiisomorphic(root1.left, root2.right) && isQuasiisomorphic(root1.right, root2.left)));
 	}
 }

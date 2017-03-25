@@ -17,8 +17,7 @@ public class Reverse_first_k {
 		System.out.println(queue.toString());
 	}
 
-	private static void reverseFirstK(Queue<Integer> queue, int k)
-			throws Exception {
+	private static void reverseFirstK(Queue<Integer> queue, int k) throws Exception {
 		if (queue == null)
 			throw new Exception("The queue appears empty!");
 		if (k > queue.size() || k <= 0)

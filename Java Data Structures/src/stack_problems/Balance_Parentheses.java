@@ -14,8 +14,7 @@ public class Balance_Parentheses {
 		int i = 0;
 		int len = string.length();
 		while (i < len) {
-			if (string.charAt(i) == '(' || string.charAt(i) == '{'
-					|| string.charAt(i) == '[') {
+			if (string.charAt(i) == '(' || string.charAt(i) == '{' || string.charAt(i) == '[') {
 				lss.push(string.charAt(i));
 				i++;
 				continue;

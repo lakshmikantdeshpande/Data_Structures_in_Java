@@ -10,8 +10,7 @@ import java.util.Stack;
 public class InfixEvaluation {
 
 	public static void main(String[] args) throws Exception {
-		System.out
-				.println(InfixEvaluation("( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )"));
+		System.out.println(InfixEvaluation("( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )"));
 		System.out.println(InfixEvaluation("(1+((2*3)-7))"));
 		System.out.println(InfixEvaluation("(1+(2+3))"));
 	}
@@ -26,8 +25,7 @@ public class InfixEvaluation {
 			if (chars[i] == ' ' || chars[i] == '(')
 				continue;
 
-			if (chars[i] == '+' || chars[i] == '-' || chars[i] == '*'
-					|| chars[i] == '/')
+			if (chars[i] == '+' || chars[i] == '-' || chars[i] == '*' || chars[i] == '/')
 				operators.push(chars[i]);
 			else if (chars[i] == ')') {
 				double op2 = operands.pop();

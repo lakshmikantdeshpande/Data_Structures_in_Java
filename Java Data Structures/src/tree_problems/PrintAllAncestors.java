@@ -22,8 +22,7 @@ public class PrintAllAncestors {
 	private static boolean printAllAncestors(TreeNode root, TreeNode node) {
 		if (root == null)
 			return false;
-		if (root.left == node || root.right == node
-				|| printAllAncestors(root.left, node)
+		if (root.left == node || root.right == node || printAllAncestors(root.left, node)
 				|| printAllAncestors(root.right, node)) {
 			System.out.println(root.data);
 			return true;

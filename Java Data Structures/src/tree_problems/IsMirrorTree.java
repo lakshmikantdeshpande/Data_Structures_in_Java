@@ -33,8 +33,7 @@ public class IsMirrorTree {
 		if (root1.data != root2.data)
 			return false;
 		else
-			return (isMirror(root1.left, root2.right) && isMirror(root1.right,
-					root2.left));
+			return (isMirror(root1.left, root2.right) && isMirror(root1.right, root2.left));
 	}
 
 }

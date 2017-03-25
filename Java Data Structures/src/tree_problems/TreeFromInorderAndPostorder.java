@@ -35,16 +35,14 @@ public class TreeFromInorderAndPostorder {
 		levelOrder(buildTree(postorder, inorder));
 	}
 
-	private static TreeNode buildTree(List<Integer> postorder,
-			List<Integer> inorder) {
+	private static TreeNode buildTree(List<Integer> postorder, List<Integer> inorder) {
 		if (postorder.size() == 0 || inorder.size() != postorder.size())
 			return null;
-		return build(postorder, 0, postorder.size() - 1, inorder, 0,
-				inorder.size() - 1);
+		return build(postorder, 0, postorder.size() - 1, inorder, 0, inorder.size() - 1);
 	}
 
-	private static TreeNode build(List<Integer> postorder, int postStart,
-			int postEnd, List<Integer> inorder, int inStart, int inEnd) {
+	private static TreeNode build(List<Integer> postorder, int postStart, int postEnd, List<Integer> inorder,
+			int inStart, int inEnd) {
 		if (postStart > postEnd || inStart > inEnd)
 			return null;
 
@@ -56,10 +54,8 @@ public class TreeFromInorderAndPostorder {
 			if (inorder.get(offset) == val)
 				break;
 
-		curr.left = build(postorder, postStart, postStart + offset - inStart
-				- 1, inorder, inStart, offset - 1);
-		curr.right = build(postorder, postStart + offset - inStart,
-				postEnd - 1, inorder, offset + 1, inEnd);
+		curr.left = build(postorder, postStart, postStart + offset - inStart - 1, inorder, inStart, offset - 1);
+		curr.right = build(postorder, postStart + offset - inStart, postEnd - 1, inorder, offset + 1, inEnd);
 		return curr;
 	}
 

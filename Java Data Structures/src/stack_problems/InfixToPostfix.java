@@ -76,8 +76,7 @@ public class InfixToPostfix {
 	// returns true if upcoming character has same or lower precedence than
 	// stack
 	// character
-	private static boolean lowPrecedence(Map<Character, Integer> map,
-			Stack<Character> stack, char c) {
+	private static boolean lowPrecedence(Map<Character, Integer> map, Stack<Character> stack, char c) {
 		return map.get(c) <= map.get(stack.peek());
 		/*
 		 * FOR DEBUGGING if (map.get(c) == null || map.get(stack.peek()) ==

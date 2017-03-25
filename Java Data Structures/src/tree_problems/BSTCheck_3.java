@@ -27,17 +27,15 @@ public class BSTCheck_3 {
 		root = insert(root, 60);
 		root = insert(root, 80);
 
-		System.out
-				.println(checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		System.out.println(checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 	}
 
 	private static boolean checkBST(BST root, int min, int max) {
 		if (root == null)
 			return true;
 
-		return (root.data > min && root.data < max
-				&& checkBST(root.left, min, root.data) && checkBST(root.right,
-					root.data, max));
+		return (root.data > min && root.data < max && checkBST(root.left, min, root.data)
+				&& checkBST(root.right, root.data, max));
 	}
 
 	// normal BST insertion

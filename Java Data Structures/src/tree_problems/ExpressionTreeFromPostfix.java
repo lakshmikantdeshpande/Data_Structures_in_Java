@@ -9,8 +9,7 @@ import tree.TreeNode;
 public class ExpressionTreeFromPostfix {
 
 	public static void main(String[] args) {
-		levelOrderPrint(buildTree(new char[] { 'A', 'B', 'C', '*', '+', 'D',
-				'/' }, 7));
+		levelOrderPrint(buildTree(new char[] { 'A', 'B', 'C', '*', '+', 'D', '/' }, 7));
 	}
 
 	public static TreeNode buildTree(char[] postfix, int size) {
@@ -18,8 +17,7 @@ public class ExpressionTreeFromPostfix {
 
 		for (int i = 0; i < size; i++) {
 			// if character is not an operator (i.e. is an operand)
-			if (postfix[i] != '+' && postfix[i] != '-' && postfix[i] != '/'
-					&& postfix[i] != '*') {
+			if (postfix[i] != '+' && postfix[i] != '-' && postfix[i] != '/' && postfix[i] != '*') {
 				TreeNode node = new TreeNode(postfix[i]);
 				stack.push(node);
 			} else {

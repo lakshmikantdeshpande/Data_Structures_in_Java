@@ -34,8 +34,7 @@ public class NumberOfHalfNodes {
 
 		while (!queue.isEmpty()) {
 			TreeNode temp = queue.poll();
-			if ((temp.left == null && temp.right != null)
-					|| (temp.left != null && temp.right == null))
+			if ((temp.left == null && temp.right != null) || (temp.left != null && temp.right == null))
 				halfNodes++;
 			if (temp.left != null)
 				queue.offer(temp.left);

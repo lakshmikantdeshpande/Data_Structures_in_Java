@@ -46,8 +46,7 @@ public class Diameter_Width_2 {
 			if (depth == 0)
 				return 1;
 			else
-				return width(root.left, depth - 1)
-						+ width(root.right, depth - 1);
+				return width(root.left, depth - 1) + width(root.right, depth - 1);
 		}
 	}
 }

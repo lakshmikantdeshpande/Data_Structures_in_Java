@@ -37,8 +37,7 @@ public class LargestRectangleUnderHistogram {
 				int top = stack.pop();
 				// calculate the area with array[top] stack as smallest bar and
 				// update maxarea
-				maxarea = Math.max(maxarea, array[top]
-						* (stack.empty() ? i : i - stack.peek() - 1));
+				maxarea = Math.max(maxarea, array[top] * (stack.empty() ? i : i - stack.peek() - 1));
 			}
 		}
 
@@ -46,8 +45,7 @@ public class LargestRectangleUnderHistogram {
 		// popped bar as smallest bar
 		while (!stack.empty()) {
 			int top = stack.pop();
-			maxarea = Math.max(maxarea, array[top]
-					* (stack.empty() ? i : i - stack.peek() - 1));
+			maxarea = Math.max(maxarea, array[top] * (stack.empty() ? i : i - stack.peek() - 1));
 		}
 		return maxarea;
 	}

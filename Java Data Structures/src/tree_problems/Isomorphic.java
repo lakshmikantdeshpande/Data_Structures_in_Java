@@ -30,10 +30,8 @@ public class Isomorphic {
 	public static boolean isIsomorphic(TreeNode root1, TreeNode root2) {
 		if (root1 == null && root2 == null)
 			return true;
-		if ((root1 == null && root2 != null)
-				|| (root1 != null && root2 == null))
+		if ((root1 == null && root2 != null) || (root1 != null && root2 == null))
 			return false;
-		return (isIsomorphic(root1.left, root2.left) && isIsomorphic(
-				root1.right, root2.right));
+		return (isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right));
 	}
 }

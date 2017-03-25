@@ -10,12 +10,12 @@ public class AVLDriver {
 		root.left.left = new AVL(3);
 		root.left.height = 0;
 
-		root.right = new AVL(1);
+		root.right = new AVL(10);
 		root.right.height = 1;
 		root.right.left = new AVL(9);
-		root.right.left.height = 1;
-		root.right.right = new AVL(1);
-		root.right.right.height = 1;
+		root.right.left.height = 0;
+		root.right.right = new AVL(11);
+		root.right.right.height = 0;
 
 		System.out.println(height(root));
 	}

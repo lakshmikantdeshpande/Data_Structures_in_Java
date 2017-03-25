@@ -77,8 +77,7 @@ public class QueueReversal {
 	}
 
 	// Reverse the linked list using stack
-	public synchronized static QueueReversal reverseQueue(QueueReversal qr)
-			throws Exception {
+	public synchronized static QueueReversal reverseQueue(QueueReversal qr) throws Exception {
 		if (qr == null)
 			return null;
 

@@ -78,11 +78,10 @@ public class CircularArrayQueue {
 		 * caq.front); System.out.println("Rear: " + caq.rear); }
 		 * caq.enQueue(99); {
 		 * 
-		 * System.out.println("Front: " + caq.front);
-		 * System.out.println("Rear: " + caq.rear); } caq.deQueue();
-		 * caq.deQueue(); caq.deQueue(); caq.deQueue(); caq.deQueue(); {
-		 * System.out.println("Front: " + caq.front);
-		 * System.out.println("Rear: " + caq.rear); }
+		 * System.out.println("Front: " + caq.front); System.out.println(
+		 * "Rear: " + caq.rear); } caq.deQueue(); caq.deQueue(); caq.deQueue();
+		 * caq.deQueue(); caq.deQueue(); { System.out.println("Front: " +
+		 * caq.front); System.out.println("Rear: " + caq.rear); }
 		 */
 		System.out.println(caq.toString());
 	}

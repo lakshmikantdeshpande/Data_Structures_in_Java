@@ -24,8 +24,7 @@ public class PathWithSum {
 		if (root.left == null && root.right == null && root.data == sum)
 			return true;
 		else
-			return pathWithSum(root.left, sum - root.data)
-					|| pathWithSum(root.right, sum - root.data);
+			return pathWithSum(root.left, sum - root.data) || pathWithSum(root.right, sum - root.data);
 	}
 
 }

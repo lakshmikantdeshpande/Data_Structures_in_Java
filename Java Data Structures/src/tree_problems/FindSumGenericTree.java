@@ -13,10 +13,8 @@ public class FindSumGenericTree {
 		root.firstChild.nextSibling = new GenericTreeNode(3);
 		root.firstChild.nextSibling.firstChild = new GenericTreeNode(4);
 		root.firstChild.nextSibling.nextSibling = new GenericTreeNode(5);
-		root.firstChild.nextSibling.nextSibling.firstChild = new GenericTreeNode(
-				6);
-		root.firstChild.nextSibling.nextSibling.firstChild.firstChild = new GenericTreeNode(
-				7);
+		root.firstChild.nextSibling.nextSibling.firstChild = new GenericTreeNode(6);
+		root.firstChild.nextSibling.nextSibling.firstChild.firstChild = new GenericTreeNode(7);
 
 		System.out.println(findSum(root));
 	}

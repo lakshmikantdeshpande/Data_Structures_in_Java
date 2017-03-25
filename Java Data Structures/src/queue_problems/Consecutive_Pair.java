@@ -1,4 +1,4 @@
-// 8. Given a stack of integers, how’d u check if a pair of numbers is consecutive or not. 
+// 8. Given a stack of integers, howï¿½d u check if a pair of numbers is consecutive or not. 
 // It can be in increasing or decreasing order. If stack has odd number of elements, 
 // top will be left out of a pair. 
 // n time (n+n+n+n)
@@ -27,8 +27,7 @@ public class Consecutive_Pair {
 		System.out.println(consecutiveCheck(stack));
 	}
 
-	private static boolean consecutiveCheck(Stack<Integer> stack)
-			throws Exception {
+	private static boolean consecutiveCheck(Stack<Integer> stack) throws Exception {
 		if (stack == null)
 			throw new Exception("Stack is null");
 		Queue<Integer> queue = new LinkedList<Integer>();

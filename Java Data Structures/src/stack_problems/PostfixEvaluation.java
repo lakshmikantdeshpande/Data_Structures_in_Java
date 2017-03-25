@@ -32,8 +32,7 @@ public class PostfixEvaluation {
 		return stack.pop();
 	}
 
-	private static double eval(double pop, double pop2, String str)
-			throws Exception {
+	private static double eval(double pop, double pop2, String str) throws Exception {
 		if (str.equals("+"))
 			return pop2 + pop;
 		else if (str.equals("-"))
