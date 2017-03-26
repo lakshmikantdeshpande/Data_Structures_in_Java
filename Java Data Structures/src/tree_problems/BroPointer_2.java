@@ -1,5 +1,6 @@
 // 40. Can you solve Q.39 with some other way ?
-// n time n space
+// n time n space recursion
+// assumes that all levels are fully filled
 
 package tree_problems;
 
