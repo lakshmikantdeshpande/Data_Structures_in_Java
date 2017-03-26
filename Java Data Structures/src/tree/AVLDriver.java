@@ -18,6 +18,7 @@ public class AVLDriver {
 		root.right.right.height = 0;
 
 		System.out.println(height(root));
+		System.out.println(getHeight(root)); // prints height + 1
 	}
 
 	// O(1) time
@@ -25,6 +26,17 @@ public class AVLDriver {
 		if (root == null)
 			return -1;
 		return root.height;
+	}
+
+	// n time
+	private static int getHeight(AVL root) {
+		if (root == null)
+			return 0;
+
+		int left = getHeight(root.left);
+		int right = getHeight(root.right);
+
+		return left >= right ? left + 1 : right + 1;
 	}
 
 }
