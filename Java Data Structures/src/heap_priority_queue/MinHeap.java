@@ -73,6 +73,16 @@ public class MinHeap {
 		array[b] = temp;
 	}
 
+	public void heapSort() {
+		for (int k = size / 2; k >= 1; k--)
+			sink(k);
+		while (size > 1) {
+			System.out.println(array[1]);
+			swap(1, size--);
+			sink(1);
+		}
+	}
+
 	public static void main(String[] args) {
 		MinHeap minheap = new MinHeap(30);
 		minheap.insert(5);
@@ -83,8 +93,10 @@ public class MinHeap {
 		minheap.insert(2);
 		minheap.insert(15);
 
-		for (int i = 0; i < 7; i++)
-			System.out.println(minheap.getMin());
+		// for (int i = 0; i < 7; i++)
+		// System.out.println(minheap.getMin());
+
+		minheap.heapSort();
 
 	}
 

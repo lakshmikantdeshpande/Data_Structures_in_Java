@@ -67,6 +67,16 @@ public class MaxHeap {
 		array[b] = temp;
 	}
 
+	public void heapSort() {
+		for (int k = size / 2; k >= 1; k--)
+			sink(k);
+		while (size > 1) {
+			System.out.println(array[1]);
+			swap(1, size--);
+			sink(1);
+		}
+	}
+
 	public static void main(String[] args) {
 		MaxHeap maxheap = new MaxHeap(30);
 		maxheap.insert(5);
@@ -77,8 +87,10 @@ public class MaxHeap {
 		maxheap.insert(2);
 		maxheap.insert(15);
 
-		for (int i = 0; i < 7; i++)
-			System.out.println(maxheap.getMax());
+		// for (int i = 0; i < 7; i++)
+		// System.out.println(maxheap.getMax());
+
+		maxheap.heapSort();
 
 	}
 
