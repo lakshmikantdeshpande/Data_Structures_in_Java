@@ -41,3 +41,6 @@ Wrote code for choosing random program to practice Complete (yet to be pushed on
 
 3/3/2017
 Data-cap Custom Application
+
+2/4/2017
+Read Lucy's DAA
