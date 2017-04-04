@@ -33,8 +33,7 @@ public class Quicksort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array = { 1, 9, 5, 87, 854, 5, 65, 65465, 46, 4654, 8, 854, 64,
-				54, 6565, 4 };
+		int[] array = { 1, 9, 5, 87, 854, 5, 65, 65465, 46, 4654, 8, 854, 64, 54, 6565, 4 };
 		sort(array, 0, array.length - 1);
 		for (int x : array) {
 			System.out.print(x + " ");

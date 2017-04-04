@@ -31,8 +31,7 @@ public class hashLinkedLists {
 	}
 
 	// selection sort
-	public static void sort(LinkedList<Integer> ContentA,
-			LinkedList<String> ContentB) {
+	public static void sort(LinkedList<Integer> ContentA, LinkedList<String> ContentB) {
 		int min = 0, N = ContentA.size();
 		for (int i = 0; i < N; i++) {
 			min = i;

@@ -1,3 +1,6 @@
+// 7. Given a min heap, find the maximum element.
+// n/2 time 1 space
+
 package heap_problems;
 
 public class MaxElementFromMinHeap {

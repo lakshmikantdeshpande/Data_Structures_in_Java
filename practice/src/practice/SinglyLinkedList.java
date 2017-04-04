@@ -36,8 +36,7 @@ class SinglyLinkedList {
 			System.out.println("5.Display the linked list");
 			System.out.println("6.Print length of the linked list");
 			System.out.println("7.Delete from the front of the linked list");
-			System.out
-					.println("8.Delete from some position in the linked list");
+			System.out.println("8.Delete from some position in the linked list");
 			System.out.println("9.Delete from the end of the linked list");
 			System.out.println("10.Quit");
 			System.out.println("Enter your choice: ");

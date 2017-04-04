@@ -37,7 +37,7 @@ public class MinimumHeap {
 		return min;
 	}
 
-	private void sink(int k) {
+	public void sink(int k) {
 
 		while (2 * k <= size) {
 			int j = 2 * k;
