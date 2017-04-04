@@ -2,7 +2,7 @@
 // insertion logn deletion logn getMax 1 time
 // n space
 
-package heap_priority_queue;
+package heap;
 
 public class MaxHeap {
 	private int capacity;

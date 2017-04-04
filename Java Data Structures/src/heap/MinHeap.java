@@ -2,7 +2,7 @@
 // insertion logn deletion logn getMin 1 time
 // n space
 
-package heap_priority_queue;
+package heap;
 
 public class MinHeap {
 	private int size;
