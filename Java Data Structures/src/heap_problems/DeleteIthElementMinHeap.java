@@ -5,10 +5,12 @@ package heap_problems;
 
 import java.util.Arrays;
 
+import heap.MaxHeap;
+
 public class DeleteIthElementMinHeap {
 
 	public static void main(String[] args) throws Exception {
-		MinimumHeap mheap = new MinimumHeap();
+		MaxHeap mheap = new MaxHeap();
 
 		mheap.insert(1);
 		mheap.insert(0);
@@ -23,7 +25,7 @@ public class DeleteIthElementMinHeap {
 		System.out.println(DeleteIthElement(mheap, 3));
 	}
 
-	private static int DeleteIthElement(MinimumHeap mheap, int k) {
+	private static int DeleteIthElement(MaxHeap mheap, int k) {
 		if (mheap == null || k > mheap.size || k < 0)
 			return -1;
 

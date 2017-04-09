@@ -6,8 +6,8 @@ package heap;
 
 public class MaxHeap {
 	private int capacity;
-	private int size;
-	private int[] array;
+	public int size;
+	public int[] array;
 
 	public MaxHeap() {
 		this(10);
@@ -42,7 +42,7 @@ public class MaxHeap {
 		return max;
 	}
 
-	private void sink(int k) {
+	public void sink(int k) {
 		while (2 * k <= size) {
 			int j = 2 * k;
 			if (j < size && array[j] < array[j + 1])

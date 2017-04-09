@@ -3,10 +3,12 @@
 
 package heap_problems;
 
+import heap.MinHeap;
+
 public class MaxElementFromMinHeap {
 
 	public static void main(String[] args) throws Exception {
-		MinimumHeap mheap = new MinimumHeap();
+		MinHeap mheap = new MinHeap();
 
 		mheap.insert(1);
 		mheap.insert(0);

@@ -5,9 +5,9 @@
 package heap;
 
 public class MinHeap {
-	private int size;
+	public int size;
 	private int capacity;
-	private int[] array;
+	public int[] array;
 
 	public MinHeap(int capacity) {
 		this.size = 0;
