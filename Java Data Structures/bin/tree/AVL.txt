@@ -1,0 +1,10 @@
+AVL Tree rotations
+
+AVLs are violated in four cases
+
+1. Left Left
+2. Right Right
+3. Left Right
+4. Right Left
+
+height of left node - height of right node should be 1
