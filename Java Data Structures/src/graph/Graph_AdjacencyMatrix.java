@@ -8,10 +8,9 @@ public class Graph_AdjacencyMatrix {
 
     public Graph_AdjacencyMatrix(int vertices) {
         if (vertices <= 0)
-            this.vertices = 10;
-        else
-            this.vertices = vertices;
-        this.adjacencyMatrix = new boolean[this.vertices][this.vertices];
+            vertices = 10;
+        this.vertices = vertices;
+        this.adjacencyMatrix = new boolean[vertices][vertices];
     }
 
     public void addEdge(int i, int j) {
