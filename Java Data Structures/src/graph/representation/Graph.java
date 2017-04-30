@@ -1,4 +1,4 @@
-package graph;
+package graph.representation;
 
 import java.io.IOException;
 import java.util.*;

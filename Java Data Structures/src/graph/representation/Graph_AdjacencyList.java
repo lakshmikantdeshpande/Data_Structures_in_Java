@@ -1,5 +1,5 @@
-// Code suggested by GayleLaakmann
-package graph;
+// Code from Hackerrank BFS DFS tutorial
+package graph.representation;
 
 import java.util.*;
 

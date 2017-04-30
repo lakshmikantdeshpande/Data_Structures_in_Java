@@ -1,6 +1,7 @@
 // unweighted undirected graph
+// boook
 
-package graph;
+package graph.representation;
 
 public class Graph_AdjacencyMatrix {
     private boolean[][] adjacencyMatrix;

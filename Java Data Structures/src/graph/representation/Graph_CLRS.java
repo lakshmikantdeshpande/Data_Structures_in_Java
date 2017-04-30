@@ -1,4 +1,4 @@
-package graph;
+package graph.representation;
 
 import java.util.*;
 
@@ -46,7 +46,7 @@ public class Graph_CLRS {
         System.out.print("BFS Traversal:");
         g1.BFS(2);
         System.out.print("DFS Traversal:");
-        g1.DFS(2);
+        g1.DFS();
 
 
     }
@@ -105,36 +105,36 @@ public class Graph_CLRS {
         }
     }
 
-    private void DFS(int src) {
+    private void DFS() {
         Arrays.fill(colors, WHITE);
         Arrays.fill(distance, 0);
         Arrays.fill(parent, -1);
         Arrays.fill(finish, -1);
 
         time = 0;
-        for (int source : map.keySet())
-            if (colors[source] == WHITE)
-                DFSTraversal(source);
+        for (int vertex : map.keySet())
+            if (colors[vertex] == WHITE)
+                DFSTraversal(vertex);
     }
 
-    public void DFSTraversal(int src) {
-        colors[src] = GRAY;
+    public void DFSTraversal(int source) {
+        colors[source] = GRAY;
         // record discovery time;
         time++;
-        distance[src] = time;
+        distance[source] = time;
 
-        System.out.print(src + " ");
-        for (Edge edge : map.get(src)) {
+        System.out.print(source + " ");
+        for (Edge edge : map.get(source)) {
             int dest = edge.destination;
             if (colors[dest] == WHITE) {
-                parent[dest] = src;
+                parent[dest] = source;
                 DFSTraversal(dest);
             }
         }
 
-        colors[src] = BLACK;
+        colors[source] = BLACK;
         time++;
-        finish[src] = time;
+        finish[source] = time;
     }
 
 

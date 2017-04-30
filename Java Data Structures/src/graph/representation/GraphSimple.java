@@ -1,4 +1,4 @@
-package graph;
+package graph.representation;
 
 import java.util.*;
 
@@ -25,35 +25,45 @@ public class GraphSimple {
         distance = new int[MAX];
         parent = new int[MAX];
         finish = new int[MAX];
-
-        for (int i = 0; i < vertices; i++)
-            map.put(i, new ArrayList<Integer>());
     }
 
     public static void main(String[] args) {
-        GraphSimple g1 = new GraphSimple(4);
-        g1.addEdge(0, 1);
-        g1.addEdge(0, 2);
-        g1.addEdge(1, 2);
-        g1.addEdge(2, 0);
-        g1.addEdge(2, 3);
-        g1.addEdge(3, 3);
+        GraphSimple g = new GraphSimple(4);
+//        g.addEdge(0, 1);
+//        g.addEdge(0, 2);
+//        g.addEdge(1, 2);
+//        g.addEdge(2, 0);
+//        g.addEdge(2, 3);
+//        g.addEdge(3, 3);
+
+        g.addEdge(5, 2);
+        g.addEdge(5, 0);
+        g.addEdge(4, 0);
+        g.addEdge(4, 1);
+        g.addEdge(2, 3);
+        g.addEdge(3, 1);
 
         System.out.print("BFS Traversal:");
-        g1.BFS(2);
+        g.BFS(5);
         System.out.print("DFS Traversal:");
-        g1.DFS(2);
+        g.DFS();
     }
 
     public void addEdge(int source, int destination) {
-        if (!map.containsKey(source) || !map.containsKey(destination))
-            throw new IllegalArgumentException("Vertices are invalid");
+        if (!map.containsKey(destination))
+            map.put(destination, new LinkedList<>());
 
-        List<Integer> listA = map.get(source);
-        listA.add(destination);
-
-        List<Integer> listB = map.get(destination);
-        listB.add(source);
+        if (map.containsKey(source)) {
+            List list = map.get(source);
+            list.add(destination);
+        } else {
+            List<Integer> list = new LinkedList();
+            list.add(destination);
+            map.put(source, list);
+        }
+//         if it would be an undirected graph
+//         List destinationList = map.get(destination);
+//         destinationList.add(source);
     }
 
     public void BFS(int source) {
@@ -71,14 +81,14 @@ public class GraphSimple {
 
         while (!queue.isEmpty()) {
             int temp = queue.poll();
-            System.out.println(temp);
+            System.out.print(temp + " ");
 
             List<Integer> adjacencyList = map.get(temp);
             for (int vertex : adjacencyList) {
                 if (colors[vertex] == WHITE) {
                     colors[vertex] = GRAY;
-                    distance[vertex] += 1;
                     parent[vertex] = temp;
+                    distance[vertex] += 1;
                     queue.add(vertex);
                 }
             }
@@ -86,15 +96,15 @@ public class GraphSimple {
         }
     }
 
-    public void DFS(int source) {
+    public void DFS() {
         Arrays.fill(colors, WHITE);
         Arrays.fill(distance, 0);
         Arrays.fill(parent, -1);
         time = 0;
 
         for (int vertex : map.keySet())
-            if (colors[source] == WHITE)
-                doDFS(source);
+            if (colors[vertex] == WHITE)
+                doDFS(vertex);
     }
 
     private void doDFS(int source) {
@@ -113,8 +123,6 @@ public class GraphSimple {
         colors[source] = BLACK;
         time++;
         finish[source] = time;
-
-
     }
 
 
