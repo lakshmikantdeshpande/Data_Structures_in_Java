@@ -31,6 +31,10 @@ Currently I have implemented the following data structures.
 
 > **Queue**
 
-> **Trees** 
+> **Tree** 
 
-> **Heaps** (Ongoing)
+> **Heap**
+
+> **Disjoint Set** 
+
+> **Graph** (Ongoing)
