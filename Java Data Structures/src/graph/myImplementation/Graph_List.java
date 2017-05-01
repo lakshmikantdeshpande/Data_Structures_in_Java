@@ -1,20 +1,20 @@
-package graph.algorithms;
+
+package graph.myImplementation;
 
 import java.util.*;
 
-public class Topological_Sort {
+public class Graph_List {
     private static final int MAX = 100;
     private static final int WHITE = 0, GRAY = 1, BLACK = 2; // colors for storing visits
-    static List<Integer> topologicallySortedLL;
     // for faster lookups, we can use Map<Integer, Set<Integer>>
     private static Map<Integer, List<Integer>> map;
     private static int[] colors;    // store colors to indicate progress of graph traversal
     private static int[] parent;    // Union find array
     private static int[] discoveryTime;  // discovery time array
-    private static int[] finished;  // for DFS, to store the final topologicallySortedLL of vertices
+    private static int[] finished;  // for DFS, to store the final list of vertices
     private static int time;
 
-    public Topological_Sort() {
+    public Graph_List() {
         map = new HashMap<>();
 
         colors = new int[MAX];
@@ -22,35 +22,24 @@ public class Topological_Sort {
         discoveryTime = new int[MAX];
         finished = new int[MAX];
 
-        topologicallySortedLL = new LinkedList<>();
-
         time = 0;
     }
 
     public static void main(String[] args) {
-        Topological_Sort g = new Topological_Sort();
+        Graph_List g = new Graph_List();
 
-        g.addEdge(1, 3);
-        g.addEdge(1, 5);
-        g.addEdge(3, 5);
-        g.addEdge(3, 7);
-        g.addEdge(7, 9);
-        g.addEdge(4, 7);
-        g.addEdge(4, 8);
-        g.addEdge(8, 9);
-        g.addEdge(2, 5);
-        g.addEdge(6, 6);
-
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
 
         System.out.println("\nBFS: ");
         g.BFS(2);
 
         System.out.println("\nDFS: ");
         g.DFS();
-
-        System.out.println("\nTopologically Sorted List:");
-        for (int vertex : g.topologicallySortedLL)
-            System.out.print(vertex + " -> ");
     }
 
     public void addEdge(int source, int destination) {
@@ -152,9 +141,5 @@ public class Topological_Sort {
         colors[source] = BLACK;
         time++;
         finished[source] = time;
-
-        // JUST ONE EXTRA LINE
-        topologicallySortedLL.add(0, source);
-
     }
 }
