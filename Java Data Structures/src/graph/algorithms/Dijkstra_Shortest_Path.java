@@ -1,21 +1,18 @@
 package graph.algorithms;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-class Vertex {
-    int destination;
-    int weight;
+class Edge {
+    int dest, weight;
 
-    public Vertex(int destination) {
-        this.destination = destination;
+    public Edge(int dest, int weight) {
+        this.dest = dest;
+        this.weight = weight;
     }
 
-    public Vertex(int destination, int weight) {
-        this.destination = destination;
-        this.weight = weight;
+    public Edge(int dest) {
+
+        this.dest = dest;
     }
 
     @Override
@@ -23,14 +20,14 @@ class Vertex {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Vertex vertex = (Vertex) o;
+        Edge edge = (Edge) o;
 
-        return destination == vertex.destination;
+        return dest == edge.dest;
     }
 
     @Override
     public int hashCode() {
-        return destination;
+        return dest;
     }
 }
 
@@ -39,7 +36,7 @@ public class Dijkstra_Shortest_Path {
     private static final int WHITE = 0, GRAY = 1, BLACK = 2; // colors for storing visits
     private static final int INFINITY = Integer.MAX_VALUE;
     // for faster lookups, we can use Map<Integer, Set<Integer>>
-    private static Map<Integer, List<Vertex>> map;
+    private static Map<Integer, List<Edge>> map;
     private static int[] colors;    // store colors to indicate progress of graph traversal
     private static int[] parent;    // Union find array
     private static int[] discoveryTime;  // discovery time array
@@ -70,8 +67,8 @@ public class Dijkstra_Shortest_Path {
             map.put(source, new LinkedList<>());
         }
 
-        List<Vertex> adjacencyList = map.get(source);
-        adjacencyList.add(new Vertex(destination));
+        List<Edge> adjacencyList = map.get(source);
+        adjacencyList.add(new Edge(destination));
 
         // optional if it is an undirected graph
         /*
@@ -81,31 +78,44 @@ public class Dijkstra_Shortest_Path {
     }
 
     public boolean removeEdge(int source, int destination) {
-        if (!map.containsKey(source))
+        if (!map.containsKey(new Edge(source)))
             return false;
-        if (!map.containsKey(new Vertex(destination)))
+        if (!map.containsKey(new Edge(destination)))
             return false;
-        if (!map.get(source).contains(new Vertex(destination)))
+        if (!map.get(source).contains(new Edge(destination)))
             return false;
         else {
-            map.get(source).remove(new Vertex(destination));
+            map.get(source).remove(new Edge(destination));
             return true;
         }
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    public void initialize_Single_Source(int source) {
-        for (Vertex v : map.get(source)) {
-            int vertex = v.destination;
+    public void dijkstra(int src) {
+        for (int vertex : map.keySet()) {
             discoveryTime[vertex] = INFINITY;
             parent[vertex] = -1;
         }
-        discoveryTime[source] = 0;
-    }
 
-    public void relax(int source, int destination, int weight) {
-        if ()
+        PriorityQueue<Edge> queue = new PriorityQueue<>();
+        queue.add(new Edge(src, 0));
+
+        while (!queue.isEmpty()) {
+            Edge edge = queue.poll();
+            int dest = edge.dest;
+            int weight = edge.weight;
+
+            if (discoveryTime[dest] != weight)
+                continue;
+
+            for (Edge e : map.get(dest)) {
+                if (discoveryTime[e.dest] < discoveryTime[dest] + e.weight)
+                    queue.add(new Edge(edge.dest, discoveryTime[e.dest] = discoveryTime[dest] + e.weight));
+            }
+
+        }
+
     }
 
 }
