@@ -40,4 +40,5 @@ Currently I have implemented the following data structures.
 > **Graph**
 
 Don't forget to check out my other respository (Competitive Programming).
+https://github.com/lakshmikantdeshpande/Competitive-Programming
 Have a good one ;-)
