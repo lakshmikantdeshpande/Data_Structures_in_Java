@@ -8,67 +8,67 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Nth_Node_From_The_End_2 {
-	private Node head;
-	private int size;
-	private Map<Integer, Integer> map;
+    private Node head;
+    private int size;
+    private Map<Integer, Integer> map;
 
-	private class Node {
-		int data;
-		Node next;
+    public Nth_Node_From_The_End_2() {
+        this.head = null;
+        this.size = 0;
+    }
 
-		public Node(int data) {
-			this.data = data;
-		}
-	}
+    public static void main(String[] args) {
+        Nth_Node_From_The_End_2 nnd = new Nth_Node_From_The_End_2();
+        nnd.insertFromTheBeginning(5);
+        nnd.insertFromTheBeginning(4);
+        nnd.insertFromTheBeginning(3);
+        nnd.insertFromTheBeginning(2);
+        nnd.insertFromTheBeginning(1);
 
-	public Nth_Node_From_The_End_2() {
-		this.head = null;
-		this.size = 0;
-	}
+        nnd.display();
+        nnd.nthFromTheEnd(2);
+    }
 
-	public synchronized void insertFromTheBeginning(int data) {
-		Node oldhead = head;
-		head = new Node(data);
-		head.next = oldhead;
-		size++;
-	}
+    public synchronized void insertFromTheBeginning(int data) {
+        Node oldhead = head;
+        head = new Node(data);
+        head.next = oldhead;
+        size++;
+    }
 
-	private synchronized void display() {
-		if (head == null)
-			return;
-		Node temp = head;
-		while (temp != null) {
-			System.out.print(temp.data + " -> ");
-			temp = temp.next;
-		}
-		System.out.print("null\n");
-	}
+    private synchronized void display() {
+        if (head == null)
+            return;
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.print("null\n");
+    }
 
-	public static void main(String[] args) {
-		Nth_Node_From_The_End_2 nnd = new Nth_Node_From_The_End_2();
-		nnd.insertFromTheBeginning(5);
-		nnd.insertFromTheBeginning(4);
-		nnd.insertFromTheBeginning(3);
-		nnd.insertFromTheBeginning(2);
-		nnd.insertFromTheBeginning(1);
+    // hashtable(hashmap) solution gives n time complexity and n space
+    // complexity
+    private void nthFromTheEnd(int n) {
+        if (head == null || n < 0)
+            return;
+        Node temp = head;
+        map = new HashMap<Integer, Integer>();
+        for (int i = size; i > 0; i--) {
+            map.put(i, temp.data);
+            temp = temp.next;
+        }
 
-		nnd.display();
-		nnd.nthFromTheEnd(2);
-	}
+        System.out.println(map.get(n));
+    }
 
-	// hashtable(hashmap) solution gives n time complexity and n space
-	// complexity
-	private void nthFromTheEnd(int n) {
-		if (head == null || n < 0)
-			return;
-		Node temp = head;
-		map = new HashMap<Integer, Integer>();
-		for (int i = size; i > 0; i--) {
-			map.put(i, temp.data);
-			temp = temp.next;
-		}
+    private class Node {
+        int data;
+        Node next;
 
-		System.out.println(map.get(n));
-	}
+        public Node(int data) {
+            this.data = data;
+        }
+    }
 
 }

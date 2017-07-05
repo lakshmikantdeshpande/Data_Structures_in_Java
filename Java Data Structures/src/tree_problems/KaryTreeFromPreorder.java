@@ -8,46 +8,46 @@ package tree_problems;
 
 public class KaryTreeFromPreorder {
 
-	static class KaryTreeNode {
-		public int data;
-		public KaryTreeNode[] child;
+    static int index = 0;
 
-		// assuming that least k should be 0
-		public KaryTreeNode(int k) {
-			if (k < 0)
-				k = 0;
-			child = new KaryTreeNode[k];
-		}
+    public static void main(String[] args) {
+        build(new int[]{1, 2, 5, 6, 7, 3, 9, 10, 11, 4}, 10, 2);
+    }
 
-		public void setChild(int i, KaryTreeNode ktn) {
-			child[i] = ktn;
-		}
+    public static KaryTreeNode build(int[] array, int n, int k) {
+        if (n <= 0)
+            return null;
 
-		public KaryTreeNode getChild(int i) {
-			return child[i];
-		}
-	}
+        KaryTreeNode node = new KaryTreeNode(k);
 
-	public static void main(String[] args) {
-		build(new int[] { 1, 2, 5, 6, 7, 3, 9, 10, 11, 4 }, 10, 2);
-	}
+        node.data = array[index];
+        for (int i = 0; i < k; i++) {
+            if (k * index + i < n) {
+                index++;
+                node.setChild(index, build(array, n, k));
+            }
+        }
+        return node;
+    }
 
-	static int index = 0;
+    static class KaryTreeNode {
+        public int data;
+        public KaryTreeNode[] child;
 
-	public static KaryTreeNode build(int[] array, int n, int k) {
-		if (n <= 0)
-			return null;
+        // assuming that least k should be 0
+        public KaryTreeNode(int k) {
+            if (k < 0)
+                k = 0;
+            child = new KaryTreeNode[k];
+        }
 
-		KaryTreeNode node = new KaryTreeNode(k);
+        public void setChild(int i, KaryTreeNode ktn) {
+            child[i] = ktn;
+        }
 
-		node.data = array[index];
-		for (int i = 0; i < k; i++) {
-			if (k * index + i < n) {
-				index++;
-				node.setChild(index, build(array, n, k));
-			}
-		}
-		return node;
-	}
+        public KaryTreeNode getChild(int i) {
+            return child[i];
+        }
+    }
 
 }

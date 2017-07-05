@@ -9,93 +9,93 @@ import java.util.Queue;
 
 public class BroPointer_BST_2 {
 
-	static class BroBST {
-		int data;
-		BroBST left, right;
-		BroBST next;
+    public static void main(String[] args) {
+        BroBST root = insert(null, 50);
+        root = insert(root, 30);
+        root = insert(root, 20);
+        root = insert(root, 40);
+        root = insert(root, 70);
+        root = insert(root, 60);
+        root = insert(root, 80);
 
-		public BroBST(int data) {
-			this.data = data;
-		}
-	}
+        linkBroz(root);
+        printLevelOrder(root);
+        printBro(root.left);
+        printBro(root.left.left);
 
-	public static void main(String[] args) {
-		BroBST root = insert(null, 50);
-		root = insert(root, 30);
-		root = insert(root, 20);
-		root = insert(root, 40);
-		root = insert(root, 70);
-		root = insert(root, 60);
-		root = insert(root, 80);
+    }
 
-		linkBroz(root);
-		printLevelOrder(root);
-		printBro(root.left);
-		printBro(root.left.left);
+    public static void linkBroz(BroBST root) {
+        if (root == null)
+            return;
 
-	}
+        if (root.left != null)
+            root.left.next = root.right;
 
-	public static void linkBroz(BroBST root) {
-		if (root == null)
-			return;
+        if (root.right != null)
+            if (root.next != null)
+                root.right.next = root.next.left;
+            else
+                root.right.next = null;
 
-		if (root.left != null)
-			root.left.next = root.right;
+        linkBroz(root.left);
+        linkBroz(root.right);
+    }
 
-		if (root.right != null)
-			if (root.next != null)
-				root.right.next = root.next.left;
-			else
-				root.right.next = null;
+    private static void printBro(BroBST root) {
+        if (root == null)
+            return;
 
-		linkBroz(root.left);
-		linkBroz(root.right);
-	}
+        while (root != null) {
+            System.out.print(root.data + " -> ");
+            root = root.next;
+        }
+        System.out.println();
+    }
 
-	private static void printBro(BroBST root) {
-		if (root == null)
-			return;
+    // normal BroBST insertion
+    public static BroBST insert(BroBST root, int data) {
+        if (root == null)
+            return new BroBST(data);
+        if (data < root.data)
+            root.left = insert(root.left, data);
+        else if (data > root.data)
+            root.right = insert(root.right, data);
+        return root;
+    }
 
-		while (root != null) {
-			System.out.print(root.data + " -> ");
-			root = root.next;
-		}
-		System.out.println();
-	}
+    // helper function for printing tree in level order
+    private static void printLevelOrder(BroBST root) {
+        if (root == null)
+            return;
+        Queue<BroBST> queue = new LinkedList<>();
+        queue.offer(root);
+        queue.offer(null);
 
-	// normal BroBST insertion
-	public static BroBST insert(BroBST root, int data) {
-		if (root == null)
-			return new BroBST(data);
-		if (data < root.data)
-			root.left = insert(root.left, data);
-		else if (data > root.data)
-			root.right = insert(root.right, data);
-		return root;
-	}
+        while (!queue.isEmpty()) {
+            BroBST temp = queue.poll();
+            if (temp != null) {
+                System.out.print(temp.data + " ");
+                if (temp.left != null)
+                    queue.offer(temp.left);
+                if (temp.right != null)
+                    queue.offer(temp.right);
+            } else {
+                System.out.println();
+                if (!queue.isEmpty())
+                    queue.offer(null);
+            }
+        }
+    }
 
-	// helper function for printing tree in level order
-	private static void printLevelOrder(BroBST root) {
-		if (root == null)
-			return;
-		Queue<BroBST> queue = new LinkedList<>();
-		queue.offer(root);
-		queue.offer(null);
+    static class BroBST {
+        int data;
+        BroBST left, right;
+        BroBST next;
 
-		while (!queue.isEmpty()) {
-			BroBST temp = queue.poll();
-			if (temp != null) {
-				System.out.print(temp.data + " ");
-				if (temp.left != null)
-					queue.offer(temp.left);
-				if (temp.right != null)
-					queue.offer(temp.right);
-			} else {
-				System.out.println();
-				if (!queue.isEmpty())
-					queue.offer(null);
-			}
-		}
-	}
+        public BroBST(int data) {
+            this.data = data;
+        }
+    }
 
 }

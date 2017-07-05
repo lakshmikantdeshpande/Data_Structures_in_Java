@@ -8,86 +8,86 @@ import java.util.Queue;
 
 public class BroPointer_1 {
 
-	class BroNode {
-		int data;
-		BroNode left;
-		BroNode right;
-		BroNode nextBro;
+    public static void main(String[] args) {
+        BroPointer_1 bp = new BroPointer_1();
+        BroNode root = bp.new BroNode(1);
+        root.left = bp.new BroNode(2);
+        root.right = bp.new BroNode(3);
+        root.left.left = bp.new BroNode(4);
+        root.left.right = bp.new BroNode(5);
 
-		public BroNode(int data) {
-			this.data = data;
-			left = right = nextBro = null;
-		}
+        fillBroPointers(root);
+        printTree(root.left);
+    }
 
-		public BroNode(int data, BroNode left, BroNode right, BroNode nextBro) {
-			this.data = data;
-			this.left = left;
-			this.right = right;
-			this.nextBro = nextBro;
-		}
+    public static void fillBroPointers(BroNode root) {
+        if (root == null)
+            return;
 
-		public boolean isLeaf(BroNode broNode) {
-			return (broNode.left == null && broNode.right == null);
-		}
-	}
+        Queue<BroNode> queue = new LinkedList<BroNode>();
+        queue.offer(root);
+        queue.offer(null);
 
-	public static void main(String[] args) {
-		BroPointer_1 bp = new BroPointer_1();
-		BroNode root = bp.new BroNode(1);
-		root.left = bp.new BroNode(2);
-		root.right = bp.new BroNode(3);
-		root.left.left = bp.new BroNode(4);
-		root.left.right = bp.new BroNode(5);
+        while (!queue.isEmpty()) {
+            BroNode temp = queue.poll();
+            if (temp != null) {
+                temp.nextBro = queue.peek();
 
-		fillBroPointers(root);
-		printTree(root.left);
-	}
+                if (temp.left != null)
+                    queue.offer(temp.left);
+                if (temp.right != null)
+                    queue.offer(temp.right);
 
-	public static void fillBroPointers(BroNode root) {
-		if (root == null)
-			return;
+            } else {
+                if (!queue.isEmpty())
+                    queue.offer(null);
+            }
+        }
+    }
 
-		Queue<BroNode> queue = new LinkedList<BroNode>();
-		queue.offer(root);
-		queue.offer(null);
+    public static void printTree(BroNode root) {
+        if (root == null)
+            return;
 
-		while (!queue.isEmpty()) {
-			BroNode temp = queue.poll();
-			if (temp != null) {
-				temp.nextBro = queue.peek();
+        Queue<BroNode> queue = new LinkedList<BroNode>();
+        queue.offer(root);
+        queue.offer(null);
 
-				if (temp.left != null)
-					queue.offer(temp.left);
-				if (temp.right != null)
-					queue.offer(temp.right);
+        while (!queue.isEmpty()) {
+            BroNode temp = queue.poll();
 
-			} else {
-				if (!queue.isEmpty())
-					queue.offer(null);
-			}
-		}
-	}
+            if (temp != null) {
+                System.out.print(temp.data + " ");
+                if (temp.nextBro != null)
+                    queue.offer(temp.nextBro);
+            } else {
+                if (!queue.isEmpty())
+                    queue.offer(null);
+            }
+        }
+        System.out.println("************************");
+    }
 
-	public static void printTree(BroNode root) {
-		if (root == null)
-			return;
+    class BroNode {
+        int data;
+        BroNode left;
+        BroNode right;
+        BroNode nextBro;
 
-		Queue<BroNode> queue = new LinkedList<BroNode>();
-		queue.offer(root);
-		queue.offer(null);
+        public BroNode(int data) {
+            this.data = data;
+            left = right = nextBro = null;
+        }
 
-		while (!queue.isEmpty()) {
-			BroNode temp = queue.poll();
+        public BroNode(int data, BroNode left, BroNode right, BroNode nextBro) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+            this.nextBro = nextBro;
+        }
 
-			if (temp != null) {
-				System.out.print(temp.data + " ");
-				if (temp.nextBro != null)
-					queue.offer(temp.nextBro);
-			} else {
-				if (!queue.isEmpty())
-					queue.offer(null);
-			}
-		}
-		System.out.println("************************");
-	}
+        public boolean isLeaf(BroNode broNode) {
+            return (broNode.left == null && broNode.right == null);
+        }
+    }
 }

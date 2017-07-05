@@ -2,134 +2,134 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Deque<Item> implements Iterable<Item> {
-	private Node head, tail;
-	private int size;
+    private Node head, tail;
+    private int size;
 
-	public Deque() {
-		head = null;
-		tail = null;
-		size = 0;
-	}
+    public Deque() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
 
-	private class Node {
-		private Item item;
-		private Node next;
-		private Node prev;
-	}
+    public static void main(String[] args) {
 
-	public boolean isEmpty() {
-		return size == 0;
-	}
+    }
 
-	public int size() {
-		return size;
-	}
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
-	public void addFirst(Item item) {
-		if (item == null) {
-			throw new NullPointerException();
-		}
+    public int size() {
+        return size;
+    }
 
-		if (isEmpty()) {
-			head = new Node();
-			head.item = item;
-			head.next = null;
-			head.prev = null;
-			tail = head;
-		} else {
-			Node oldhead = head;
-			head = new Node();
-			head.item = item;
-			head.next = oldhead;
-			oldhead.prev = head;
-			head.prev = null;
-		}
-		size++;
-	}
+    public void addFirst(Item item) {
+        if (item == null) {
+            throw new NullPointerException();
+        }
 
-	public void addLast(Item item) {
-		if (item == null) {
-			throw new NullPointerException();
-		}
+        if (isEmpty()) {
+            head = new Node();
+            head.item = item;
+            head.next = null;
+            head.prev = null;
+            tail = head;
+        } else {
+            Node oldhead = head;
+            head = new Node();
+            head.item = item;
+            head.next = oldhead;
+            oldhead.prev = head;
+            head.prev = null;
+        }
+        size++;
+    }
 
-		if (isEmpty()) {
-			tail = new Node();
-			tail.item = item;
-			tail.next = null;
-			tail.prev = null;
-			head = tail;
-		} else {
-			Node oldtail = tail;
-			tail = new Node();
-			tail.item = item;
-			tail.next = null;
-			tail.prev = oldtail;
-			oldtail.next = tail;
-		}
-		size++;
-	}
+    public void addLast(Item item) {
+        if (item == null) {
+            throw new NullPointerException();
+        }
 
-	public Item removeFirst() {
-		if (size == 0) {
-			throw new NoSuchElementException();
-		}
-		size--;
-		Item item = head.item;
-		head = head.next;
-		if (isEmpty())
-			tail = null;
-		else
-			head.prev = null;
-		return item;
-	}
+        if (isEmpty()) {
+            tail = new Node();
+            tail.item = item;
+            tail.next = null;
+            tail.prev = null;
+            head = tail;
+        } else {
+            Node oldtail = tail;
+            tail = new Node();
+            tail.item = item;
+            tail.next = null;
+            tail.prev = oldtail;
+            oldtail.next = tail;
+        }
+        size++;
+    }
 
-	public Item removeLast() {
-		if (size == 0) {
-			throw new NoSuchElementException();
-		}
-		size--;
-		Item item = tail.item;
-		tail = tail.prev;
-		if (isEmpty())
-			head = null;
-		else
-			tail.next = null;
+    public Item removeFirst() {
+        if (size == 0) {
+            throw new NoSuchElementException();
+        }
+        size--;
+        Item item = head.item;
+        head = head.next;
+        if (isEmpty())
+            tail = null;
+        else
+            head.prev = null;
+        return item;
+    }
 
-		return item;
-	}
+    public Item removeLast() {
+        if (size == 0) {
+            throw new NoSuchElementException();
+        }
+        size--;
+        Item item = tail.item;
+        tail = tail.prev;
+        if (isEmpty())
+            head = null;
+        else
+            tail.next = null;
 
-	@Override
-	public Iterator<Item> iterator() {
-		return new DequeComparator();
-	}
+        return item;
+    }
 
-	private class DequeComparator implements Iterator<Item> {
-		private Node current = head;
+    @Override
+    public Iterator<Item> iterator() {
+        return new DequeComparator();
+    }
 
-		@Override
-		public Item next() {
-			if (!this.hasNext()) {
-				throw new NoSuchElementException();
-			} else {
-				Item item = current.item;
-				current = current.next;
-				return item;
-			}
-		}
+    private class Node {
+        private Item item;
+        private Node next;
+        private Node prev;
+    }
 
-		@Override
-		public boolean hasNext() {
-			return current != null;
-		}
+    private class DequeComparator implements Iterator<Item> {
+        private Node current = head;
 
-		@Override
-		public void remove() {
-			// Not Implemented
-			throw new UnsupportedOperationException();
-		}
-	}
+        @Override
+        public Item next() {
+            if (!this.hasNext()) {
+                throw new NoSuchElementException();
+            } else {
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }
+        }
 
-	public static void main(String[] args) {
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
 
-	}
+        @Override
+        public void remove() {
+            // Not Implemented
+            throw new UnsupportedOperationException();
+        }
+    }
 }

@@ -5,87 +5,87 @@
 package stack_problems;
 
 public class MinimumElementStack_1 {
-	int top = -1;
-	static Node head1; // main stack
-	static Node head2; // minimum stack
+    static Node head1; // main stack
+    static Node head2; // minimum stack
+    int top = -1;
 
-	private static class Node {
-		int data;
-		Node next;
+    public MinimumElementStack_1() {
+        head1 = null;
+        head2 = null;
+    }
 
-		public Node(int data) {
-			this.data = data;
-			this.next = null;
-		}
-	}
+    public static boolean isEmpty() {
+        return head1 == null;
+    }
 
-	public MinimumElementStack_1() {
-		head1 = null;
-		head2 = null;
-	}
+    public static int getMinimum() throws Exception {
+        if (isEmpty())
+            throw new Exception("Stack is empty");
+        return head2.data;
+    }
 
-	public synchronized int pop() throws Exception {
-		if (head1 == null)
-			throw new Exception("Underflow");
-		int data = head1.data;
-		head1 = head1.next;
-		head2 = head2.next;
-		System.gc();
-		return data;
-	}
+    public static void main(String[] args) throws Exception {
+        MinimumElementStack_1 mes = new MinimumElementStack_1();
+        mes.push(2);
+        mes.push(6);
+        mes.push(4);
+        mes.push(1);
+        mes.push(5);
 
-	public synchronized void push(int data) throws Exception {
-		if (isEmpty()) {
-			head1 = new Node(data);
-			head2 = new Node(data);
-		} else {
-			Node oldHead = head1;
-			head1 = new Node(data);
-			head1.next = oldHead;
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+    }
 
-			oldHead = head2;
-			if (data < oldHead.data)
-				;
-			else
-				data = oldHead.data;
-			head2 = new Node(data);
-			head2.next = oldHead;
-		}
-		top++;
-	}
+    public synchronized int pop() throws Exception {
+        if (head1 == null)
+            throw new Exception("Underflow");
+        int data = head1.data;
+        head1 = head1.next;
+        head2 = head2.next;
+        System.gc();
+        return data;
+    }
 
-	public static boolean isEmpty() {
-		return head1 == null;
-	}
+    public synchronized void push(int data) throws Exception {
+        if (isEmpty()) {
+            head1 = new Node(data);
+            head2 = new Node(data);
+        } else {
+            Node oldHead = head1;
+            head1 = new Node(data);
+            head1.next = oldHead;
 
-	public int size() {
-		return top + 1;
-	}
+            oldHead = head2;
+            if (data < oldHead.data)
+                ;
+            else
+                data = oldHead.data;
+            head2 = new Node(data);
+            head2.next = oldHead;
+        }
+        top++;
+    }
 
-	public static int getMinimum() throws Exception {
-		if (isEmpty())
-			throw new Exception("Stack is empty");
-		return head2.data;
-	}
+    public int size() {
+        return top + 1;
+    }
 
-	public static void main(String[] args) throws Exception {
-		MinimumElementStack_1 mes = new MinimumElementStack_1();
-		mes.push(2);
-		mes.push(6);
-		mes.push(4);
-		mes.push(1);
-		mes.push(5);
+    private static class Node {
+        int data;
+        Node next;
 
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-	}
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
 
 }

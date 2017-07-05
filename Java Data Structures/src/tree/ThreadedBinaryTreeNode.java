@@ -1,11 +1,11 @@
 package tree;
 
 public class ThreadedBinaryTreeNode {
-	public ThreadedBinaryTreeNode left;
-	int LTag;
-	int data;
-	int RTag;
-	public ThreadedBinaryTreeNode right;
+    public ThreadedBinaryTreeNode left;
+    public ThreadedBinaryTreeNode right;
+    int LTag;
+    int data;
+    int RTag;
 }
 
 /*-

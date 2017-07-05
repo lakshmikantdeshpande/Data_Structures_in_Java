@@ -3,16 +3,16 @@
 package tree;
 
 public class AVL {
-	// not an ideal structure
-	// we should make these private and use setters, getters
-	public int data;
-	public int height;
+    // not an ideal structure
+    // we should make these private and use setters, getters
+    public int data;
+    public int height;
 
-	public AVL left;
-	public AVL right;
+    public AVL left;
+    public AVL right;
 
-	public AVL(int data) {
-		this.data = data;
-		this.height = 1;
-	}
+    public AVL(int data) {
+        this.data = data;
+        this.height = 1;
+    }
 }

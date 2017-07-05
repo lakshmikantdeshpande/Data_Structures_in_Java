@@ -4,68 +4,68 @@
 package linked_list_Problems;
 
 public class Stack_Using_Linked_List {
-	private int top;
-	private int sizelimit;
-	private Node head;
+    private int top;
+    private int sizelimit;
+    private Node head;
 
-	private class Node {
-		int data;
-		Node next;
+    public Stack_Using_Linked_List(int sizelimit) {
+        this.top = 0;
+        this.head = null;
+        this.sizelimit = sizelimit;
+    }
 
-		public Node(int data) {
-			this.data = data;
-		}
-	}
+    public static void main(String args[]) throws Exception {
+        Stack_Using_Linked_List sull = new Stack_Using_Linked_List(2);
 
-	public Stack_Using_Linked_List(int sizelimit) {
-		this.top = 0;
-		this.head = null;
-		this.sizelimit = sizelimit;
-	}
+        sull.push(1);
+        sull.push(2);
+        // sull.push(3);
 
-	public synchronized int pop() throws Exception {
-		if (head == null)
-			throw new Exception("Underflow");
-		int value = head.data;
-		head = head.next;
-		top--;
-		return value;
-	}
+        System.out.println(sull.pop());
+        System.out.println(sull.pop());
+        // System.out.println(sull.pop());
 
-	public synchronized void push(int data) throws Exception {
-		if (top == sizelimit)
-			throw new Exception("Overflow");
-		Node temp = new Node(data);
-		temp.next = head;
-		head = temp;
-		top++;
-	}
+        System.out.println(sull.size());
+        System.out.println(sull.isFull());
+        System.out.println(sull.isEmpty());
+    }
 
-	public synchronized int size() {
-		return this.top;
-	}
+    public synchronized int pop() throws Exception {
+        if (head == null)
+            throw new Exception("Underflow");
+        int value = head.data;
+        head = head.next;
+        top--;
+        return value;
+    }
 
-	public synchronized boolean isFull() {
-		return this.top == this.sizelimit;
-	}
+    public synchronized void push(int data) throws Exception {
+        if (top == sizelimit)
+            throw new Exception("Overflow");
+        Node temp = new Node(data);
+        temp.next = head;
+        head = temp;
+        top++;
+    }
 
-	public synchronized boolean isEmpty() {
-		return this.top == 0;
-	}
+    public synchronized int size() {
+        return this.top;
+    }
 
-	public static void main(String args[]) throws Exception {
-		Stack_Using_Linked_List sull = new Stack_Using_Linked_List(2);
+    public synchronized boolean isFull() {
+        return this.top == this.sizelimit;
+    }
 
-		sull.push(1);
-		sull.push(2);
-		// sull.push(3);
+    public synchronized boolean isEmpty() {
+        return this.top == 0;
+    }
 
-		System.out.println(sull.pop());
-		System.out.println(sull.pop());
-		// System.out.println(sull.pop());
+    private class Node {
+        int data;
+        Node next;
 
-		System.out.println(sull.size());
-		System.out.println(sull.isFull());
-		System.out.println(sull.isEmpty());
-	}
+        public Node(int data) {
+            this.data = data;
+        }
+    }
 }

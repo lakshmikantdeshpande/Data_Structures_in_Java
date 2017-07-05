@@ -7,53 +7,53 @@ package stack_problems;
 import java.util.Stack;
 
 public class MinimumElementStack_2 {
-	private static Stack<Integer> stack;
-	private static Stack<Integer> minStack;
+    private static Stack<Integer> stack;
+    private static Stack<Integer> minStack;
 
-	public MinimumElementStack_2() {
-		stack = new Stack<>();
-		minStack = new Stack<>();
-	}
+    public MinimumElementStack_2() {
+        stack = new Stack<>();
+        minStack = new Stack<>();
+    }
 
-	public synchronized void push(int data) {
-		stack.push(data);
-		if (minStack.isEmpty() || data <= minStack.peek())
-			minStack.push(data);
-	}
+    public static synchronized int getMinimum() throws Exception {
+        if (minStack.isEmpty())
+            throw new Exception("Stack is empty!");
+        return minStack.peek();
+    }
 
-	public synchronized int pop() throws Exception {
-		if (stack.isEmpty())
-			throw new Exception("Underflow");
+    public static void main(String[] args) throws Exception {
+        MinimumElementStack_2 mes = new MinimumElementStack_2();
+        mes.push(2);
+        mes.push(6);
+        mes.push(4);
+        mes.push(1);
+        mes.push(5);
 
-		if (stack.peek() == minStack.peek())
-			minStack.pop();
-		return stack.pop();
-	}
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+        System.out.println(getMinimum());
+        mes.pop();
+    }
 
-	public static synchronized int getMinimum() throws Exception {
-		if (minStack.isEmpty())
-			throw new Exception("Stack is empty!");
-		return minStack.peek();
-	}
+    public synchronized void push(int data) {
+        stack.push(data);
+        if (minStack.isEmpty() || data <= minStack.peek())
+            minStack.push(data);
+    }
 
-	public static void main(String[] args) throws Exception {
-		MinimumElementStack_2 mes = new MinimumElementStack_2();
-		mes.push(2);
-		mes.push(6);
-		mes.push(4);
-		mes.push(1);
-		mes.push(5);
+    public synchronized int pop() throws Exception {
+        if (stack.isEmpty())
+            throw new Exception("Underflow");
 
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-		System.out.println(getMinimum());
-		mes.pop();
-	}
+        if (stack.peek() == minStack.peek())
+            minStack.pop();
+        return stack.pop();
+    }
 
 }

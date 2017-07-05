@@ -3,61 +3,61 @@ package week_2_Stacks_and_Queues.PartOne;
 import java.util.Iterator;
 
 public class IteratorLinkedListStack<Item> implements Iterable<Item> {
-	Node head = null;
+    Node head = null;
 
-	public static void main(String args[]) {
-		IteratorLinkedListStack ills = new IteratorLinkedListStack();
-		ills.push(1);
-		ills.push("Two");
-		ills.push('3');
-		Iterator iterator = ills.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
-	}
+    public static void main(String args[]) {
+        IteratorLinkedListStack ills = new IteratorLinkedListStack();
+        ills.push(1);
+        ills.push("Two");
+        ills.push('3');
+        Iterator iterator = ills.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
 
-	public void push(Item item) {
-		Node oldhead = head;
-		head = new Node();
-		head.item = item;
-		head.next = oldhead;
-	}
+    public void push(Item item) {
+        Node oldhead = head;
+        head = new Node();
+        head.item = item;
+        head.next = oldhead;
+    }
 
-	public Item pop() {
-		Item item = head.item;
-		head = head.next;
-		return item;
-	}
+    public Item pop() {
+        Item item = head.item;
+        head = head.next;
+        return item;
+    }
 
-	public boolean isEmpty() {
-		return head == null;
-	}
+    public boolean isEmpty() {
+        return head == null;
+    }
 
-	public Iterator<Item> iterator() {
-		return new StackIterator();
-	}
+    public Iterator<Item> iterator() {
+        return new StackIterator();
+    }
 
-	private class Node {
-		Item item;
-		Node next;
-	}
+    private class Node {
+        Item item;
+        Node next;
+    }
 
-	private class StackIterator implements Iterator<Item> {
-		private Node current = head;
+    private class StackIterator implements Iterator<Item> {
+        private Node current = head;
 
-		public boolean hasNext() {
-			return current != null;
-		}
+        public boolean hasNext() {
+            return current != null;
+        }
 
-		public Item next() {
-			Item item = current.item;
-			current = current.next;
-			return item;
-		}
+        public Item next() {
+            Item item = current.item;
+            current = current.next;
+            return item;
+        }
 
-		public void remove() {
-			// Not Implemented
-		}
-	}
+        public void remove() {
+            // Not Implemented
+        }
+    }
 
 }

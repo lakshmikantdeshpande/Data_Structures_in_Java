@@ -3,11 +3,11 @@
 package tree;
 
 public class GenericTreeNode {
-	public int data;
-	public GenericTreeNode firstChild;
-	public GenericTreeNode nextSibling;
+    public int data;
+    public GenericTreeNode firstChild;
+    public GenericTreeNode nextSibling;
 
-	public GenericTreeNode(int data) {
-		this.data = data;
-	}
+    public GenericTreeNode(int data) {
+        this.data = data;
+    }
 }

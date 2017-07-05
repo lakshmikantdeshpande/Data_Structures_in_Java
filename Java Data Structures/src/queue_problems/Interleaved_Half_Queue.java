@@ -11,38 +11,38 @@ import java.util.Stack;
 
 public class Interleaved_Half_Queue {
 
-	public static void main(String[] args) throws Exception {
-		Queue<Integer> queue = new LinkedList<Integer>();
+    public static void main(String[] args) throws Exception {
+        Queue<Integer> queue = new LinkedList<Integer>();
 
-		for (int i = 1; i <= 10; i++)
-			queue.offer(i);
-		System.out.println(queue.toString());
+        for (int i = 1; i <= 10; i++)
+            queue.offer(i);
+        System.out.println(queue.toString());
 
-		interleaved(queue);
-		System.out.println(queue.toString());
-	}
+        interleaved(queue);
+        System.out.println(queue.toString());
+    }
 
-	private static void interleaved(Queue<Integer> queue) throws Exception {
-		if (queue == null)
-			throw new Exception("Null queue");
-		if (queue.size() % 2 != 0)
-			throw new Exception("Odd sized queue");
+    private static void interleaved(Queue<Integer> queue) throws Exception {
+        if (queue == null)
+            throw new Exception("Null queue");
+        if (queue.size() % 2 != 0)
+            throw new Exception("Odd sized queue");
 
-		Stack<Integer> stack = new Stack<Integer>();
-		int mid = queue.size() / 2;
+        Stack<Integer> stack = new Stack<Integer>();
+        int mid = queue.size() / 2;
 
-		for (int i = 0; i < mid; i++)
-			stack.push(queue.remove());
-		for (int i = 0; i < mid; i++)
-			queue.add(stack.pop());
-		for (int i = 0; i < mid; i++)
-			queue.add(queue.remove());
-		for (int i = 0; i < mid; i++)
-			stack.push(queue.remove());
-		for (int i = 0; i < mid; i++) {
-			queue.add(stack.pop());
-			queue.add(queue.remove());
-		}
-	}
+        for (int i = 0; i < mid; i++)
+            stack.push(queue.remove());
+        for (int i = 0; i < mid; i++)
+            queue.add(stack.pop());
+        for (int i = 0; i < mid; i++)
+            queue.add(queue.remove());
+        for (int i = 0; i < mid; i++)
+            stack.push(queue.remove());
+        for (int i = 0; i < mid; i++) {
+            queue.add(stack.pop());
+            queue.add(queue.remove());
+        }
+    }
 
 }

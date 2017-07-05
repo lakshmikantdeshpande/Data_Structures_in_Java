@@ -12,46 +12,46 @@ import java.util.Stack;
 
 public class Consecutive_Pair {
 
-	public static void main(String[] args) throws Exception {
-		Stack<Integer> stack = new Stack<Integer>();
-		stack.push(4);
-		stack.push(5);
-		stack.push(-2);
-		stack.push(-3);
-		stack.push(11);
-		stack.push(10);
-		stack.push(5);
-		stack.push(6);
-		stack.push(20);
+    public static void main(String[] args) throws Exception {
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(4);
+        stack.push(5);
+        stack.push(-2);
+        stack.push(-3);
+        stack.push(11);
+        stack.push(10);
+        stack.push(5);
+        stack.push(6);
+        stack.push(20);
 
-		System.out.println(consecutiveCheck(stack));
-	}
+        System.out.println(consecutiveCheck(stack));
+    }
 
-	private static boolean consecutiveCheck(Stack<Integer> stack) throws Exception {
-		if (stack == null)
-			throw new Exception("Stack is null");
-		Queue<Integer> queue = new LinkedList<Integer>();
-		boolean ordered = true;
+    private static boolean consecutiveCheck(Stack<Integer> stack) throws Exception {
+        if (stack == null)
+            throw new Exception("Stack is null");
+        Queue<Integer> queue = new LinkedList<Integer>();
+        boolean ordered = true;
 
-		while (!stack.empty())
-			queue.add(stack.pop());
+        while (!stack.empty())
+            queue.add(stack.pop());
 
-		while (!queue.isEmpty())
-			stack.push(queue.remove());
+        while (!queue.isEmpty())
+            stack.push(queue.remove());
 
-		while (!stack.isEmpty()) {
-			int n = stack.pop();
-			queue.add(n);
-			if (!stack.isEmpty()) {
-				int m = stack.pop();
-				queue.add(m);
-				if (Math.abs(n - m) != 1)
-					ordered = false;
-			}
-		}
-		while (!queue.isEmpty())
-			stack.push(queue.remove());
-		return ordered;
-	}
+        while (!stack.isEmpty()) {
+            int n = stack.pop();
+            queue.add(n);
+            if (!stack.isEmpty()) {
+                int m = stack.pop();
+                queue.add(m);
+                if (Math.abs(n - m) != 1)
+                    ordered = false;
+            }
+        }
+        while (!queue.isEmpty())
+            stack.push(queue.remove());
+        return ordered;
+    }
 
 }
