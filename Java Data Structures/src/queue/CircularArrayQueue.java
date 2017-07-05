@@ -25,7 +25,7 @@ public class CircularArrayQueue {
         CircularArrayQueue caq = new CircularArrayQueue();
         caq.enQueue(1);
         /*
-		 * CRAZY TESTS DOWN HERE; for (int i = 0; i < caq.capacity; i++) {
+         * CRAZY TESTS DOWN HERE; for (int i = 0; i < caq.capacity; i++) {
 		 * caq.enQueue(i); System.out.println("Front: " + caq.front);
 		 * System.out.println("Rear: " + caq.rear); } for (int i = 5; i <
 		 * caq.capacity; i++) { caq.deQueue(); System.out.println("Front: " +

@@ -79,7 +79,7 @@ public class InfixToPostfix {
     private static boolean lowPrecedence(Map<Character, Integer> map, Stack<Character> stack, char c) {
         return map.get(c) <= map.get(stack.peek());
         /*
-		 * FOR DEBUGGING if (map.get(c) == null || map.get(stack.peek()) ==
+         * FOR DEBUGGING if (map.get(c) == null || map.get(stack.peek()) ==
 		 * null) { System.out.println(c + " -> " + map.get(c));
 		 * System.out.println(stack.peek() + " -> " + map.get(stack.peek()));
 		 * return false; }

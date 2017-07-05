@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MainMTH1 {
     public static int processArray(ArrayList<Integer> array) {
         /*
-		 * Do not make any changes outside this method.
+         * Do not make any changes outside this method.
 		 * 
 		 * Modify this method to process `array` as indicated in the question.
 		 * At the end, return the size of the array.
