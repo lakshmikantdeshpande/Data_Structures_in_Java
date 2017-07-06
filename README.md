@@ -4,7 +4,7 @@ Data structures and algorithms
 **Work In Progress**
 
 This repository contains data structures and algorithms implemented in Java.
-You are free to report any issues.
+Feel free to report any issues.
 Thanks for stopping by
 
                                       88         
@@ -37,4 +37,8 @@ Currently I have implemented the following data structures.
 
 > **Disjoint Set** 
 
-> **Graph** (Ongoing)
+> **Graph**
+
+Don't forget to check out my other respository (Competitive Programming).
+https://github.com/lakshmikantdeshpande/Competitive-Programming
+Have a good one ;-)
