@@ -76,6 +76,51 @@ public class Linked_List {
         }
     }
 
+    public synchronized void deleteFromTheBeginning() {
+        Node temp = head;
+        if (head != null) {
+            head = temp.next;
+            temp = null;
+        }
+    }
+
+    public synchronized void deleteFromTheEnd() {
+        if (head == null)
+            return;
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node p = head, q = null;
+        while (p.next != null) {
+            q = p;
+            p = p.next;
+        }
+        p = null;
+        q.next = null; // to prevent loitering
+    }
+
+    public synchronized void deleteFromThePosition(int position) {
+        if (position < 0)
+            position = 0;
+        if (head == null)
+            return;
+        if (position == 0) {
+            deleteFromTheBeginning();
+            return;
+        }
+
+        Node p = head, q = null;
+        int k = 0;
+        while (p.next != null && k < position) {
+            q = p;
+            p = p.next;
+            k++;
+        }
+        q.next = p.next;
+        p = null;
+    }
+
     public static void main(String[] args) {
         head = insertBeginning(head, 1);
         head = insertBeginning(head, 0);
