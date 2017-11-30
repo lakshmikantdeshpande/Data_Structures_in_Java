@@ -1,6 +1,6 @@
 package linked_list;
 
-public class Linked_List {
+public class Singly_Linked_List {
     public static class Node {
         private int data;
         private Node next;
@@ -76,7 +76,7 @@ public class Linked_List {
         }
     }
 
-    public synchronized void deleteFromTheBeginning() {
+    public void deleteFromTheBeginning() {
         Node temp = head;
         if (head != null) {
             head = temp.next;
@@ -84,7 +84,7 @@ public class Linked_List {
         }
     }
 
-    public synchronized void deleteFromTheEnd() {
+    public void deleteFromTheEnd() {
         if (head == null)
             return;
         if (head.next == null) {
@@ -100,7 +100,7 @@ public class Linked_List {
         q.next = null; // to prevent loitering
     }
 
-    public synchronized void deleteFromThePosition(int position) {
+    public void deleteFromThePosition(int position) {
         if (position < 0)
             position = 0;
         if (head == null)
