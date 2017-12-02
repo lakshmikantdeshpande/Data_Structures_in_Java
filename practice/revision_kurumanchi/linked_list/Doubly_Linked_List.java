@@ -1,7 +1,5 @@
 package linked_list;
 
-import java.io.PrintWriter;
-
 public class Doubly_Linked_List {
     private static class Node {
         int data;
@@ -89,6 +87,35 @@ public class Doubly_Linked_List {
 
     }
 
+    private void deleteBeginning() {
+        if (head == null) {
+            tail = null;
+            return;
+        } else if (head.next == null) {
+            tail = null;
+            head = null;
+            return;
+        }
+        Node oldHead = head;
+        head = head.next;
+        head.previous = null;
+        oldHead = null;
+    }
+
+    private void deleteEnd() {
+        if (tail == null) {
+            return;
+        } else if (tail.previous == null) {
+            tail = null;
+            return;
+        }
+
+        Node oldTail = tail;
+        tail = tail.previous;
+        tail.next = null;
+        oldTail = null;
+    }
+
     public static void main(String[] args) {
         Doubly_Linked_List dll = new Doubly_Linked_List();
 
@@ -102,6 +129,12 @@ public class Doubly_Linked_List {
         display(head);
 
         dll.insertInTheMiddle(4, 99);
+        display(head);
+
+        dll.deleteBeginning();
+        display(head);
+
+        dll.deleteEnd();
         display(head);
     }
 
