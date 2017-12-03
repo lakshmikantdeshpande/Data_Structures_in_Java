@@ -1,10 +1,8 @@
-// N time N space
+// N + N time 1 space
+
 package linked_list.problems;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class NthNodeLinkedList_2 {
+public class NthNodeLinkedList_3 {
 
     private static class Node {
         int data;
@@ -31,28 +29,34 @@ public class NthNodeLinkedList_2 {
         if (head == null || position < 0)
             return Integer.MIN_VALUE;
 
+        // find the length of the linked list
+        int len = 0;
         Node temp = head;
-        Map<Integer, Node> map = new HashMap<>();
-        int counter = 0;
         while (temp != null) {
-            map.put(counter++, temp);
+            temp = temp.next;
+            ++len;
+        }
+
+        if (len - position - 1 < 0) {
+            throw new Exception("Invalid position provided");
+        }
+
+        temp = head;
+        for (int i = 0; i < len - position - 1; i++) {
             temp = temp.next;
         }
-        System.out.println(map);
-
-        if (position > map.size()) {
-            return Integer.MIN_VALUE;
-        }
-        return map.get(map.size() - position - 1).data;
+        return temp.data;
     }
 
 
     public static void main(String[] args) throws Exception {
-        NthNodeLinkedList_2 linkedList = new NthNodeLinkedList_2();
+        NthNodeLinkedList_3 linkedList = new NthNodeLinkedList_3();
         linkedList.insertBeginning(1);
         linkedList.insertBeginning(0);
         linkedList.insertBeginning(-1);
 
-        System.out.println(linkedList.nthFromTheEnd(15));
+        System.out.println(linkedList.nthFromTheEnd(2));
     }
+
 }
+
