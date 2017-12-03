@@ -25,9 +25,10 @@ public class NthNodeLinkedList_1 {
         }
     }
 
-    private int nthFromTheEnd(int position) {
-        if (head == null || position < 0)
-            return Integer.MIN_VALUE;
+    private int nthFromTheEnd(int position) throws Exception {
+        if (head == null || position < 0) {
+            throw new Exception("Invalid position provided");
+        }
 
         Node outer = head;
         while (outer != null) {
@@ -42,11 +43,11 @@ public class NthNodeLinkedList_1 {
             } else
                 outer = outer.next;
         }
-        return Integer.MIN_VALUE;
+        throw new Exception("Invalid position provided");
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         NthNodeLinkedList_1 linkedList = new NthNodeLinkedList_1();
         linkedList.insertBeginning(1);
         linkedList.insertBeginning(0);

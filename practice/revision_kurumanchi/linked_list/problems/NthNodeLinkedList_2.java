@@ -28,8 +28,9 @@ public class NthNodeLinkedList_2 {
     }
 
     private int nthFromTheEnd(int position) throws Exception {
-        if (head == null || position < 0)
-            return Integer.MIN_VALUE;
+        if (head == null || position < 0) {
+            throw new Exception("Invalid position provided");
+        }
 
         Node temp = head;
         Map<Integer, Node> map = new HashMap<>();
@@ -41,7 +42,7 @@ public class NthNodeLinkedList_2 {
         System.out.println(map);
 
         if (position > map.size()) {
-            return Integer.MIN_VALUE;
+            throw new Exception("Invalid position provided");
         }
         return map.get(map.size() - position - 1).data;
     }

@@ -26,8 +26,9 @@ public class NthNodeLinkedList_3 {
     }
 
     private int nthFromTheEnd(int position) throws Exception {
-        if (head == null || position < 0)
-            return Integer.MIN_VALUE;
+        if (head == null || position < 0) {
+            throw new Exception("Invalid position provided");
+        }
 
         // find the length of the linked list
         int len = 0;
@@ -47,7 +48,6 @@ public class NthNodeLinkedList_3 {
         }
         return temp.data;
     }
-
 
     public static void main(String[] args) throws Exception {
         NthNodeLinkedList_3 linkedList = new NthNodeLinkedList_3();
