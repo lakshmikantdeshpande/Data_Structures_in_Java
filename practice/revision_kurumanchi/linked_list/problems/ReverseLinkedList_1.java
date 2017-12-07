@@ -1,6 +1,6 @@
 package linked_list.problems;
 
-public class ReverseLinkedList {
+public class ReverseLinkedList_1 {
 
     private static class Node {
         int data;
@@ -58,7 +58,7 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        ReverseLinkedList linkedList = new ReverseLinkedList();
+        ReverseLinkedList_1 linkedList = new ReverseLinkedList_1();
 
         linkedList.insertBeginning(8);
         linkedList.insertBeginning(7);
