@@ -67,19 +67,20 @@ public class Intersection_Of_Linked_Lists_1 {
     }
 
     private void findIntersection(Node head1, Node head2) {
-        int x = 0;
         Map<Node, Integer> map = new HashMap<Node, Integer>();
         Node temp1 = head1, temp2 = head2;
         while (temp1 != null && temp2 != null) {
             if (map.containsKey(temp1)) {
                 System.out.println(temp1.data);
                 return;
-            } else if (map.containsKey(temp2)) {
+            }
+            map.put(temp1, 0);
+
+            if (map.containsKey(temp2)) {
                 System.out.println(temp2.data);
                 return;
             }
-            map.put(temp1, x++);
-            map.put(temp2, x++);
+            map.put(temp2, 0);
             temp1 = temp1.next;
             temp2 = temp2.next;
         }
