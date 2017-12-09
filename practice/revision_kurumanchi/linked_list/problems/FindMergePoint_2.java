@@ -1,11 +1,8 @@
-// N + M + P (length of common LL part) time  N + M space
-
 package linked_list.problems;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Stack;
 
-public class FindMergePoint_1 {
+public class FindMergePoint_2 {
     private static class Node {
         int data;
         Node next;
@@ -14,6 +11,7 @@ public class FindMergePoint_1 {
             this.data = data;
         }
     }
+
 
     private Node insertBeginning(Node head, int data) {
         if (head == null) {
@@ -31,24 +29,33 @@ public class FindMergePoint_1 {
             throw new IllegalArgumentException();
         }
 
+        Stack<Node> stackA = new Stack<>();
+        Stack<Node> stackB = new Stack<>();
         Node tempA = headA;
-        Node tempB = headB;
-        Map<Node, Integer> map = new HashMap<>();
-        while (tempA != null && tempB != null) {
-            if (map.containsKey(tempA)) {
-                return tempA.data;
-            }
-            map.put(tempA, 1);
-
-            if (map.containsKey(tempB)) {
-                return tempB.data;
-            }
-            map.put(tempB, 1);
+        while (tempA != null) {
+            stackA.push(tempA);
             tempA = tempA.next;
+        }
+
+        Node tempB = headB;
+        while (tempB != null) {
+            stackB.push(tempB);
             tempB = tempB.next;
         }
 
-        return Integer.MIN_VALUE;
+        int last = Integer.MIN_VALUE;
+        while (!stackA.isEmpty() && !stackB.isEmpty()) {
+            if (stackA.peek() == stackB.peek()) {
+                last = stackA.peek().data;
+            } else {
+                stackA.clear();
+                stackB.clear();
+                return last;
+            }
+            stackA.pop();
+            stackB.pop();
+        }
+        return last;
     }
 
     private void display(Node head) {
@@ -68,7 +75,7 @@ public class FindMergePoint_1 {
 
     public static void main(String[] args) {
         Node headA = null, headB = null;
-        FindMergePoint_1 fmp = new FindMergePoint_1();
+        FindMergePoint_2 fmp = new FindMergePoint_2();
 
         headA = fmp.insertBeginning(headA, 4);
         headA = fmp.insertBeginning(headA, 3);
