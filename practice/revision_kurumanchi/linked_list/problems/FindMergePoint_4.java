@@ -1,4 +1,4 @@
-// N + N + M log N time  N space
+// N + N + N log N + M log N time  N space
 
 package linked_list.problems;
 
