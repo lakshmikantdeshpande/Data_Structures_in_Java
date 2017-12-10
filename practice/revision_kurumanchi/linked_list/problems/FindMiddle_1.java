@@ -47,7 +47,7 @@ public class FindMiddle_1 {
                 if (j == i) {
                     return temp.data;
                 }
-            } else if (i > j) {
+            } else if (i - j == -1) {
                 // odd case
                 return temp.data;
             }
