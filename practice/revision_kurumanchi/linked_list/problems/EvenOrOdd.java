@@ -1,8 +1,8 @@
-// N time N space for recursion
+// N / 2 time 1 space
 
 package linked_list.problems;
 
-public class PrintReverse {
+public class EvenOrOdd {
     static class Node {
         int data;
         Node next;
@@ -23,25 +23,27 @@ public class PrintReverse {
         Node oldHead = head;
         head = new Node(data);
         head.next = oldHead;
-        return;
     }
 
-    private String printReverse(Node node) {
-        if (node.next == null) {
-            return String.valueOf(node.data);
+    private int evenOrOdd(Node head) {
+        while (head != null && head.next != null) {
+            head = head.next.next;
         }
 
-        return printReverse(node.next) + " -> " + node.data;
+        if (head == null) {
+            return 0;
+        }
+        return 1;
     }
 
     public static void main(String[] args) {
-        PrintReverse linkedList = new PrintReverse();
+        EvenOrOdd linkedList = new EvenOrOdd();
         linkedList.insertBeginning(1);
         linkedList.insertBeginning(0);
         linkedList.insertBeginning(-1);
         linkedList.insertBeginning(-2);
         linkedList.insertBeginning(-3);
 
-        System.out.println(linkedList.printReverse(linkedList.head));
+        System.out.println(linkedList.evenOrOdd(linkedList.head));
     }
 }
