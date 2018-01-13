@@ -51,8 +51,9 @@ public class MinimumElementStack_2 {
         if (stack.isEmpty())
             throw new Exception("Underflow");
 
-        if (stack.peek() == minStack.peek())
+        if (stack.peek().equals(minStack.peek())) {
             minStack.pop();
+        }
         return stack.pop();
     }
 
