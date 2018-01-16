@@ -1,12 +1,13 @@
 package linkedlist;
 
-public class SinglyLinkedList {
+public class DoublyLinkedList {
 
     private static Node head;
 
     private static class Node {
         int data;
         Node next;
+        Node prev;
 
         public Node(int data) {
             this.data = data;
@@ -22,6 +23,7 @@ public class SinglyLinkedList {
         Node temp = head;
         head = new Node(data);
         head.next = temp;
+        temp.prev = head;
     }
 
     public static void insertEnd(int data) {
@@ -35,6 +37,7 @@ public class SinglyLinkedList {
             temp = temp.next;
         }
         temp.next = new Node(data);
+        temp.next.prev = temp;
     }
 
     public static void insertMiddle(int data, int position) {
@@ -61,10 +64,15 @@ public class SinglyLinkedList {
             if (counter < position) {
                 System.out.println("Linked list is shorter than expected, inserting at the end of the linked list");
                 temp.next = new Node(data);
+                temp.next.prev = temp;
             } else {
                 Node t = new Node(data);
                 t.next = temp.next;
+                t.prev = temp;
                 temp.next = t;
+                if (t.next != null) {
+                    t.next.prev = t;
+                }
             }
         }
     }
@@ -72,9 +80,15 @@ public class SinglyLinkedList {
     public static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = head;
-        while (temp != null) {
-            builder.append(temp.data).append("~");
+        builder.append(">>>   ");
+        while (temp.next != null) {
+            builder.append(temp.data).append('~');
             temp = temp.next;
+        }
+        builder.append(temp.data).append("\n<<<   ");
+        while (temp != null) {
+            builder.append(temp.data).append('~');
+            temp = temp.prev;
         }
         System.out.println(builder.toString());
     }
