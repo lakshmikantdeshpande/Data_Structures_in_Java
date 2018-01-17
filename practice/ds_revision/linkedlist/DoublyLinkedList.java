@@ -77,6 +77,59 @@ public class DoublyLinkedList {
         }
     }
 
+    public static void deleteFromTheBeginning() {
+        Node temp = head;
+        if (head != null) {
+            head = temp.next;
+            head.prev = null;
+            temp = null;
+        }
+    }
+
+    public static void deleteFromTheEnd() {
+        if (head == null)
+            return;
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node p = head, q = null;
+        while (p.next != null) {
+            q = p;
+            p = p.next;
+        }
+        p = null;
+        q.next = null; // to prevent loitering
+    }
+
+    public static void deleteFromThePosition(int position) {
+        if (position < 0) {
+            position = 0;
+        } else if (head == null) {
+            return;
+        } else if (position == 0) {
+            deleteFromTheBeginning();
+            return;
+        }
+
+        Node p = head, q = null;
+        int k = 0;
+        while (p.next != null && k < position) {
+            q = p;
+            p = p.next;
+            k++;
+        }
+        if (k == position) {
+            q.next = p.next;
+            p = null;
+            q.next.prev = q;
+        } else {
+            System.out.println("Linked list is shorter than expected, deleting from the end");
+            q.next = null;
+            p = null;
+        }
+    }
+
     public static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = head;
@@ -110,6 +163,15 @@ public class DoublyLinkedList {
         insertMiddle(1111, 5);
         display();
         insertMiddle(11111, 99);
+        display();
+
+        deleteFromTheBeginning();
+        display();
+        deleteFromTheEnd();
+        display();
+        deleteFromThePosition(2);
+        display();
+        deleteFromThePosition(99);
         display();
     }
 

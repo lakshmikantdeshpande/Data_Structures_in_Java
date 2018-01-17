@@ -24,6 +24,14 @@ public class SinglyLinkedList {
         head.next = temp;
     }
 
+    public static void deleteFromTheBeginning() {
+        Node temp = head;
+        if (head != null) {
+            head = temp.next;
+            temp = null;
+        }
+    }
+
     public static void insertEnd(int data) {
         if (head == null) {
             head = new Node(data);
@@ -35,6 +43,23 @@ public class SinglyLinkedList {
             temp = temp.next;
         }
         temp.next = new Node(data);
+    }
+
+    public static void deleteFromTheEnd() {
+        if (head == null) {
+            return;
+        } else if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node p = head, q = null;
+        while (p.next != null) {
+            q = p;
+            p = p.next;
+        }
+        p = null;
+        q.next = null; // to prevent loitering
     }
 
     public static void insertMiddle(int data, int position) {
@@ -69,6 +94,27 @@ public class SinglyLinkedList {
         }
     }
 
+    public static void deleteFromThePosition(int position) {
+        if (position < 0) {
+            position = 0;
+        } else if (head == null) {
+            return;
+        } else if (position == 0) {
+            deleteFromTheBeginning();
+            return;
+        }
+
+        Node p = head, q = null;
+        int k = 0;
+        while (p.next != null && k < position) {
+            q = p;
+            p = p.next;
+            k++;
+        }
+        q.next = p.next;
+        p = null;
+    }
+
     public static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = head;
@@ -96,6 +142,13 @@ public class SinglyLinkedList {
         insertMiddle(1111, 5);
         display();
         insertMiddle(11111, 99);
+        display();
+
+        deleteFromTheBeginning();
+        display();
+        deleteFromTheEnd();
+        display();
+        deleteFromThePosition(2);
         display();
     }
 

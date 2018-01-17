@@ -173,10 +173,14 @@ public class DoublyLinkedList {
             p = p.next;
             k++;
         }
-        if (p != null) {
+        if (k == position) {
             q.next = p.next;
             p = null;
-            q.next.prev = null;
+            q.next.prev = q;
+        } else {
+            System.out.println("Linked list is shorter than expected, deleting from the end");
+            q.next = null;
+            p = null;
         }
         length--;
     }

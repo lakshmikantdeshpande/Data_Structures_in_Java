@@ -62,6 +62,34 @@ public class CircularLinkedList {
         }
     }
 
+    public static void deleteFromTheEnd() {
+        if (tail == null)
+            return;
+        if (tail.next == tail) {
+            tail = null;
+            return;
+        }
+
+        Node temp = tail.next;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = tail.next;
+        tail = temp;
+    }
+
+    public static void deleteFromTheFront() {
+        if (tail == null)
+            return;
+        if (tail.next == tail) {
+            tail = null;
+            return;
+        }
+        Node temp = tail.next;
+        tail.next = temp.next;
+        temp = null;
+    }
+
     public static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = tail.next;
@@ -90,6 +118,11 @@ public class CircularLinkedList {
         insertMiddle(1111, 5);
         display();
         insertMiddle(11111, 99);
+        display();
+
+        deleteFromTheFront();
+        display();
+        deleteFromTheEnd();
         display();
     }
 
