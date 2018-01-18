@@ -1,20 +1,20 @@
 package linkedlist;
 
-public class DoublyLinkedList {
+public class DLL {
 
-    private static Node head;
+    static Node head;
 
     private static class Node {
         int data;
         Node next;
         Node prev;
 
-        public Node(int data) {
+        Node(int data) {
             this.data = data;
         }
     }
 
-    public static void insertBeginning(int data) {
+    static void insertBeginning(int data) {
         if (head == null) {
             head = new Node(data);
             return;
@@ -26,7 +26,7 @@ public class DoublyLinkedList {
         temp.prev = head;
     }
 
-    public static void insertEnd(int data) {
+    static void insertEnd(int data) {
         if (head == null) {
             head = new Node(data);
             return;
@@ -40,7 +40,7 @@ public class DoublyLinkedList {
         temp.next.prev = temp;
     }
 
-    public static void insertMiddle(int data, int position) {
+    static void insertMiddle(int data, int position) {
         if (head == null) {
             System.out.println("Head is null, inserting at the beginning");
             head = new Node(data);
@@ -77,7 +77,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public static void deleteFromTheBeginning() {
+    static void deleteFromTheBeginning() {
         Node temp = head;
         if (head != null) {
             head = temp.next;
@@ -86,7 +86,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public static void deleteFromTheEnd() {
+    static void deleteFromTheEnd() {
         if (head == null)
             return;
         if (head.next == null) {
@@ -102,7 +102,7 @@ public class DoublyLinkedList {
         q.next = null; // to prevent loitering
     }
 
-    public static void deleteFromThePosition(int position) {
+    static void deleteFromThePosition(int position) {
         if (position < 0) {
             position = 0;
         } else if (head == null) {
@@ -130,7 +130,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public static void display() {
+    static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = head;
         builder.append(">>>   ");

@@ -1,19 +1,19 @@
 package linkedlist;
 
-public class CircularLinkedList {
+public class CLL {
 
-    private static Node tail;
+    static Node tail;
 
     private static class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+        Node(int data) {
             this.data = data;
         }
     }
 
-    public static void insertBeginning(int data) {
+    static void insertBeginning(int data) {
         if (tail == null) {
             tail = new Node(data);
             tail.next = tail;
@@ -25,12 +25,12 @@ public class CircularLinkedList {
         tail.next = node;
     }
 
-    public static void insertEnd(int data) {
+    static void insertEnd(int data) {
         insertBeginning(data);
         tail = tail.next;
     }
 
-    public static void insertMiddle(int data, int position) {
+    static void insertMiddle(int data, int position) {
         if (tail == null) {
             System.out.println("Head is null, inserting at the beginning");
             tail = new Node(data);
@@ -62,7 +62,7 @@ public class CircularLinkedList {
         }
     }
 
-    public static void deleteFromTheEnd() {
+    static void deleteFromTheEnd() {
         if (tail == null)
             return;
         if (tail.next == tail) {
@@ -78,7 +78,7 @@ public class CircularLinkedList {
         tail = temp;
     }
 
-    public static void deleteFromTheFront() {
+    static void deleteFromTheFront() {
         if (tail == null)
             return;
         if (tail.next == tail) {
@@ -90,7 +90,7 @@ public class CircularLinkedList {
         temp = null;
     }
 
-    public static void display() {
+    static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = tail.next;
         while (temp != tail) {

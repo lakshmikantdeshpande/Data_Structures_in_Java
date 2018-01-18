@@ -1,19 +1,19 @@
 package linkedlist;
 
-public class SinglyLinkedList {
+public class SLL {
 
-    private static Node head;
+    static Node head;
 
-    private static class Node {
+    static class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+        Node(int data) {
             this.data = data;
         }
     }
 
-    public static void insertBeginning(int data) {
+    static void insertBeginning(int data) {
         if (head == null) {
             head = new Node(data);
             return;
@@ -24,7 +24,7 @@ public class SinglyLinkedList {
         head.next = temp;
     }
 
-    public static void deleteFromTheBeginning() {
+    static void deleteFromTheBeginning() {
         Node temp = head;
         if (head != null) {
             head = temp.next;
@@ -32,7 +32,7 @@ public class SinglyLinkedList {
         }
     }
 
-    public static void insertEnd(int data) {
+    static void insertEnd(int data) {
         if (head == null) {
             head = new Node(data);
             return;
@@ -45,7 +45,7 @@ public class SinglyLinkedList {
         temp.next = new Node(data);
     }
 
-    public static void deleteFromTheEnd() {
+    static void deleteFromTheEnd() {
         if (head == null) {
             return;
         } else if (head.next == null) {
@@ -62,7 +62,7 @@ public class SinglyLinkedList {
         q.next = null; // to prevent loitering
     }
 
-    public static void insertMiddle(int data, int position) {
+    static void insertMiddle(int data, int position) {
         if (head == null) {
             System.out.println("Head is null, inserting at the beginning");
             head = new Node(data);
@@ -94,7 +94,7 @@ public class SinglyLinkedList {
         }
     }
 
-    public static void deleteFromThePosition(int position) {
+    static void deleteFromThePosition(int position) {
         if (position < 0) {
             position = 0;
         } else if (head == null) {
@@ -115,7 +115,7 @@ public class SinglyLinkedList {
         p = null;
     }
 
-    public static void display() {
+    static void display() {
         StringBuilder builder = new StringBuilder();
         Node temp = head;
         while (temp != null) {
