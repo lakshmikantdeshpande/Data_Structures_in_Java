@@ -1,6 +1,7 @@
 package linkedlist;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class FindMiddle {
 
@@ -13,6 +14,21 @@ public class FindMiddle {
         System.out.println(findMiddle1(SLL.head));
         System.out.println(findMiddle2(SLL.head));
         System.out.println(findMiddle3(SLL.head));
+        System.out.println(findMiddle4(SLL.head));
+    }
+
+    // N time 1 space
+    private static int findMiddle4(SLL.Node head) {
+        if (head == null) {
+            return -1;
+        }
+
+        SLL.Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.data;
     }
 
     // N + N time 1 space
@@ -42,7 +58,7 @@ public class FindMiddle {
             return -1;
         }
 
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int i = 0;
         while (head != null) {
             map.put(i++, head.data);
