@@ -14,6 +14,23 @@ public class Reverse {
         SLL.display();
         SLL.head = reverse2(SLL.head);
         SLL.display();
+        SLL.head = reverse3(SLL.head);
+        SLL.display();
+    }
+
+    private static SLL.Node reverse3(SLL.Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        SLL.Node curr = head, prev = null;
+        while (curr != null) {
+            SLL.Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 
     private static SLL.Node reverse2(SLL.Node head) {
