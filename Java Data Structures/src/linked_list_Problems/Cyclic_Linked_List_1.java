@@ -57,7 +57,7 @@ public class Cyclic_Linked_List_1 {
             return;
         }
 
-        List<Node> list = new ArrayList<Node>();
+        List<Node> list = new ArrayList<>();
         Node temp = head;
         while (temp.next != null && !list.contains(temp.next)) {
             temp = temp.next;
