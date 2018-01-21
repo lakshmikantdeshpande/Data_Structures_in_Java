@@ -16,14 +16,17 @@ public class StackUsingLL {
         }
     }
 
+    // 1 time 1 space
     private int size() {
         return this.size;
     }
 
+    // 1 time 1 space
     private boolean isEmpty() {
         return size() == 0;
     }
 
+    // 1 time 1 space
     private void push(int data) {
         Node oldHead = head;
         head = new Node(data);
@@ -31,6 +34,7 @@ public class StackUsingLL {
         size++;
     }
 
+    // 1 time 1 space
     private int pop() {
         if (isEmpty()) {
             throw new RuntimeException("Stack is empty");

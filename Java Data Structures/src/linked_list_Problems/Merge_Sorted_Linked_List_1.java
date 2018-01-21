@@ -56,7 +56,7 @@ public class Merge_Sorted_Linked_List_1 {
         if (head2 == null)
             return head1;
 
-        Node head = new Node(0);
+        Node head;
         if (head1.data <= head2.data) {
             head = head1;
             head.next = merge(head1.next, head2);

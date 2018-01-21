@@ -16,6 +16,7 @@ public class Search {
         return findRec(head, i, 0);
     }
 
+    // N time N space (for recursion)
     private static int findRec(SLL.Node head, int i, int index) {
         if (head == null) {
             return -1;
@@ -26,6 +27,7 @@ public class Search {
         }
     }
 
+    // N time 1 space
     private static int findIterative(SLL.Node head, int i) {
         if (head == null) {
             return -1;

@@ -18,6 +18,7 @@ public class Reverse {
         SLL.display();
     }
 
+    // N time 1 space
     private static SLL.Node reverse3(SLL.Node head) {
         if (head == null) {
             return null;
@@ -33,6 +34,7 @@ public class Reverse {
         return prev;
     }
 
+    // N time N space (for recursion)
     private static SLL.Node reverse2(SLL.Node head) {
         if (head == null) {
             return null;

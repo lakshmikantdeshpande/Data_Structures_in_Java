@@ -17,6 +17,7 @@ public class Length {
         System.out.println(length);
     }
 
+    // N time N space
     private static int findLengthRecursive(SLL.Node head) {
         if (head == null) {
             return 0;
@@ -24,6 +25,7 @@ public class Length {
         return 1 + findLengthRecursive(head.next);
     }
 
+    // N time 1 space
     private static void findLengthIterative(SLL.Node head) {
         SLL.Node temp = head;
         int counter = 0;

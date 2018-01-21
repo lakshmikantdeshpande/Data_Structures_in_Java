@@ -15,6 +15,7 @@ public class InsertionSortedLinkedList {
         SLL.display();
     }
 
+    // N time 1 space
     private static SLL.Node insertIntoSortedLinkedList(SLL.Node head, int data) {
         SLL.Node node = new SLL.Node(data);
 
