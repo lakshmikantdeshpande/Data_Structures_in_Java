@@ -20,6 +20,7 @@ public class Intersection {
         System.out.println(findIntersection3(SLL.head, node));
     }
 
+    // M + N time 1 space
     private static boolean findIntersection3(SLL.Node head1, SLL.Node head2) {
         if (head1 == null || head2 == null) {
             return false;
