@@ -1,17 +1,48 @@
 package linkedlist;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class RemoveDuplicatesUnsortedLL {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            SLL.insertBeginning(i);
-            SLL.insertBeginning(i);
-        }
+        getLinkedList();
         SLL.display();
 
         SLL.head = removeDuplicates1(SLL.head);
         SLL.display();
+
+        getLinkedList();
+        SLL.head = removeDuplicates2(SLL.head);
+        SLL.display();
+    }
+
+    // N time N space
+    private static SLL.Node removeDuplicates2(SLL.Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        Set<Integer> set = new LinkedHashSet<>();
+        SLL.Node temp = head;
+        while (temp != null) {
+            SLL.Node nxt = temp.next;
+            temp.next = null;
+            set.add(temp.data);
+            temp = nxt;
+        }
+
+        SLL.Node newHead = null;
+        for (int k : set) {
+            if (temp == null) {
+                temp = new SLL.Node(k);
+                newHead = temp;
+            } else {
+                temp.next = new SLL.Node(k);
+                temp = temp.next;
+            }
+        }
+        return newHead;
     }
 
     // N * N time 1 space
@@ -35,6 +66,15 @@ public class RemoveDuplicatesUnsortedLL {
             temp1 = temp1.next;
         }
         return head;
+    }
+
+    private static SLL.Node getLinkedList() {
+        SLL.head = null;
+        for (int i = 0; i < 10; i++) {
+            SLL.insertBeginning(i);
+            SLL.insertBeginning(i);
+        }
+        return SLL.head;
     }
 
 }
