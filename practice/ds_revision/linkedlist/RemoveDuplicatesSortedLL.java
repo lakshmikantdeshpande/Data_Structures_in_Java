@@ -32,7 +32,6 @@ public class RemoveDuplicatesSortedLL {
                 curr = curr.next;
             }
         }
-        return;
     }
 
     // N time N space
