@@ -12,6 +12,7 @@ public class MakeLastNodeTheFirstNode {
         SLL.display();
     }
 
+    // N time 1 space
     private static SLL.Node makeLastNodeTheFirstNode(SLL.Node head) {
         if (head == null || head.next == null) {
             return head;
