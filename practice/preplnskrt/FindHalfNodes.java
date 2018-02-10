@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class FindFullNodes {
+public class FindHalfNodes {
 
     private static class TreeNode {
         int data;
@@ -23,12 +23,12 @@ public class FindFullNodes {
         root.right.right.right.right = new TreeNode(455);
         root.right.right.right.left = new TreeNode(455);
 
-        System.out.printf("There are %d full nodes in the tree\n", findFullNodes(root));
-        System.out.printf("There are %d full nodes in the tree\n", findFullNodesRecursive(root, 0));
+        System.out.printf("There are %d half nodes in the tree\n", findHalfNodes(root));
+        System.out.printf("There are %d half nodes in the tree\n", findHalfNodesRecursive(root, 0));
     }
 
-    private static int findFullNodes(TreeNode root) {
-        if (root == null || (root.left == null && root.right == null)) {
+    private static int findHalfNodes(TreeNode root) {
+        if (root == null) {
             return 0;
         }
 
@@ -39,7 +39,7 @@ public class FindFullNodes {
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
 
-            if (node.left != null && node.right != null) {
+            if ((node.left == null && node.right != null) || (node.left != null && node.right == null)) {
                 count++;
             }
             if (node.left != null) {
@@ -52,15 +52,15 @@ public class FindFullNodes {
         return count;
     }
 
-    private static int findFullNodesRecursive(TreeNode root, int i) {
+    private static int findHalfNodesRecursive(TreeNode root, int i) {
         if (root == null) {
             return 0;
         }
 
-        if (root.left == null && root.right == null) {
-            return 1;
+        if ((root.left == null && root.right != null) || (root.left != null && root.right == null)) {
+            return 1 + findHalfNodes(root.right == null ? root.left : root.right);
         } else {
-            return findFullNodesRecursive(root.left, i) + findFullNodesRecursive(root.right, i);
+            return findHalfNodesRecursive(root.left, i) + findHalfNodesRecursive(root.right, i);
         }
     }
 
