@@ -23,6 +23,7 @@ public class NumberOfLeaves {
         root.right.right.right.right = new TreeNode(455);
 
         System.out.printf("There are %d leaves in the tree.\n", findNumberOfLeaves(root));
+        System.out.printf("There are %d leaves in the tree.\n", findNumberOfLeavesRecursive(root, 0));
     }
 
     private static int findNumberOfLeaves(TreeNode root) {
@@ -49,6 +50,18 @@ public class NumberOfLeaves {
             }
         }
         return counter;
+    }
+
+    private static int findNumberOfLeavesRecursive(TreeNode root, int i) {
+        if (root == null) {
+            return 0;
+        }
+
+        if (root.left == null && root.right == null) {
+            return 1;
+        } else {
+            return findNumberOfLeavesRecursive(root.left, i) + findNumberOfLeaves(root.right);
+        }
     }
 
 }
