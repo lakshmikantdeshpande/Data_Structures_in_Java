@@ -1,5 +1,8 @@
 package algorithms;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class HasUniqueCharacters {
 
     public static void main(String[] args) {
@@ -44,6 +47,24 @@ public class HasUniqueCharacters {
             }
             flag[value] = true;
         }
+        return true;
+    }
+
+    // n time n space
+    private static boolean hasUniqueCharacters3(String one) {
+        if (one == null) {
+            return false;
+        } else if (one.isEmpty()) {
+            return true;
+        }
+
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < one.length(); i++) {
+            if (!set.add(one.charAt(i))) {
+                return false;
+            }
+        }
+
         return true;
     }
 
