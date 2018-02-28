@@ -1,6 +1,8 @@
 package algorithms;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class HasUniqueCharacters {
@@ -10,6 +12,8 @@ public class HasUniqueCharacters {
         for (int i = 0; i < array.length; i++) {
             System.out.println(hasUniqueCharacters1(array[i]));
             System.out.println(hasUniqueCharacters2(array[i]));
+            System.out.println(hasUniqueCharacters3(array[i]));
+            System.out.println(hasUniqueCharacters4(array[i]));
         }
     }
 
@@ -65,6 +69,24 @@ public class HasUniqueCharacters {
             }
         }
 
+        return true;
+    }
+
+    private static boolean hasUniqueCharacters4(String one) {
+        if (one == null) {
+            return false;
+        } else if (one.isEmpty()) {
+            return true;
+        }
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < one.length(); i++) {
+            if (map.containsKey(one.charAt(i))) {
+                return false;
+            } else {
+                map.put(one.charAt(i), 1);
+            }
+        }
         return true;
     }
 
