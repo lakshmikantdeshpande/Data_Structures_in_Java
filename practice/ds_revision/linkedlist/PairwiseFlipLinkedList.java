@@ -83,4 +83,16 @@ public class PairwiseFlipLinkedList {
         return oldHead;
     }
 
+    private static Node pairwiseFlipRecursive(Node head) {
+        if (head == null && head.next == null) {
+            return head;
+        }
+
+        Node nxt = head.next.next;
+        Node newhead = head.next;
+        head.next.next = head;
+        head.next = pairwiseFlipRecursive(nxt);
+        return newhead;
+    }
+
 }
