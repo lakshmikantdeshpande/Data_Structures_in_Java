@@ -41,6 +41,8 @@ public class PairwiseFlipLinkedList {
         display(head);
         head = pairwiseFlip(head);
         display(head);
+        head = pairwiseFlipRecursive(head);
+        display(head);
     }
 
     private static void display(Node head) {
@@ -84,7 +86,7 @@ public class PairwiseFlipLinkedList {
     }
 
     private static Node pairwiseFlipRecursive(Node head) {
-        if (head == null && head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
