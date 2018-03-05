@@ -16,6 +16,7 @@ public class IsBSTOrNot {
         bst.right = new BST(1);
 
         System.out.println(isBst(bst));
+        System.out.println(isBSTAlternative(bst));
     }
 
     private static boolean isBst(BST root) {
@@ -31,6 +32,22 @@ public class IsBSTOrNot {
             return false;
 
         return isBst(root.left) && isBst(root.right);
+    }
+
+    private static int last = Integer.MIN_VALUE;
+
+    private static boolean isBSTAlternative(BST root) {
+        if (root == null)
+            return true;
+
+        if (!isBSTAlternative(root.left))
+            return false;
+
+        if (root.data < last)
+            return false;
+        last = root.data;
+
+        return isBSTAlternative(root.right);
     }
 
 }
