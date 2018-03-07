@@ -11,7 +11,7 @@ public class LargestHistogram {
 
     private static int largestAreaUnderHistogram(int[] array) {
         if (array == null || array.length == 0) {
-            return -1;
+            return 0;
         }
 
         int maxArea = 0;
@@ -42,6 +42,5 @@ public class LargestHistogram {
 
         return maxArea;
     }
-
 
 }
