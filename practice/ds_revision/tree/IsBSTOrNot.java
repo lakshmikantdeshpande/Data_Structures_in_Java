@@ -17,6 +17,7 @@ public class IsBSTOrNot {
 
         System.out.println(isBst(bst));
         System.out.println(isBSTAlternative(bst));
+        System.out.println(checkIfTreeIsBst(bst, Integer.MIN_VALUE, Integer.MAX_VALUE));
     }
 
     private static boolean isBst(BST root) {
@@ -48,6 +49,18 @@ public class IsBSTOrNot {
         last = root.data;
 
         return isBSTAlternative(root.right);
+    }
+
+    private static boolean checkIfTreeIsBst(BST root, int min, int max) {
+        if (root == null) {
+            return true;
+        }
+
+        if (root.data < min || root.data > max) {
+            return false;
+        }
+
+        return (checkIfTreeIsBst(root.left, min, root.data - 1) && checkIfTreeIsBst(root.right, root.data + 1, max));
     }
 
 }
