@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/revision_kurumanchi" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ds_revision" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/preplnskrt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/eleven_g" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
