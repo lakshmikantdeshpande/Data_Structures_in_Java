@@ -16,7 +16,7 @@ public class CheckDuplicates {
     }
 
     // n * n time 1 space
-    static boolean hasDuplicatesBruteForce(int[] array) {
+    private static boolean hasDuplicatesBruteForce(int[] array) {
         if (array == null || array.length == 0) {
             throw new RuntimeException("The given array is null / empty");
         }
@@ -32,7 +32,7 @@ public class CheckDuplicates {
     }
 
     // nlogn time 1 space
-    static boolean hasDuplicatesSort(int[] array) {
+    private static boolean hasDuplicatesSort(int[] array) {
         if (array == null || array.length == 0) {
             throw new RuntimeException("The given array is null / empty");
         }
@@ -47,7 +47,7 @@ public class CheckDuplicates {
     }
 
     // n time n space
-    static boolean hasDuplicatesSet(int[] array) {
+    private static boolean hasDuplicatesSet(int[] array) {
         if (array == null || array.length == 0) {
             throw new RuntimeException("The given array is null / empty");
         }
@@ -63,7 +63,7 @@ public class CheckDuplicates {
 
     // n time 1 space
     // assuming that all elements are positive, and in range of array length
-    static boolean hasDuplicatesNegativeInRange(int[] array) {
+    private static boolean hasDuplicatesNegativeInRange(int[] array) {
         if (array == null || array.length == 0) {
             throw new RuntimeException("The given array is null / empty");
         }
