@@ -4,7 +4,8 @@
 package linked_list_Problems;
 
 public class Stack_Using_Linked_List {
-    private int top;
+    
+private int top;
     private int sizelimit;
     private Node head;
 
@@ -30,7 +31,7 @@ public class Stack_Using_Linked_List {
         System.out.println(sull.isEmpty());
     }
 
-    public synchronized int pop() throws Exception {
+    public int pop() throws Exception {
         if (head == null)
             throw new Exception("Underflow");
         int value = head.data;
@@ -39,7 +40,7 @@ public class Stack_Using_Linked_List {
         return value;
     }
 
-    public synchronized void push(int data) throws Exception {
+    public void push(int data) throws Exception {
         if (top == sizelimit)
             throw new Exception("Overflow");
         Node temp = new Node(data);
@@ -48,15 +49,15 @@ public class Stack_Using_Linked_List {
         top++;
     }
 
-    public synchronized int size() {
+    public int size() {
         return this.top;
     }
 
-    public synchronized boolean isFull() {
+    public boolean isFull() {
         return this.top == this.sizelimit;
     }
 
-    public synchronized boolean isEmpty() {
+    public boolean isEmpty() {
         return this.top == 0;
     }
 
@@ -68,4 +69,5 @@ public class Stack_Using_Linked_List {
             this.data = data;
         }
     }
+
 }

@@ -4,9 +4,10 @@
 package linked_list_Problems;
 
 public class Rotate_List {
+
     private static Node head;
 
-    private static synchronized void display(Node head) {
+    private static void display(Node head) {
         if (head == null)
             return;
         Node temp = head;
@@ -47,20 +48,25 @@ public class Rotate_List {
     }
 
     private static Node rotateRight(Node head, int n) {
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return head;
+        }
+
         Node rotateStart = head, rotateEnd = head;
         while (n-- > 0) {
             rotateEnd = rotateEnd.next;
             if (rotateEnd == null)
                 rotateEnd = head;
         }
+
         if (rotateStart == rotateEnd)
             return head;
+
         while (rotateEnd.next != null) {
             rotateStart = rotateStart.next;
             rotateEnd = rotateEnd.next;
         }
+
         Node temp = rotateStart.next;
         rotateEnd.next = head;
         rotateStart.next = null;
@@ -73,7 +79,7 @@ public class Rotate_List {
 
         public Node(int data) {
             this.data = data;
-            this.next = null;
         }
     }
+
 }

@@ -76,7 +76,7 @@ public class Start_Of_The_Loop_Linked_List {
         }
 
         // Make slow pointer point to the head, and move fast & slow pointer by
-        // 1 at a time
+        // 1 at a time if they meet, a loop exists
         slowPointer = head;
         while (slowPointer != fastPointer) {
             fastPointer = fastPointer.next;
