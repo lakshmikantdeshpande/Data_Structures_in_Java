@@ -39,7 +39,7 @@ public class Reverse_K_Nodes_1 {
         rll.display();
     }
 
-    private synchronized void display() {
+    private void display() {
         if (head == null)
             return;
         Node temp = head;
@@ -50,7 +50,7 @@ public class Reverse_K_Nodes_1 {
         System.out.print("null\n");
     }
 
-    public synchronized Node reverse(Node head, int k) {
+    public Node reverse(Node head, int k) {
         int count = k;
         Node prev = null, curr = head, next = null;
         while (curr != null && count > 0) {

@@ -38,7 +38,7 @@ public class TwoStacksInAnArray {
         System.out.println(tsa);
     }
 
-    public synchronized int pop(int id) throws Exception {
+    public int pop(int id) throws Exception {
         if (isEmpty(id))
             throw new Exception("Underflow");
 
@@ -54,7 +54,7 @@ public class TwoStacksInAnArray {
             throw new Exception("Invalid ID bruh !");
     }
 
-    public synchronized void push(int id, int data) throws Exception {
+    public void push(int id, int data) throws Exception {
         if (topA + 1 == topB)
             throw new Exception("Touched the array limit, sorry :( ");
         if (id == 1)

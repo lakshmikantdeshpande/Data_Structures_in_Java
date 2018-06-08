@@ -25,12 +25,12 @@ public class QueueUsing2Stacks {
         System.out.println(quts.deQueue());
     }
 
-    public synchronized void enQueue(int data) {
+    public void enQueue(int data) {
         stack1.push(data);
     }
 
     // Micro Optimization
-    public synchronized int deQueue() throws Exception {
+    public int deQueue() throws Exception {
         if (stack2.empty()) {
             if (stack1.empty())
                 throw new Exception("Empty Queue");

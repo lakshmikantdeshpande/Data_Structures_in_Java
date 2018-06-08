@@ -25,7 +25,7 @@ public class Cut_Circular_Linked_List {
         cll.splitList(cll.tail, temp1, temp2);
     }
 
-    public synchronized void display() {
+    public void display() {
         if (tail == null)
             return;
 
@@ -37,7 +37,7 @@ public class Cut_Circular_Linked_List {
         System.out.println(temp.data);
     }
 
-    public synchronized void insertAtTheBeginning(int data) {
+    public void insertAtTheBeginning(int data) {
         Node temp = new Node(data);
         if (tail == null) {
             tail = temp;
@@ -49,7 +49,7 @@ public class Cut_Circular_Linked_List {
         length++;
     }
 
-    public synchronized void insertAtTheEnd(int data) {
+    public void insertAtTheEnd(int data) {
         insertAtTheBeginning(data);
         tail = tail.next; // length added in the insertAtTheBeginning function
     }

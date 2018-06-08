@@ -27,7 +27,7 @@ public class LinkedListQueue {
         System.out.println(llq.toString());
     }
 
-    public synchronized void enQueue(int data) throws Exception {
+    public void enQueue(int data) throws Exception {
         Node node = new Node(data);
         if (isEmpty())
             front = node;
@@ -37,7 +37,7 @@ public class LinkedListQueue {
         length++;
     }
 
-    public synchronized int deQueue() throws Exception {
+    public int deQueue() throws Exception {
         if (isEmpty())
             throw new Exception("Underflow");
 

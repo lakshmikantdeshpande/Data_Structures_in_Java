@@ -41,7 +41,7 @@ public class Reverse_A_Linked_List_1 {
         rll.display();
     }
 
-    private synchronized void display() {
+    private void display() {
         if (head == null)
             return;
         Node temp = head;
@@ -53,7 +53,7 @@ public class Reverse_A_Linked_List_1 {
     }
 
     // n time 1 space, move these three pointers one by one
-    public synchronized void reverse() {
+    public void reverse() {
         if (head == null) {
             System.out.println("Linked list seems empty !");
         }

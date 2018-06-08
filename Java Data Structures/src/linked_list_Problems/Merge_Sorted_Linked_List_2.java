@@ -7,7 +7,7 @@ public class Merge_Sorted_Linked_List_2 {
     private Node head1;
     private Node head2;
 
-    public static synchronized void display(Node head) {
+    public static void display(Node head) {
         Node temp = head;
         if (temp == null)
             return;

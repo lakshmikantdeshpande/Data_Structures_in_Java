@@ -42,7 +42,7 @@ public class Insert_In_A_Sorted_Linked_List {
         ill.display();
     }
 
-    private synchronized void display() {
+    private void display() {
         if (head == null)
             return;
         Node temp = head;
@@ -53,7 +53,7 @@ public class Insert_In_A_Sorted_Linked_List {
         System.out.print("null\n");
     }
 
-    private synchronized void InsertInTheMiddle(int data) {
+    private void InsertInTheMiddle(int data) {
         if (head == null) {
             System.out.println("The linked list appears empty!");
             return;

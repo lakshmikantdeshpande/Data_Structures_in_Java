@@ -26,13 +26,13 @@ public class Nth_Node_From_The_End_5 {
         nne.nthFromTheEnd(nne.head, 0);
     }
 
-    public synchronized void addFromTheBeginning(int data) {
+    public void addFromTheBeginning(int data) {
         Node temp = new Node(data);
         temp.next = head;
         head = temp;
     }
 
-    public synchronized void display(Node thead) {
+    public void display(Node thead) {
         while (thead != null) {
             System.out.print(thead.data + " -> ");
             thead = thead.next;

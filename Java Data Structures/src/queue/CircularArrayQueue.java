@@ -40,7 +40,7 @@ public class CircularArrayQueue {
         System.out.println(caq.toString());
     }
 
-    public synchronized void enQueue(int data) throws Exception {
+    public void enQueue(int data) throws Exception {
         if (isFull())
             throw new Exception("Overflow");
         size++;
@@ -49,7 +49,7 @@ public class CircularArrayQueue {
         rear = (rear + 1) % capacity;
     }
 
-    public synchronized int deQueue() throws Exception {
+    public int deQueue() throws Exception {
         if (isEmpty())
             throw new Exception("Underflow");
 
@@ -60,15 +60,15 @@ public class CircularArrayQueue {
         return data;
     }
 
-    public synchronized boolean isEmpty() {
+    public boolean isEmpty() {
         return size() == 0;
     }
 
-    public synchronized int size() {
+    public int size() {
         return this.size;
     }
 
-    public synchronized boolean isFull() {
+    public boolean isFull() {
         return size() == this.capacity;
     }
 

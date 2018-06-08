@@ -23,14 +23,14 @@ public class Nth_Node_From_The_End_3 {
         nnd.nthFromTheEnd(0);
     }
 
-    public synchronized void insertFromTheBeginning(int data) {
+    public void insertFromTheBeginning(int data) {
         Node oldhead = head;
         head = new Node(data);
         head.next = oldhead;
         size++;
     }
 
-    private synchronized void display() {
+    private void display() {
         if (head == null)
             return;
         Node temp = head;

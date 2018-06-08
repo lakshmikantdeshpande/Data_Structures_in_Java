@@ -15,7 +15,7 @@ public class MinimumElementStack_2 {
         minStack = new Stack<>();
     }
 
-    public static synchronized int getMinimum() throws Exception {
+    public static int getMinimum() throws Exception {
         if (minStack.isEmpty())
             throw new Exception("Stack is empty!");
         return minStack.peek();
@@ -41,13 +41,13 @@ public class MinimumElementStack_2 {
         mes.pop();
     }
 
-    public synchronized void push(int data) {
+    public void push(int data) {
         stack.push(data);
         if (minStack.isEmpty() || data <= minStack.peek())
             minStack.push(data);
     }
 
-    public synchronized int pop() throws Exception {
+    public int pop() throws Exception {
         if (stack.isEmpty())
             throw new Exception("Underflow");
 

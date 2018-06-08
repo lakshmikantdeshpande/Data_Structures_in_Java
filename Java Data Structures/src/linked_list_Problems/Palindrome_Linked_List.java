@@ -9,7 +9,7 @@ public class Palindrome_Linked_List {
 
     private static Node head;
 
-    private static synchronized void display(Node head) {
+    private static void display(Node head) {
         if (head == null)
             return;
         Node temp = head;

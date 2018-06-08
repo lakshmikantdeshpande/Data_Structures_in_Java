@@ -57,7 +57,7 @@ public class Intersection_Of_Linked_Lists_4 {
         ill.display(head2);
     }
 
-    private synchronized void display(Node head) {
+    private void display(Node head) {
         if (head == null)
             return;
         Node temp = head;

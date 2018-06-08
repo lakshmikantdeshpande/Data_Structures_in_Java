@@ -5,7 +5,7 @@ package linked_list_Problems;
 public class Remove_Duplicates_1 {
     private static Node head;
 
-    private static synchronized void display(Node head) {
+    private static void display(Node head) {
         if (head == null)
             return;
         Node temp = head;

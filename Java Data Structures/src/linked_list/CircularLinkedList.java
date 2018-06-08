@@ -22,7 +22,7 @@ public class CircularLinkedList {
         cll.display();
     }
 
-    public synchronized int ListLength() {
+    public int ListLength() {
         if (tail == null)
             return 0;
         int count = 0;
@@ -37,7 +37,7 @@ public class CircularLinkedList {
         // or just return this.length;
     }
 
-    public synchronized void display() {
+    public void display() {
         if (tail == null)
             return;
 
@@ -49,7 +49,7 @@ public class CircularLinkedList {
         System.out.println(temp.data);
     }
 
-    public synchronized void insertAtTheBeginning(int data) {
+    public void insertAtTheBeginning(int data) {
         Node temp = new Node(data);
         if (tail == null) {
             tail = temp;
@@ -61,12 +61,12 @@ public class CircularLinkedList {
         length++;
     }
 
-    public synchronized void insertAtTheEnd(int data) {
+    public void insertAtTheEnd(int data) {
         insertAtTheBeginning(data);
         tail = tail.next; // length added in the insertAtTheBeginning function
     }
 
-    public synchronized void deleteFromTheEnd() {
+    public void deleteFromTheEnd() {
         if (tail == null)
             return;
         if (tail.next == tail) {
@@ -84,7 +84,7 @@ public class CircularLinkedList {
         length--;
     }
 
-    public synchronized void deleteFromTheFront() {
+    public void deleteFromTheFront() {
         if (tail == null)
             return;
         if (tail.next == tail) {

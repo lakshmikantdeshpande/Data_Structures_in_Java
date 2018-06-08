@@ -27,7 +27,7 @@ public class QueueReversal {
     }
 
     // Reverse the linked list using stack
-    public synchronized static QueueReversal reverseQueue(QueueReversal qr) throws Exception {
+    public static QueueReversal reverseQueue(QueueReversal qr) throws Exception {
         if (qr == null)
             return null;
 
@@ -40,15 +40,15 @@ public class QueueReversal {
         return qr;
     }
 
-    public synchronized boolean isEmpty() {
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public synchronized int size() {
+    public int size() {
         return size;
     }
 
-    public synchronized void enqueue(int data) {
+    public void enqueue(int data) {
         Node node = new Node(data);
         if (isEmpty())
             front = node;
@@ -58,7 +58,7 @@ public class QueueReversal {
         size++;
     }
 
-    public synchronized int dequeue() throws Exception {
+    public int dequeue() throws Exception {
         if (isEmpty())
             throw new Exception("Queue is empty! ");
         int data = front.data;
@@ -69,7 +69,7 @@ public class QueueReversal {
     }
 
     @Override
-    public synchronized String toString() {
+    public String toString() {
         if (isEmpty())
             return "[ ]";
         StringBuilder strb = new StringBuilder("[ ");

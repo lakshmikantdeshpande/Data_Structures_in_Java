@@ -27,14 +27,14 @@ public class StackUsing2Queues {
         System.out.println(su.pop());
     }
 
-    public synchronized void push(int data) {
+    public void push(int data) {
         if (queue1.isEmpty())
             queue2.offer(data);
         else
             queue1.offer(data);
     }
 
-    public synchronized int pop() throws Exception {
+    public int pop() throws Exception {
         int i = 0, size;
         if (queue2.isEmpty() && queue1.isEmpty())
             throw new Exception("Stack is empty");

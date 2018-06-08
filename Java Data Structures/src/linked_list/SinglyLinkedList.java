@@ -58,14 +58,14 @@ public class SinglyLinkedList {
         }
     }
 
-    public synchronized void insertAtTheBeginning(int data) {
+    public void insertAtTheBeginning(int data) {
         Node oldHead = head;
         head = new Node(data);
         head.next = oldHead;
         length++;
     }
 
-    public synchronized void insertAtTheEnd(int data) {
+    public void insertAtTheEnd(int data) {
         if (head == null) {
             insertAtTheBeginning(data);
             return;
@@ -81,7 +81,7 @@ public class SinglyLinkedList {
         length++;
     }
 
-    public synchronized void insertAtThePosition(int position, int data) throws Exception {
+    public void insertAtThePosition(int position, int data) throws Exception {
         if (position < 0)
             position = 0;
         if (position > length)
@@ -102,7 +102,7 @@ public class SinglyLinkedList {
         length++;
     }
 
-    public synchronized void deleteFromTheBeginning() {
+    public void deleteFromTheBeginning() {
         Node temp = head;
         if (head != null) {
             head = temp.next;
@@ -111,7 +111,7 @@ public class SinglyLinkedList {
         length--;
     }
 
-    public synchronized void deleteFromTheEnd() {
+    public void deleteFromTheEnd() {
         if (head == null)
             return;
         if (head.next == null) {
@@ -128,7 +128,7 @@ public class SinglyLinkedList {
         length--;
     }
 
-    public synchronized void deleteFromThePosition(int position) {
+    public void deleteFromThePosition(int position) {
         if (position < 0)
             position = 0;
         if (head == null)

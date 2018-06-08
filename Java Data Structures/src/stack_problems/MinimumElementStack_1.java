@@ -44,7 +44,7 @@ public class MinimumElementStack_1 {
         mes.pop();
     }
 
-    public synchronized int pop() throws Exception {
+    public int pop() throws Exception {
         if (head1 == null)
             throw new Exception("Underflow");
         int data = head1.data;
@@ -54,7 +54,7 @@ public class MinimumElementStack_1 {
         return data;
     }
 
-    public synchronized void push(int data) throws Exception {
+    public void push(int data) throws Exception {
         if (isEmpty()) {
             head1 = new Node(data);
             head2 = new Node(data);

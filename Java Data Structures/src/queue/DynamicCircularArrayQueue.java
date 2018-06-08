@@ -29,7 +29,7 @@ public class DynamicCircularArrayQueue {
         System.out.println(dacq.toString());
     }
 
-    public synchronized void enQueue(int data) throws Exception {
+    public void enQueue(int data) throws Exception {
         if (isFull())
             expand();
         size++;
@@ -50,7 +50,7 @@ public class DynamicCircularArrayQueue {
         capacity *= 2;
     }
 
-    public synchronized int deQueue() throws Exception {
+    public int deQueue() throws Exception {
         if (isEmpty())
             throw new Exception("Underflow");
 
@@ -73,15 +73,15 @@ public class DynamicCircularArrayQueue {
         queue = newQueue;
     }
 
-    public synchronized boolean isEmpty() {
+    public boolean isEmpty() {
         return size() == 0;
     }
 
-    public synchronized int size() {
+    public int size() {
         return this.size;
     }
 
-    public synchronized boolean isFull() {
+    public boolean isFull() {
         return size() == this.capacity;
     }
 

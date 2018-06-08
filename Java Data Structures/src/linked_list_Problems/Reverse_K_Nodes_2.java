@@ -40,7 +40,7 @@ public class Reverse_K_Nodes_2 {
         rll.display();
     }
 
-    private synchronized void display() {
+    private void display() {
         if (head == null)
             return;
         Node temp = head;
