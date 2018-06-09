@@ -93,7 +93,7 @@ public class DynamicCircularArrayQueue {
         StringBuilder strb = new StringBuilder("[ ");
         int index = front;
         for (int i = 0; i < size; i++) {
-            strb.append(queue[index] + " ");
+            strb.append(queue[index]).append(" ");
             index = (index + 1) % capacity;
         }
         return strb.append("]").toString();

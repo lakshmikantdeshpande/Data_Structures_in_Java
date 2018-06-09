@@ -26,8 +26,9 @@ public class VerticalSum {
         sum(map, root, 0);
         System.out.println();
 
-        for (int key : map.keySet())
-            System.out.println("Position: " + key + " Sum: " + map.get(key));
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println("Position: " + entry.getKey() + " Sum: " + entry.getValue());
+        }
     }
 
     private static void sum(Map<Integer, Integer> map, TreeNode root, int key) {

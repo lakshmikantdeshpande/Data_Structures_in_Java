@@ -21,7 +21,7 @@ public class ZigzagTraversal {
     }
 
     private static List<ArrayList<Integer>> zigzag(TreeNode root) {
-        List<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        List<ArrayList<Integer>> result = new ArrayList<>();
         if (root == null)
             return result;
 
@@ -31,7 +31,7 @@ public class ZigzagTraversal {
         queue.offer(root);
         queue.offer(null);
 
-        List<Integer> current = new ArrayList<Integer>();
+        List<Integer> current = new ArrayList<>();
 
         while (!queue.isEmpty()) {
             TreeNode temp = queue.poll();
@@ -43,13 +43,13 @@ public class ZigzagTraversal {
                     queue.offer(temp.right);
             } else {
                 if (reverse) {
-                    ArrayList<Integer> array = new ArrayList<Integer>(current);
+                    ArrayList<Integer> array = new ArrayList<>(current);
                     result.add(array);
                     current.clear();
                 } else {
-                    Stack<Integer> stack = new Stack<Integer>();
+                    Stack<Integer> stack = new Stack<>();
                     stack.addAll(current);
-                    ArrayList<Integer> array = new ArrayList<Integer>();
+                    ArrayList<Integer> array = new ArrayList<>();
                     while (!stack.isEmpty())
                         array.add(stack.pop());
                     result.add(array);

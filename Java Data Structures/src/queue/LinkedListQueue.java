@@ -71,7 +71,7 @@ public class LinkedListQueue {
             return "[ ]";
         StringBuilder strb = new StringBuilder("[ ");
         for (Node temp = front; temp != null; temp = temp.next)
-            strb.append(temp.data + " ");
+            strb.append(temp.data).append(" ");
         return strb.append("]").toString();
     }
 
