@@ -1,3 +1,5 @@
+package clair;
+
 import java.io.Serializable;
 
 public class Employee implements Comparable<Employee>, Serializable {
