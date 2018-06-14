@@ -24,7 +24,8 @@ public class Reverse {
             return null;
         }
 
-        SLL.Node curr = head, prev = null;
+        SLL.Node curr = head;
+        SLL.Node prev = null;
         while (curr != null) {
             SLL.Node next = curr.next;
             curr.next = prev;
