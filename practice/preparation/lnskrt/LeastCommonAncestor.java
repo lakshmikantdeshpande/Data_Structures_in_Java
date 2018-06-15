@@ -15,7 +15,7 @@ public class LeastCommonAncestor {
 
         @Override
         public String toString() {
-            return "TreeNode{" +
+            return "Node{" +
                     "data=" + data +
                     '}';
         }
