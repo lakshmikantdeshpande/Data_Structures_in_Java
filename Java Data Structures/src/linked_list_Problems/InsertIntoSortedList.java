@@ -2,16 +2,25 @@ package linked_list_Problems;
 
 public class InsertIntoSortedList {
 
-    private static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-        }
-    }
-
     private Node head;
+
+    public static void main(String[] args) {
+        InsertIntoSortedList linkedList = new InsertIntoSortedList();
+
+        linkedList.insertBeginning(8);
+        linkedList.insertBeginning(7);
+        linkedList.insertBeginning(6);
+        linkedList.insertBeginning(5);
+        linkedList.insertBeginning(4);
+        linkedList.insertBeginning(3);
+        linkedList.insertBeginning(2);
+        linkedList.insertBeginning(1);
+
+        linkedList.display();
+        linkedList.insertIntoSortedList(0);
+        linkedList.display();
+
+    }
 
     private void insertIntoSortedList(int data) {
         if (head == null) {
@@ -59,21 +68,12 @@ public class InsertIntoSortedList {
         System.out.println(stringBuilder.toString());
     }
 
-    public static void main(String[] args) {
-        InsertIntoSortedList linkedList = new InsertIntoSortedList();
+    private static class Node {
+        int data;
+        Node next;
 
-        linkedList.insertBeginning(8);
-        linkedList.insertBeginning(7);
-        linkedList.insertBeginning(6);
-        linkedList.insertBeginning(5);
-        linkedList.insertBeginning(4);
-        linkedList.insertBeginning(3);
-        linkedList.insertBeginning(2);
-        linkedList.insertBeginning(1);
-
-        linkedList.display();
-        linkedList.insertIntoSortedList(0);
-        linkedList.display();
-
+        Node(int data) {
+            this.data = data;
+        }
     }
 }

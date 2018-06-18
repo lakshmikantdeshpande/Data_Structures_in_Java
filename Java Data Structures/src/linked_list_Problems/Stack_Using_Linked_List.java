@@ -4,8 +4,8 @@
 package linked_list_Problems;
 
 public class Stack_Using_Linked_List {
-    
-private int top;
+
+    private int top;
     private int sizelimit;
     private Node head;
 

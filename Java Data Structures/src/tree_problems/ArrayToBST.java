@@ -14,14 +14,14 @@ public class ArrayToBST {
 
         int[] array = new int[]{20, 30, 40, 50, 60, 70, 80};
 
-		/*-
+        /*-
          *It should be converted to this BST
-		 *       50                                   
-		 *     /     \                                 
-		 *    30      70                               
-		 *   /  \    /  \                              
-		 * 20   40  60   80 
-		 */
+         *       50
+         *     /     \
+         *    30      70
+         *   /  \    /  \
+         * 20   40  60   80
+         */
 
         printLevelOrder(arrayToBST(array, 0, array.length - 1));
 

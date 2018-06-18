@@ -35,7 +35,7 @@ public class HasUniqueCharacters {
         return true;
     }
 
-    // n time 1 space
+    // n time 1 space (flag array size is constant)
     private static boolean hasUniqueCharacters2(String one) {
         if (one == null) {
             return false;

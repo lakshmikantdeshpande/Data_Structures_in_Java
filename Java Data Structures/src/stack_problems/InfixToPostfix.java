@@ -80,10 +80,10 @@ public class InfixToPostfix {
         return map.get(c) <= map.get(stack.peek());
         /*
          * FOR DEBUGGING if (map.get(c) == null || map.get(stack.peek()) ==
-		 * null) { System.out.println(c + " -> " + map.get(c));
-		 * System.out.println(stack.peek() + " -> " + map.get(stack.peek()));
-		 * return false; }
-		 */
+         * null) { System.out.println(c + " -> " + map.get(c));
+         * System.out.println(stack.peek() + " -> " + map.get(stack.peek()));
+         * return false; }
+         */
     }
 
     private static boolean isAlphaNumeric(char c) {

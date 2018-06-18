@@ -8,14 +8,14 @@ public class BSTDriver {
     public static void main(String[] args) {
         BST root = insert(null, 50);
 
-		/*-
+        /*-
          *
-		 *       50                                   
-		 *     /     \                                 
-		 *    30      70                               
-		 *   /  \    /  \                              
-		 * 20   40  60   80 
-		 */
+         *       50
+         *     /     \
+         *    30      70
+         *   /  \    /  \
+         * 20   40  60   80
+         */
 
         root = insert(root, 30);
         root = insert(root, 20);

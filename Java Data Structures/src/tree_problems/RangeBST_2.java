@@ -12,14 +12,14 @@ public class RangeBST_2 {
 
     public static void main(String[] args) {
 
-		/*-
+        /*-
          *
-		 *       50                                   
-		 *     /     \                                 
-		 *    30      70                               
-		 *   /  \    /  \                              
-		 * 20   40  60   80 
-		 */
+         *       50
+         *     /     \
+         *    30      70
+         *   /  \    /  \
+         * 20   40  60   80
+         */
 
         BST root = insert(null, 50);
         root = insert(root, 30);

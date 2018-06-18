@@ -1,10 +1,6 @@
 package tree.huffman;
 
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 class HuffmanNode {
     int frequency;

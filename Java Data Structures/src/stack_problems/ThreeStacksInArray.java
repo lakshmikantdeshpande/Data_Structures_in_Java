@@ -24,9 +24,9 @@ public class ThreeStacksInArray {
         this(10);
     }
 
-	/*
+    /*
      * |---> |---> <---| topOne baseThree & topThree topTwo
-	 */
+     */
 
     public static void main(String args[]) throws Exception {
         ThreeStacksInArray tsia = new ThreeStacksInArray();

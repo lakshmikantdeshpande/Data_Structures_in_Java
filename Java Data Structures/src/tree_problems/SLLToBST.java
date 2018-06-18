@@ -16,16 +16,16 @@ public class SLLToBST {
     public static void main(String[] args) {
         /*-
          * 20 <> 30 <> 40 <> 50 <> 60 <> 70 <> 80
-		 */
+         */
 
-		/*-
+        /*-
          *It should be converted to this BST
-		 *       50                                   
-		 *     /     \                                 
-		 *    30      70                               
-		 *   /  \    /  \                              
-		 * 20   40  60   80 
-		 */
+         *       50
+         *     /     \
+         *    30      70
+         *   /  \    /  \
+         * 20   40  60   80
+         */
 
         head = new SLL(20);
         SLL two = new SLL(30);
