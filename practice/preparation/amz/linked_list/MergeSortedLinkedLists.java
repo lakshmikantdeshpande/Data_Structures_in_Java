@@ -3,11 +3,11 @@ package amz.linked_list;
 public class MergeSortedLinkedLists {
 
     public static void main(String[] args) {
-        Node head1 = createLinkedList(1);
-        display(head1);
-        Node head2 = createLinkedList(2);
-        display(head2);
-        Node merged = merge(head1, head2);
+        display(createLinkedList(1));
+        display(createLinkedList(2));
+        Node merged = merge(createLinkedList(1), createLinkedList(2));
+        display(merged);
+        merged = mergeRecursive(createLinkedList(1), createLinkedList(2));
         display(merged);
     }
 
@@ -39,6 +39,25 @@ public class MergeSortedLinkedLists {
             temp = temp.next;
         }
         return tempPrev.next;
+    }
+
+    // N + M time N + M space recursion
+    private static Node mergeRecursive(Node head1, Node head2) {
+        if (head1 == null) {
+            return head2;
+        } else if (head2 == null) {
+            return head1;
+        }
+
+        Node head;
+        if (head1.data <= head2.data) {
+            head = head1;
+            head.next = mergeRecursive(head1.next, head2);
+        } else {
+            head = head2;
+            head.next = mergeRecursive(head1, head2.next);
+        }
+        return head;
     }
 
     private static void display(Node head) {
