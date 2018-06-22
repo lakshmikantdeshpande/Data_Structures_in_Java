@@ -11,8 +11,8 @@ public class QueueUsing2Stacks {
     private Stack<Integer> stack1, stack2;
 
     public QueueUsing2Stacks() {
-        stack1 = new Stack<Integer>();
-        stack2 = new Stack<Integer>();
+        stack1 = new Stack<>();
+        stack2 = new Stack<>();
     }
 
     public static void main(String[] args) throws Exception {

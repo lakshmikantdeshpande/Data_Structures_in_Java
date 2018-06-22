@@ -7,11 +7,11 @@ public class QueueUsingStacks {
     private Stack<Integer> stack1 = new Stack();
     private Stack<Integer> stack2 = new Stack();
 
-    private void push(int data) {
+    private void enqueue(int data) {
         stack1.push(data);
     }
 
-    private int pop() {
+    private int dequeue() {
         if (stack1.isEmpty() && stack2.isEmpty()) {
             throw new RuntimeException("Underflow");
         }
@@ -26,16 +26,16 @@ public class QueueUsingStacks {
 
     public static void main(String[] args) {
         QueueUsingStacks queue = new QueueUsingStacks();
-        queue.push(1);
-        queue.push(2);
-        queue.push(3);
-        System.out.println(queue.pop());
-        System.out.println(queue.pop());
-        queue.push(4);
-        queue.push(5);
-        System.out.println(queue.pop());
-        System.out.println(queue.pop());
-        System.out.println(queue.pop());
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        queue.enqueue(4);
+        queue.enqueue(5);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
     }
 
 }
