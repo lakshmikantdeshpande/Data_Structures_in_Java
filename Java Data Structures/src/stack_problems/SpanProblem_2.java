@@ -8,7 +8,7 @@ import java.util.Stack;
 public class SpanProblem_2 {
 
     public static void main(String[] args) {
-        int spans[] = findSpans(new int[]{6, 3, 4, 5, 2});
+        int[] spans = findSpans(new int[]{6, 3, 4, 5, 2});
         for (int x : spans) {
             System.out.println(x);
         }
@@ -17,7 +17,7 @@ public class SpanProblem_2 {
     private static int[] findSpans(int[] array) {
         int[] spans = new int[array.length];
 
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
         stack.push(0);
         spans[0] = 1; // span of the first element will always be 1
 

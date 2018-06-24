@@ -1,4 +1,4 @@
-package amz;
+package amz.algos;
 
 import java.util.ArrayList;
 import java.util.List;
