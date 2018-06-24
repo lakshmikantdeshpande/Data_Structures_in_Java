@@ -24,7 +24,7 @@ public class SpanProblem_2 {
         for (int i = 1; i < array.length; i++) {
             // keep popping the stack, while stack is not empty and top of
             // the stack is smaller than spans[i]
-            while (!stack.empty() && array[stack.peek()] < array[i])
+            while (!stack.empty() && array[stack.peek()] <= array[i])
                 stack.pop();
 
             // all the elements to the left are smaller than array[i]

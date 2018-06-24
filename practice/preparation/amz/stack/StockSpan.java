@@ -1,32 +1,53 @@
 package amz.stack;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class StockSpan {
 
     public static void main(String[] args) {
         int[] stockPrices = new int[]{1, 2, 3, 3, 2, 1, 4};
-        findStockSpanBruteForce(stockPrices);
+        System.out.println(Arrays.toString(findStockSpanBruteForce(stockPrices)));
+        System.out.println(Arrays.toString(findStockSpanOptimal(stockPrices)));
     }
 
-    private static void findStockSpanBruteForce(int[] stockPrices) {
-        if (stockPrices == null || stockPrices.length == 0) {
+    private static int[] findStockSpanBruteForce(int[] array) {
+        if (array == null || array.length == 0) {
             throw new IllegalArgumentException();
         }
-        final int n = stockPrices.length;
+
+        final int n = array.length;
         int[] spans = new int[n];
         spans[0] = 1;
 
         for (int i = 1; i < n; i++) {
             spans[i] = 1;
-            int j = i - 1;
 
-            while (j >= 0 && stockPrices[j] <= stockPrices[j + 1]) {
-                j--;
+            for (int j = i - 1; j >= 0 && (array[i] >= array[j]); j--) {
                 spans[i]++;
             }
         }
-        System.out.println(Arrays.toString(spans));
+        return spans;
+    }
+
+    private static int[] findStockSpanOptimal(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException();
+        }
+
+        int[] spans = new int[array.length];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        spans[0] = 1;
+
+        for (int i = 1; i < array.length; i++) {
+            while (!stack.isEmpty() && array[stack.peek()] <= array[i]) {
+                stack.pop();
+            }
+            spans[i] = stack.isEmpty() ? i + 1 : i - stack.peek();
+            stack.push(i);
+        }
+        return spans;
     }
 
 }
