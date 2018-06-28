@@ -44,9 +44,9 @@ public class RotateMatrix {
         if (array == null) {
             throw new RuntimeException("Invalid input");
         }
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        for (int[] anArray : array) {
+            for (int j = 0; j < anArray.length; j++) {
+                System.out.print(anArray[j] + " ");
             }
             System.out.println();
         }
