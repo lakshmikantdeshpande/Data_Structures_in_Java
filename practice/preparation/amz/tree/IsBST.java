@@ -20,6 +20,7 @@ public class IsBST {
         System.out.println(isBST(root));
     }
 
+    // WRONG
     private static boolean isBST(Node root) {
         if (root == null) {
             return false;
@@ -33,6 +34,27 @@ public class IsBST {
         }
 
         return isBST(root.left) && isBST(root.right);
+    }
+
+    // CORRECT
+    private static boolean isBSTCorrect(Node root) {
+        if (root == null) {
+            return false;
+        }
+
+        return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private static boolean checkBST(Node root, int minValue, int maxValue) {
+        if (root == null) {
+            return true;
+        }
+
+        if (root.data < minValue || root.data > maxValue)
+            return false;
+
+        return (checkBST(root.left, minValue, root.data - 1) &&
+                checkBST(root.right, root.data + 1, maxValue));
     }
 
 }
