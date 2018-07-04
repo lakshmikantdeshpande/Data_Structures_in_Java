@@ -19,10 +19,8 @@ public class NextGreaterElement {
         final int n = array.length;
 
         for (int i = 1; i < n; i++) {
-            if (!stack.isEmpty()) {
-                while (!stack.isEmpty() && stack.peek() < array[i]) {
-                    System.out.printf("%ds next greater element is %d%n", stack.pop(), array[i]);
-                }
+            while (!stack.isEmpty() && stack.peek() < array[i]) {
+                System.out.printf("%ds next greater element is %d%n", stack.pop(), array[i]);
             }
             stack.push(array[i]);
         }
