@@ -8,6 +8,7 @@ public class LargestRectangleUnderHistogram {
 
     public static void main(String[] args) {
         System.out.println(getMaxArea(new int[]{6, 2, 5, 4, 5, 1, 6}));
+        System.out.println(getMaxArea(new int[]{3, 2, 5, 6, 1, 4, 4}));
     }
 
     public static int getMaxArea(int array[]) {
