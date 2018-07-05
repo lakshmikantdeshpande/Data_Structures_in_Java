@@ -27,12 +27,10 @@ public class MirrorTree {
     private static TreeNode mirror(TreeNode root) {
         if (root == null)
             return null;
-        mirror(root.left);
-        mirror(root.right);
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-
+        TreeNode left = mirror(root.left);
+        TreeNode right = mirror(root.right);
+        root.left = right;
+        root.right = left;
         return root;
     }
 
