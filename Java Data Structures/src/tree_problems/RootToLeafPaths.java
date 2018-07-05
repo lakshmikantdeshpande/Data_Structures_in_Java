@@ -5,6 +5,9 @@ package tree_problems;
 
 import tree.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RootToLeafPaths {
 
     public static void main(String[] args) {
@@ -16,6 +19,7 @@ public class RootToLeafPaths {
         root.left.right = new TreeNode(5);
 
         printPaths(root);
+        paths(root, new ArrayList<>());
     }
 
     public static void printPaths(TreeNode root) {
@@ -44,6 +48,28 @@ public class RootToLeafPaths {
         else {
             printPaths(root.left, paths, len);
             printPaths(root.right, paths, len);
+        }
+    }
+
+    private static void paths(TreeNode root, List<Integer> paths) {
+        if (root == null || paths == null) {
+            return;
+        }
+
+        paths.add(root.data);
+        if (root.left == null || root.right == null) {
+            for (int i : paths) {
+                System.out.print(i + " ");
+            }
+            paths.remove(paths.size() - 1);
+            System.out.println();
+            return;
+        }
+        paths(root.left, paths);
+        paths(root.right, paths);
+
+        if (!paths.isEmpty()) {
+            paths.remove(paths.size() - 1);
         }
     }
 
