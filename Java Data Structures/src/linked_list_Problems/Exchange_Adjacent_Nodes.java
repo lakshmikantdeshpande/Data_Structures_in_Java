@@ -44,11 +44,13 @@ public class Exchange_Adjacent_Nodes {
 
         display(head);
         // display(flipPairsRecursive(head));
-        display(flipPairs(head));
+        display(flipKNodes(head, 2));
+//        display(flipPairs(head));
     }
 
     private static Node flipPairs(Node head) {
-        Node temp1 = null, temp2 = null;
+        Node temp1 = null;
+        Node temp2 = null;
 
         while (head != null && head.next != null) {
             if (temp1 != null) {
@@ -63,6 +65,31 @@ public class Exchange_Adjacent_Nodes {
             head = head.next;
         }
         return temp2;
+    }
+
+    private static Node flipKNodes(Node head, int k) {
+        if (head == null || k <= 0) {
+            return head;
+        }
+
+        int count = 0;
+        Node current = head;
+        Node next = null;
+        Node prev = null;
+
+        while (current != null && count < k) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            count++;
+        }
+
+        if (next != null) {
+            head.next = flipKNodes(next, k);
+        }
+
+        return prev;
     }
 
     private static class Node {
