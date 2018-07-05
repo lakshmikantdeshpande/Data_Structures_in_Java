@@ -32,15 +32,13 @@ public class VerticalSum {
     }
 
     private static void sum(Map<Integer, Integer> map, TreeNode root, int key) {
-        if (root.left != null)
-            sum(map, root.left, key - 1);
-        if (root.right != null)
-            sum(map, root.right, key + 1);
-        int data = 0;
-
-        if (map.containsKey(key))
-            data = map.get(key);
-        map.put(key, root.data + data);
+        if (root == null || map == null) {
+            return;
+        }
+        int sum = map.getOrDefault(key, 0);
+        map.put(key, sum + root.data);
+        sum(map, root.left, key - 1);
+        sum(map, root.right, key + 1);
     }
 
 }
