@@ -52,33 +52,28 @@ public class Reverse_K_Nodes_2 {
     }
 
     public Node reverse(Node head, int k) {
-        Node current = head;
-        Node prevTail = null; // last node after reversing
-        Node prevCurrent = null;
-
-        while (current != null) {
-            // loop for reversing k nodes
-            int count = k;
-            Node tail = null;
-
-            while (current != null && count > 0) {
-                Node next = current.next;
-                current.next = tail;
-                tail = current;
-                current = next;
-                count--;
-            }
-
-            // reversed k nodes
-            if (prevTail != null) {
-                prevTail.next = tail;
-            } else {
-                head = tail;
-            }
-            prevTail = prevCurrent;
-            prevCurrent = current;
+        if (head == null || k <= 0) {
+            return head;
         }
-        return head;
+
+        int count = 0;
+        Node next = null;
+        Node prev = null;
+        Node current = head;
+
+        while (current != null && count < k) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            count++;
+        }
+
+        if (next != null) {
+            head.next = reverse(next, k);
+        }
+
+        return prev;
     }
 
     private class Node {
