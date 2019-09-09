@@ -5,7 +5,10 @@ package tree_problems;
 
 import tree.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class ZigzagTraversal {
 
@@ -20,48 +23,35 @@ public class ZigzagTraversal {
         System.out.println(zigzag(root));
     }
 
-    private static List<ArrayList<Integer>> zigzag(TreeNode root) {
-        List<ArrayList<Integer>> result = new ArrayList<>();
-        if (root == null)
-            return result;
-
-        boolean reverse = true;
+    private static List<List<Integer>> zigzag(TreeNode root) {
+        List<List<Integer>> resultList = new ArrayList<>();
+        if (root == null) return resultList;
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        queue.offer(null);
-
-        List<Integer> current = new ArrayList<>();
+        boolean left = true;
 
         while (!queue.isEmpty()) {
-            TreeNode temp = queue.poll();
-            if (temp != null) {
-                current.add(temp.data);
-                if (temp.left != null)
-                    queue.offer(temp.left);
-                if (temp.right != null)
-                    queue.offer(temp.right);
-            } else {
-                if (reverse) {
-                    ArrayList<Integer> array = new ArrayList<>(current);
-                    result.add(array);
-                    current.clear();
-                } else {
-                    Stack<Integer> stack = new Stack<>();
-                    stack.addAll(current);
-                    ArrayList<Integer> array = new ArrayList<>();
-                    while (!stack.isEmpty())
-                        array.add(stack.pop());
-                    result.add(array);
-                    current.clear();
-                }
+            final int size = queue.size();
+            LinkedList<Integer> list = new LinkedList<>();
 
-                if (!queue.isEmpty()) {
-                    queue.offer(null);
-                    reverse = !reverse;
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node != null) {
+                    if (left) {
+                        list.add(node.data);
+                    } else {
+                        list.addFirst(node.data);
+                    }
+
+                    if (node.left != null) queue.offer(node.left);
+                    if (node.right != null) queue.offer(node.right);
                 }
             }
+            resultList.add(list);
+            left = !left;
         }
-        return result;
+
+        return resultList;
     }
 }
