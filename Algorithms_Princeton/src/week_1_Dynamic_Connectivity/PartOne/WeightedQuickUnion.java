@@ -48,13 +48,12 @@ class WeightedQuickUnion {
             return;
         else {
             // make larger component parent of smaller component
-            if (size[p] >= size[q]) {
-                size[q] += size[p];
-                id[pid] = qid;
-            } else {
-                size[p] += size[q];
+            if (size[pid] >= size[qid]) {
                 id[qid] = pid;
-
+                size[pid] += size[qid];
+            } else {
+                id[pid] = qid;
+                size[qid] += size[pid];
             }
         }
     }
